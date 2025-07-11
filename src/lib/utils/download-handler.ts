@@ -5,7 +5,7 @@ export interface DownloadDocument {
   title: string;
   description: string;
   fileName: string;
-  fileType: 'pdf' | 'doc' | 'docx' | 'md';
+  fileType: 'pdf' | 'doc' | 'docx' | 'md' | 'html';
   size: string;
   category: 'application' | 'cost' | 'compliance' | 'iso-9001' | 'iso-14001' | 'iso-45001' | 'esg';
   icon: string;
@@ -79,9 +79,9 @@ export const certificationDocuments: DownloadDocument[] = [
   {
     id: 'iso-9001-overview',
     title: 'ISO 9001 표준개요',
-    description: '품질경영시스템 개요 및 요구사항 가이드',
+    description: '품질경영시스템 개요 및 요구사항 가이드 (HTML)',
     fileName: 'ISO_9001_표준개요.html',
-    fileType: 'pdf',
+    fileType: 'html',
     size: '276KB',
     category: 'iso-9001',
     icon: 'BookOpen',
@@ -90,9 +90,9 @@ export const certificationDocuments: DownloadDocument[] = [
   {
     id: 'iso-9001-guide',
     title: 'ISO 9001 구축가이드북',
-    description: '시스템 구축 단계별 상세 가이드',
+    description: '시스템 구축 단계별 상세 가이드 (HTML)',
     fileName: 'ISO_9001_구축가이드북.html',
-    fileType: 'pdf',
+    fileType: 'html',
     size: '549KB',
     category: 'iso-9001',
     icon: 'BookOpen',
@@ -103,9 +103,9 @@ export const certificationDocuments: DownloadDocument[] = [
   {
     id: 'iso-14001-overview',
     title: 'ISO 14001 표준개요',
-    description: '환경경영시스템 개요 및 요구사항 가이드',
+    description: '환경경영시스템 개요 및 요구사항 가이드 (HTML)',
     fileName: 'ISO_14001_표준개요.html',
-    fileType: 'pdf',
+    fileType: 'html',
     size: '481KB',
     category: 'iso-14001',
     icon: 'Leaf',
@@ -114,9 +114,9 @@ export const certificationDocuments: DownloadDocument[] = [
   {
     id: 'iso-14001-env-guide',
     title: 'ISO 14001 환경법규가이드',
-    description: '환경법규 준수 실무 가이드',
+    description: '환경법규 준수 실무 가이드 (HTML)',
     fileName: 'ISO_14001_환경법규가이드.html',
-    fileType: 'pdf',
+    fileType: 'html',
     size: '620KB',
     category: 'iso-14001',
     icon: 'Scale',
@@ -127,9 +127,9 @@ export const certificationDocuments: DownloadDocument[] = [
   {
     id: 'iso-45001-overview',
     title: 'ISO 45001 표준개요',
-    description: '안전보건경영시스템 개요 및 요구사항 가이드',
+    description: '안전보건경영시스템 개요 및 요구사항 가이드 (HTML)',
     fileName: 'ISO_45001_표준개요.html',
-    fileType: 'pdf',
+    fileType: 'html',
     size: '580KB',
     category: 'iso-45001',
     icon: 'Shield',
@@ -138,9 +138,9 @@ export const certificationDocuments: DownloadDocument[] = [
   {
     id: 'iso-45001-risk-guide',
     title: 'ISO 45001 위험성평가가이드',
-    description: '위험성평가 실무 가이드',
+    description: '위험성평가 실무 가이드 (HTML)',
     fileName: 'ISO_45001_위험성평가가이드.html',
-    fileType: 'pdf',
+    fileType: 'html',
     size: '750KB',
     category: 'iso-45001',
     icon: 'AlertTriangle',
@@ -222,6 +222,8 @@ export const getFileTypeIcon = (fileType: string): string => {
       return 'FileText';
     case 'md':
       return 'BookOpen';
+    case 'html':
+      return 'Globe';
     default:
       return 'FileText';
   }
@@ -237,6 +239,8 @@ export const getFileTypeColor = (fileType: string): string => {
       return 'blue';
     case 'md':
       return 'green';
+    case 'html':
+      return 'indigo';
     default:
       return 'gray';
   }
