@@ -98,18 +98,44 @@ const educationPrograms = {
         ]
       }
     ],
-    instructor: {
-      name: '이후경영지도사',
-      title: 'ESG 인증원 선임심사원',
-      experience: '25년',
-      certifications: [
-        'KAB 인정 심사원',
-        'ISO 9001 선임심사원',
-        '경영지도사 (품질경영)',
-        '품질관리기술사'
-      ],
-      description: '25년간의 풍부한 현장 경험을 바탕으로 실무 중심의 교육을 제공하며, 수많은 기업의 품질경영시스템 구축 및 개선을 지원해왔습니다.'
-    },
+    instructors: [
+      {
+        name: '박윤철 대표',
+        title: 'ESG 인증원 대표',
+        experience: '30년',
+        certifications: [
+          'KAB 인정 심사원',
+          'ISO 9001 선임심사원',
+          '경영지도사 (품질경영)',
+          '품질관리기술사'
+        ],
+        description: '30년간의 풍부한 현장 경험을 바탕으로 실무 중심의 교육을 제공하며, 수많은 기업의 품질경영시스템 구축 및 개선을 지원해왔습니다.'
+      },
+      {
+        name: '이후경 경영지도사',
+        title: 'ESG 인증원 선임심사원',
+        experience: '25년',
+        certifications: [
+          'KAB 인정 심사원',
+          'ISO 9001 선임심사원',
+          '경영지도사 (품질경영)',
+          '품질관리기술사'
+        ],
+        description: '25년간의 풍부한 현장 경험을 바탕으로 실무 중심의 교육을 제공하며, 수많은 기업의 품질경영시스템 구축 및 개선을 지원해왔습니다.'
+      },
+      {
+        name: '홍용기 경영지도사',
+        title: 'ESG 인증원 선임심사원',
+        experience: '20년',
+        certifications: [
+          'KAB 인정 심사원',
+          'ISO 9001 선임심사원',
+          '경영지도사 (품질경영)',
+          '품질관리기술사'
+        ],
+        description: '20년간의 풍부한 현장 경험을 바탕으로 실무 중심의 교육을 제공하며, 수많은 기업의 품질경영시스템 구축 및 개선을 지원해왔습니다.'
+      }
+    ],
     materials: [
       'ISO 9001:2015 표준 원문 (한글판)',
       '내부심사 체크리스트 템플릿',
@@ -239,18 +265,44 @@ const educationPrograms = {
         ]
       }
     ],
-    instructor: {
-      name: '이후경영지도사',
-      title: 'ESG 인증원 선임심사원',
-      experience: '25년',
-      certifications: [
-        'KAB 인정 심사원',
-        'ISO 14001 선임심사원',
-        '경영지도사 (환경경영)',
-        '환경관리기술사'
-      ],
-      description: '환경경영 분야 25년의 전문 경험을 바탕으로 실무 중심의 교육을 제공하며, 다양한 업종의 환경경영시스템 구축 및 개선을 지원해왔습니다.'
-    },
+    instructors: [
+      {
+        name: '박윤철 대표',
+        title: 'ESG 인증원 대표',
+        experience: '30년',
+        certifications: [
+          'KAB 인정 심사원',
+          'ISO 14001 선임심사원',
+          '경영지도사 (환경경영)',
+          '환경관리기술사'
+        ],
+        description: '환경경영 분야 30년의 전문 경험을 바탕으로 실무 중심의 교육을 제공하며, 다양한 업종의 환경경영시스템 구축 및 개선을 지원해왔습니다.'
+      },
+      {
+        name: '이후경 경영지도사',
+        title: 'ESG 인증원 선임심사원',
+        experience: '25년',
+        certifications: [
+          'KAB 인정 심사원',
+          'ISO 14001 선임심사원',
+          '경영지도사 (환경경영)',
+          '환경관리기술사'
+        ],
+        description: '환경경영 분야 25년의 전문 경험을 바탕으로 실무 중심의 교육을 제공하며, 다양한 업종의 환경경영시스템 구축 및 개선을 지원해왔습니다.'
+      },
+      {
+        name: '홍용기 경영지도사',
+        title: 'ESG 인증원 선임심사원',
+        experience: '20년',
+        certifications: [
+          'KAB 인정 심사원',
+          'ISO 14001 선임심사원',
+          '경영지도사 (환경경영)',
+          '환경관리기술사'
+        ],
+        description: '환경경영 분야 20년의 전문 경험을 바탕으로 실무 중심의 교육을 제공하며, 다양한 업종의 환경경영시스템 구축 및 개선을 지원해왔습니다.'
+      }
+    ],
     materials: [
       'ISO 14001:2015 표준 원문 (한글판)',
       '환경법규 요약집',
@@ -376,18 +428,44 @@ const educationPrograms = {
         ]
       }
     ],
-    instructor: {
-      name: '이후경영지도사',
-      title: 'ESG 인증원 선임심사원',
-      experience: '25년',
-      certifications: [
-        'KAB 인정 심사원',
-        'ISO 45001 선임심사원',
-        '경영지도사 (안전경영)',
-        '산업안전기사'
-      ],
-      description: '안전보건경영 분야 25년의 전문 경험을 바탕으로 실무 중심의 교육을 제공하며, 다양한 업종의 안전보건경영시스템 구축 및 개선을 지원해왔습니다.'
-    },
+    instructors: [
+      {
+        name: '박윤철 대표',
+        title: 'ESG 인증원 대표',
+        experience: '30년',
+        certifications: [
+          'KAB 인정 심사원',
+          'ISO 45001 선임심사원',
+          '경영지도사 (안전경영)',
+          '산업안전기사'
+        ],
+        description: '안전보건경영 분야 30년의 전문 경험을 바탕으로 실무 중심의 교육을 제공하며, 다양한 업종의 안전보건경영시스템 구축 및 개선을 지원해왔습니다.'
+      },
+      {
+        name: '이후경 경영지도사',
+        title: 'ESG 인증원 선임심사원',
+        experience: '25년',
+        certifications: [
+          'KAB 인정 심사원',
+          'ISO 45001 선임심사원',
+          '경영지도사 (안전경영)',
+          '산업안전기사'
+        ],
+        description: '안전보건경영 분야 25년의 전문 경험을 바탕으로 실무 중심의 교육을 제공하며, 다양한 업종의 안전보건경영시스템 구축 및 개선을 지원해왔습니다.'
+      },
+      {
+        name: '홍용기 경영지도사',
+        title: 'ESG 인증원 선임심사원',
+        experience: '20년',
+        certifications: [
+          'KAB 인정 심사원',
+          'ISO 45001 선임심사원',
+          '경영지도사 (안전경영)',
+          '산업안전기사'
+        ],
+        description: '안전보건경영 분야 20년의 전문 경험을 바탕으로 실무 중심의 교육을 제공하며, 다양한 업종의 안전보건경영시스템 구축 및 개선을 지원해왔습니다.'
+      }
+    ],
     materials: [
       'ISO 45001:2018 표준 원문 (한글판)',
       '안전보건법규 요약집',
@@ -502,18 +580,44 @@ const educationPrograms = {
         ]
       }
     ],
-    instructor: {
-      name: '이후경영지도사',
-      title: 'ESG 인증원 선임심사원',
-      experience: '25년',
-      certifications: [
-        'ESG 전문가',
-        'KAB 인정 심사원',
-        '경영지도사 (ESG경영)',
-        '지속가능경영 전문가'
-      ],
-      description: 'ESG 경영 및 지속가능경영 분야의 선도적 전문가로서, 다양한 기업의 ESG 경영시스템 구축과 개선을 지원하고 있습니다.'
-    },
+    instructors: [
+      {
+        name: '박윤철 대표',
+        title: 'ESG 인증원 대표',
+        experience: '30년',
+        certifications: [
+          'ESG 전문가',
+          'KAB 인정 심사원',
+          '경영지도사 (ESG경영)',
+          '지속가능경영 전문가'
+        ],
+        description: 'ESG 경영 및 지속가능경영 분야의 선도적 전문가로서, 다양한 기업의 ESG 경영시스템 구축과 개선을 지원하고 있습니다.'
+      },
+      {
+        name: '이후경 경영지도사',
+        title: 'ESG 인증원 선임심사원',
+        experience: '25년',
+        certifications: [
+          'ESG 전문가',
+          'KAB 인정 심사원',
+          '경영지도사 (ESG경영)',
+          '지속가능경영 전문가'
+        ],
+        description: 'ESG 경영 및 지속가능경영 분야의 선도적 전문가로서, 다양한 기업의 ESG 경영시스템 구축과 개선을 지원하고 있습니다.'
+      },
+      {
+        name: '홍용기 경영지도사',
+        title: 'ESG 인증원 선임심사원',
+        experience: '20년',
+        certifications: [
+          'ESG 전문가',
+          'KAB 인정 심사원',
+          '경영지도사 (ESG경영)',
+          '지속가능경영 전문가'
+        ],
+        description: 'ESG 경영 및 지속가능경영 분야의 선도적 전문가로서, 다양한 기업의 ESG 경영시스템 구축과 개선을 지원하고 있습니다.'
+      }
+    ],
     materials: [
       'ESG 경영 가이드북',
       'ESG 법규 및 규제 요약집',
@@ -802,45 +906,51 @@ export default function EducationProgramDetailPage() {
 
                   {/* 강사진 탭 */}
                   <TabsContent value="instructor" className="mt-6">
-                    <Card>
-                      <CardHeader>
-                        <CardTitle className="flex items-center">
-                          <User className="w-5 h-5 mr-2 text-blue-600" />
-                          주강사 소개
-                        </CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        <div className="flex items-start gap-6">
-                          <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
-                            <User className="w-12 h-12 text-white" />
-                          </div>
-                          <div className="flex-1">
-                            <h3 className="text-xl font-bold text-gray-900 mb-1">
-                              {program.instructor.name}
-                            </h3>
-                            <p className="text-blue-600 font-semibold mb-2">
-                              {program.instructor.title}
-                            </p>
-                            <p className="text-gray-600 mb-4">
-                              경력 {program.instructor.experience}
-                            </p>
-                            <p className="text-gray-700 mb-4">
-                              {program.instructor.description}
-                            </p>
-                            <div>
-                              <h4 className="font-semibold mb-2">주요 자격</h4>
-                              <div className="flex flex-wrap gap-2">
-                                {program.instructor.certifications.map((cert, index) => (
-                                  <Badge key={index} variant="outline" className="text-xs">
-                                    {cert}
-                                  </Badge>
-                                ))}
+                    <div className="space-y-6">
+                      <Card>
+                        <CardHeader>
+                          <CardTitle className="flex items-center">
+                            <User className="w-5 h-5 mr-2 text-blue-600" />
+                            주강사진 소개
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                          <div className="space-y-8">
+                            {program.instructors.map((instructor, index) => (
+                              <div key={index} className="flex items-start gap-6">
+                                <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+                                  <User className="w-12 h-12 text-white" />
+                                </div>
+                                <div className="flex-1">
+                                  <h3 className="text-xl font-bold text-gray-900 mb-1">
+                                    {instructor.name}
+                                  </h3>
+                                  <p className="text-blue-600 font-semibold mb-2">
+                                    {instructor.title}
+                                  </p>
+                                  <p className="text-gray-600 mb-4">
+                                    경력 {instructor.experience}
+                                  </p>
+                                  <p className="text-gray-700 mb-4">
+                                    {instructor.description}
+                                  </p>
+                                  <div>
+                                    <h4 className="font-semibold mb-2">주요 자격</h4>
+                                    <div className="flex flex-wrap gap-2">
+                                      {instructor.certifications.map((cert, certIndex) => (
+                                        <Badge key={certIndex} variant="outline" className="text-xs">
+                                          {cert}
+                                        </Badge>
+                                      ))}
+                                    </div>
+                                  </div>
+                                </div>
                               </div>
-                            </div>
+                            ))}
                           </div>
-                        </div>
-                      </CardContent>
-                    </Card>
+                        </CardContent>
+                      </Card>
+                    </div>
                   </TabsContent>
 
                   {/* 교재/혜택 탭 */}
