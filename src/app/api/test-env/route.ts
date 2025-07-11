@@ -74,7 +74,7 @@ export async function POST(request: NextRequest) {
       const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
       const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
 
-      const prompt = `당신은 M-CENTER의 AI상담사입니다. 다음 메시지에 간단히 응답해주세요: "${testMessage}"`;
+      const prompt = `당신은 ESG 인증원의 AI상담사입니다. 다음 메시지에 간단히 응답해주세요: "${testMessage}"`;
       
       const result = await model.generateContent(prompt);
       const response = await result.response;

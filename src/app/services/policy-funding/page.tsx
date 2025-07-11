@@ -448,7 +448,7 @@ export default function PolicyFundingPage() {
               onClick={() => document.getElementById('hero-section')?.scrollIntoView({ behavior: 'smooth' })}
               className="px-3 py-1 text-xs font-medium bg-blue-100 text-blue-700 rounded-full hover:bg-blue-200 transition-colors"
             >
-              🏠 홈
+              홈
             </button>
             <button
               onClick={() => document.getElementById('diagnosis-section')?.scrollIntoView({ behavior: 'smooth' })}
@@ -460,13 +460,13 @@ export default function PolicyFundingPage() {
               onClick={() => document.getElementById('dscr-detailed-analysis')?.scrollIntoView({ behavior: 'smooth' })}
               className="px-3 py-1 text-xs font-medium bg-green-100 text-green-700 rounded-full hover:bg-green-200 transition-colors"
             >
-              📊 DSCR
+              DSCR
             </button>
             <button
               onClick={() => document.getElementById('ai-features')?.scrollIntoView({ behavior: 'smooth' })}
               className="px-3 py-1 text-xs font-medium bg-orange-100 text-orange-700 rounded-full hover:bg-orange-200 transition-colors"
             >
-              🤖 AI기능
+              AI기능
             </button>
           </div>
         </div>
@@ -564,29 +564,44 @@ export default function PolicyFundingPage() {
 
              {/* 🔥 모바일 최적화된 HERO Section */}
        <div id="hero-section" className={`mobile-hero relative ${isMobile ? 'min-h-screen' : ''} text-white overflow-hidden`}>
-        {/* 배경 패턴 */}
+        {/* 배경 패턴 - AI 이중 효과 */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-20 left-20 w-40 h-40 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute top-10 right-10 w-60 h-60 bg-gradient-to-br from-blue-400 to-purple-400 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute bottom-20 left-1/3 w-50 h-50 bg-gradient-to-br from-green-400 to-teal-400 rounded-full blur-3xl animate-pulse delay-2000"></div>
+          <div className="absolute bottom-10 right-1/4 w-32 h-32 bg-gradient-to-br from-pink-400 to-red-400 rounded-full blur-2xl animate-pulse delay-3000"></div>
+        </div>
+        
+        {/* 동적 그리드 패턴 */}
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: 'radial-gradient(circle at 25% 25%, rgba(255,255,255,0.2) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(255,255,255,0.1) 0%, transparent 50%)',
-          }} />
+          <div className="w-full h-full grid-animation-funding"></div>
         </div>
         
         <div className={`relative container mx-auto px-4 ${isMobile ? 'py-12 min-h-screen flex flex-col justify-center' : 'py-16 lg:py-24'}`}>
           <div className={`text-center ${isMobile ? 'space-y-8' : 'mb-12'}`}>
-            <h1 className={`${isMobile ? 'text-3xl' : 'text-3xl md:text-4xl lg:text-5xl'} font-bold mb-6 leading-tight z-10 relative`}>
+            {/* AI 배지 */}
+            <div className="inline-flex items-center gap-2 px-6 py-3 bg-white/20 backdrop-blur-sm 
+                            text-white rounded-full font-semibold text-sm mb-8 shadow-lg hover:shadow-xl transition-all duration-300
+                            border border-white/30 hover:border-white/50 animate-bounce-gentle">
+              <TrendingUp className="w-5 h-5 animate-pulse" />
+              <span>AI 기반 정책자금 매칭</span>
+              <Zap className="w-4 h-4 text-yellow-300 animate-pulse" />
+            </div>
+            
+            <h1 className={`${isMobile ? 'text-3xl' : 'text-3xl md:text-4xl lg:text-5xl'} font-bold mb-6 leading-tight z-10 relative animate-slide-in`}>
               {isMobile ? (
                 <>
-                  🚀 중소기업 성장동력<br />
-                  <span className="text-yellow-300 text-4xl">확실한 뒷받침</span>
+                  중소기업 성장동력<br />
+                  <span className="text-yellow-300 text-4xl bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent animate-gradient-x">확실한 뒷받침</span>
                 </>
               ) : (
                 <>
                   중소기업 성장 동력을<br />
-                  <span className="text-yellow-300">확실하게 뒷받침</span>
+                  <span className="bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent animate-gradient-x">확실하게 뒷받침</span>
                 </>
               )}
             </h1>
-            <p className={`${isMobile ? 'text-lg px-4' : 'text-xl lg:text-2xl'} text-blue-100 mb-8 max-w-4xl mx-auto leading-relaxed z-10 relative`}>
+            <p className={`${isMobile ? 'text-lg px-4' : 'text-xl lg:text-2xl'} text-blue-100 mb-8 max-w-4xl mx-auto leading-relaxed z-10 relative animate-fade-in-up delay-300`}>
               {isMobile ? (
                 <>
                   💼 세밀한 검증 + 철저한 사후관리<br />
@@ -599,6 +614,30 @@ export default function PolicyFundingPage() {
                 </>
               )}
             </p>
+            
+            {/* 인터랙티브 통계 카드 */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8 max-w-4xl mx-auto">
+              <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 
+                              border border-white/30 hover:border-white/50 transform hover:scale-105 group">
+                <div className="text-2xl font-bold text-yellow-300 mb-1 group-hover:text-yellow-200">100+</div>
+                <div className="text-sm text-blue-100">정책자금 종류</div>
+              </div>
+              <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 
+                              border border-white/30 hover:border-white/50 transform hover:scale-105 group">
+                <div className="text-2xl font-bold text-green-300 mb-1 group-hover:text-green-200">95%</div>
+                <div className="text-sm text-blue-100">승인 성공률</div>
+              </div>
+              <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 
+                              border border-white/30 hover:border-white/50 transform hover:scale-105 group">
+                <div className="text-2xl font-bold text-orange-300 mb-1 group-hover:text-orange-200">AI</div>
+                <div className="text-sm text-blue-100">매칭 기술</div>
+              </div>
+              <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 
+                              border border-white/30 hover:border-white/50 transform hover:scale-105 group">
+                <div className="text-2xl font-bold text-purple-300 mb-1 group-hover:text-purple-200">24H</div>
+                <div className="text-sm text-blue-100">빠른 진단</div>
+              </div>
+            </div>
             
             {/* 🔥 모바일 최적화된 CTA 버튼들 */}
             <div className={`${isMobile ? 'space-y-4 px-4' : 'flex flex-col sm:flex-row gap-4 justify-center'} mb-16 z-10 relative`}>
@@ -616,7 +655,7 @@ export default function PolicyFundingPage() {
                 } : undefined}
               >
                 <Play className={`${isMobile ? 'w-6 h-6' : 'w-5 h-5'} mr-3`} />
-                {isMobile ? '🔥 무료진단 신청' : '무료 진단 신청하기'}
+                                  {isMobile ? '무료진단 신청' : '무료 진단 신청하기'}
               </Button>
               <Button 
                 size="lg" 
@@ -675,7 +714,7 @@ export default function PolicyFundingPage() {
         <div className={`container mx-auto ${isMobile ? 'px-2' : 'px-4'}`}>
           <div className={`text-center ${isMobile ? 'mb-8' : 'mb-12'}`}>
             <h2 className={`${isMobile ? 'text-2xl' : 'text-3xl lg:text-4xl'} font-bold text-gray-900 mb-4`}>
-              🤖 AI 기반 분석 시스템
+              AI 기반 분석 시스템
             </h2>
             <p className={`${isMobile ? 'text-base px-4' : 'text-xl'} text-gray-600 max-w-3xl mx-auto`}>
               {isMobile ? 'AI 기술로 빠른 정책자금 매칭' : '혁신적 AI 기술로 정확하고 빠른 정책자금 매칭 서비스'}
@@ -715,6 +754,8 @@ export default function PolicyFundingPage() {
             })}
           </div>
         </div>
+        
+
       </div>
 
       {/* 혁신적 듀얼라인 방법론 섹션 */}
@@ -722,7 +763,7 @@ export default function PolicyFundingPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-emerald-600 bg-clip-text text-transparent mb-4">
-              🔄 혁신적 듀얼라인 방법론
+              혁신적 듀얼라인 방법론
             </h2>
             <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
               정책자금 확보와 투자타당성 분석을 동시에 진행하는 통합 컨설팅 시스템
@@ -823,8 +864,8 @@ export default function PolicyFundingPage() {
             <p className={`${isMobile ? 'text-base px-2' : 'text-xl'} text-gray-700 leading-relaxed max-w-4xl mx-auto`}>
               {isMobile ? (
                 <>
-                  🎯 전문가급 NPV/IRR 계산<br />
-                  📊 연도별 상세 투자타당성 검토
+                                  전문가급 NPV/IRR 계산<br />
+                연도별 상세 투자타당성 검토
                 </>
               ) : (
                 '전문가급 투자분석 알고리즘으로 연도별 상세 NPV 계산과 영업이익률 연계 투자타당성 검토를 제공합니다'
@@ -2727,14 +2768,14 @@ export default function PolicyFundingPage() {
                   전문가 상담 신청
                 </Button>
               </Link>
-              <Link href="/analysis">
+              <Link href="/services/policy-funding/investment-analysis">
                 <Button 
                   variant="outline" 
                   size="lg" 
                   className="border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white font-bold py-4 px-8 rounded-xl text-lg transition-all duration-300 transform hover:scale-105"
                 >
                   <BarChart3 className="mr-2 h-5 w-5" />
-                  투자분석 시작하기
+                  정책자금투자타당성분석기
                 </Button>
               </Link>
             </div>

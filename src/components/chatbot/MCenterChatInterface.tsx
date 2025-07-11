@@ -337,9 +337,9 @@ const MCenterChatInterface: React.FC<MCenterChatInterfaceProps> = ({
         <div className="flex items-center justify-between p-4 border-b border-gray-200 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-t-2xl">
           <div className="flex items-center space-x-3">
             <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center overflow-hidden">
-              <img
-                src="/images/M-Center-leader.png"
-                alt="M센터장 이후경 경영지도사"
+                              <img
+                  src="/images/M-Center-leader.png"
+                  alt="이후경 경영지도사"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -398,7 +398,7 @@ const MCenterChatInterface: React.FC<MCenterChatInterfaceProps> = ({
                       ) : (
                         <img
                           src="/images/M-Center-leader.png"
-                          alt="M센터장"
+                          alt="이후경 경영지도사"
                           className="w-full h-full object-cover"
                         />
                       )}
@@ -458,7 +458,7 @@ const MCenterChatInterface: React.FC<MCenterChatInterfaceProps> = ({
                     <div className="w-8 h-8 rounded-full bg-gradient-to-br from-purple-500 to-blue-600 text-white flex items-center justify-center overflow-hidden">
                       <img
                         src="/images/M-Center-leader.png"
-                        alt="M센터장"
+                        alt="이후경 경영지도사"
                         className="w-full h-full object-cover animate-pulse"
                       />
                     </div>

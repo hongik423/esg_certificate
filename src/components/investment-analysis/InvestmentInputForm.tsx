@@ -337,7 +337,7 @@ export default function InvestmentInputForm({ onSubmit, isLoading }: InvestmentI
             <div className={`mobile-card bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-200 ${isMobile ? 'mx-2' : ''}`}>
             <div className="flex items-center gap-2 mb-4">
               <Calculator className="w-5 h-5 text-blue-600" />
-              <h3 className="text-lg font-semibold text-blue-800">🔥 핵심 NPV/IRR 분석 조건</h3>
+              <h3 className="text-lg font-semibold text-blue-800">핵심 NPV/IRR 분석 조건</h3>
               <div className="flex items-center gap-1 text-sm text-blue-600">
                 <AlertTriangle className="w-4 h-4" />
                 <span>투자 성과에 가장 큰 영향을 미치는 핵심 변수들</span>
@@ -393,7 +393,7 @@ export default function InvestmentInputForm({ onSubmit, isLoading }: InvestmentI
                 render={({ field }) => (
                   <FormItem className={isMobile ? 'mb-6' : ''}>
                     <FormLabel className={`flex items-center font-semibold text-blue-700 ${isMobile ? 'text-lg mb-3' : ''}`}>
-                      📊 할인율 (WACC)
+                      할인율 (WACC)
                       <Tooltip>
                         <TooltipTrigger asChild>
                           <Info className={`${isMobile ? 'w-5 h-5 ml-2' : 'w-4 h-4 ml-1'} text-blue-400 mobile-touch-area`} />
@@ -437,7 +437,7 @@ export default function InvestmentInputForm({ onSubmit, isLoading }: InvestmentI
                 render={({ field }) => (
                   <FormItem className={isMobile ? 'mb-6' : ''}>
                     <FormLabel className={`flex items-center font-semibold text-blue-700 ${isMobile ? 'text-lg mb-3' : ''}`}>
-                      💰 영업이익률 (핵심)
+                      영업이익률 (핵심)
                       <Tooltip>
                         <TooltipTrigger asChild>
                           <Info className={`${isMobile ? 'w-5 h-5 ml-2' : 'w-4 h-4 ml-1'} text-blue-400 mobile-touch-area`} />
@@ -483,7 +483,7 @@ export default function InvestmentInputForm({ onSubmit, isLoading }: InvestmentI
           <div className={`mobile-card ${isMobile ? 'mx-2' : ''}`}>
             <h3 className={`${isMobile ? 'text-xl' : 'text-lg'} font-semibold mb-6 flex items-center text-gray-800`}>
               <DollarSign className={`${isMobile ? 'w-6 h-6 mr-3' : 'w-5 h-5 mr-2'}`} />
-              💎 초기 투자 정보
+              초기 투자 정보
             </h3>
             <div className={`grid ${isMobile ? 'grid-cols-1 gap-8' : 'grid-cols-1 md:grid-cols-3 gap-6'}`}>
               <FormField
@@ -492,7 +492,7 @@ export default function InvestmentInputForm({ onSubmit, isLoading }: InvestmentI
                 render={({ field }) => (
                   <FormItem className={isMobile ? 'mb-8' : ''}>
                     <FormLabel className={`flex items-center ${isMobile ? 'text-lg mb-3 font-bold text-green-700' : ''}`}>
-                      💎 초기 투자금
+                      초기 투자금
                       <Tooltip>
                         <TooltipTrigger asChild>
                           <Info className={`${isMobile ? 'w-5 h-5 ml-2' : 'w-4 h-4 ml-1'} text-gray-400 mobile-touch-area`} />
@@ -525,7 +525,7 @@ export default function InvestmentInputForm({ onSubmit, isLoading }: InvestmentI
                     {isMobile && (
                       <div className="mt-3 p-3 bg-green-50 rounded-lg border border-green-200">
                         <p className="text-green-700 text-sm font-medium">
-                          💡 억원 단위로 자동 변환됩니다
+                          억원 단위로 자동 변환됩니다
                         </p>
                       </div>
                     )}
@@ -540,7 +540,7 @@ export default function InvestmentInputForm({ onSubmit, isLoading }: InvestmentI
                 render={({ field }) => (
                   <FormItem className={isMobile ? 'mb-8' : ''}>
                     <FormLabel className={`flex items-center ${isMobile ? 'text-lg mb-3 font-bold text-blue-700' : ''}`}>
-                      🏛️ 정책자금 규모
+                      정책자금 규모
                       <Tooltip>
                         <TooltipTrigger asChild>
                           <Info className={`${isMobile ? 'w-5 h-5 ml-2' : 'w-4 h-4 ml-1'} text-gray-400 mobile-touch-area`} />
@@ -573,7 +573,7 @@ export default function InvestmentInputForm({ onSubmit, isLoading }: InvestmentI
                     {isMobile && (
                       <div className="mt-3 p-3 bg-blue-50 rounded-lg border border-blue-200">
                         <p className="text-blue-700 text-sm font-medium">
-                          🏛️ 정부 지원 정책자금 금액
+                          정부 지원 정책자금 금액
                         </p>
                       </div>
                     )}
@@ -588,13 +588,13 @@ export default function InvestmentInputForm({ onSubmit, isLoading }: InvestmentI
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel className="flex items-center font-semibold text-red-700">
-                      📅 평가 기간 (필수) ⚠️
+                      평가 기간 (필수)
                       <Tooltip>
                         <TooltipTrigger asChild>
                           <Info className="w-4 h-4 ml-1 text-red-400" />
                         </TooltipTrigger>
                         <TooltipContent>
-                          <p>⚠️ NPV/IRR 계산에 필수적인 분석 기간! 연도별 매출 데이터 길이가 자동 조정됩니다</p>
+                          <p>NPV/IRR 계산에 필수적인 분석 기간! 연도별 매출 데이터 길이가 자동 조정됩니다</p>
                         </TooltipContent>
                       </Tooltip>
                     </FormLabel>
@@ -615,7 +615,7 @@ export default function InvestmentInputForm({ onSubmit, isLoading }: InvestmentI
                       </div>
                     </FormControl>
                     <FormDescription className="text-red-600 font-bold">
-                      ⚠️ 현재 설정: {field.value}년간 분석 ({field.value}년 매출 데이터 필요)
+                      현재 설정: {field.value}년간 분석 ({field.value}년 매출 데이터 필요)
                     </FormDescription>
                     <FormMessage />
                   </FormItem>
@@ -975,7 +975,7 @@ export default function InvestmentInputForm({ onSubmit, isLoading }: InvestmentI
                         <SelectContent>
                           <SelectItem value="pessimistic">📉 비관적 시나리오</SelectItem>
                           <SelectItem value="neutral">➡️ 중립적 시나리오</SelectItem>
-                          <SelectItem value="optimistic">📈 낙관적 시나리오</SelectItem>
+                          <SelectItem value="optimistic">낙관적 시나리오</SelectItem>
                         </SelectContent>
                       </Select>
                     </FormControl>
@@ -1140,7 +1140,7 @@ export default function InvestmentInputForm({ onSubmit, isLoading }: InvestmentI
               ) : (
                 <>
                   <Calculator className={`${isMobile ? 'w-6 h-6' : 'w-4 h-4'} mr-3`} />
-                  {isMobile ? '투자분석 시작 🚀' : `${analysisYears}년간 NPV/IRR 투자 분석 시작`}
+                  {isMobile ? '투자분석 시작' : `${analysisYears}년간 NPV/IRR 투자 분석 시작`}
                 </>
               )}
             </Button>

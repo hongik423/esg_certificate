@@ -722,7 +722,7 @@ export async function GET(request: NextRequest) {
   try {
     return NextResponse.json({
       status: 'ok',
-      message: 'M센터장 상담 시스템이 정상 작동 중입니다.',
+              message: 'ESG 인증원 전문상담사 시스템이 정상 작동 중입니다.',
       consultant: 'ESG 인증원 이후경 선임심사원',
       experience: '25년 현장 경험',
       timestamp: new Date().toISOString(),

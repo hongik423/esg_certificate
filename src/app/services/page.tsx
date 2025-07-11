@@ -276,60 +276,101 @@ export default function ServicesPage() {
       <Header />
       
       {/* 히어로 섹션 - 모바일 최적화 */}
-      <section className="py-16 lg:py-24 safe-area-top">
-        <div className="container mx-auto px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 max-w-7xl">
+      <section className="py-16 lg:py-24 safe-area-top relative overflow-hidden">
+        {/* 배경 패턴 - AI 이중 효과 */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 left-20 w-40 h-40 bg-gradient-to-br from-blue-400 to-purple-400 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute top-10 right-10 w-60 h-60 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute bottom-20 left-1/3 w-50 h-50 bg-gradient-to-br from-green-400 to-blue-400 rounded-full blur-3xl animate-pulse delay-2000"></div>
+          <div className="absolute bottom-10 right-1/4 w-32 h-32 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-full blur-2xl animate-pulse delay-3000"></div>
+        </div>
+        
+        {/* 동적 그리드 패턴 */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="w-full h-full grid-animation"></div>
+        </div>
+        
+        <div className="container mx-auto px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 max-w-7xl relative z-10">
           <div className="text-center mb-12 lg:mb-16">
-          <h1 className="text-mobile-3xl lg:text-6xl font-bold text-gray-900 mb-6 mobile-centered">
-            <span className="text-overflow-safe">기업의별 M-CENTER</span>
-            <br />
-            <span className="text-overflow-safe bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              프리미엄 컨설팅 서비스
-            </span>
-          </h1>
-          
-          <p className="text-mobile-lg lg:text-xl text-gray-600 mb-8 max-w-4xl mx-auto mobile-text">
-            25년 전문가 경험과 최신 AI 기술로 기업의 성장 잠재력을 최대화합니다.<br />
-            매출 증대부터 디지털 혁신까지, 맞춤형 솔루션을 제공합니다.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button 
-              size="lg"
-              className="mobile-button touch-feedback bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-xl hover:shadow-2xl gpu-accelerated"
-            >
-              <Star className="w-5 h-5 mr-2" />
-              <span className="text-overflow-safe">무료 전문가 진단 받기</span>
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="mobile-button touch-feedback border-2 border-blue-600 text-blue-600 hover:bg-blue-50"
-            >
-              <Phone className="w-5 h-5 mr-2" />
-              <span className="text-overflow-safe">전문가 상담 (010-9251-9743)</span>
-            </Button>
-          </div>
-          
-          {/* 핵심 지표 - 모바일 그리드 */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8 max-w-4xl mx-auto">
-            {[
-              { number: '500+', label: '성공 프로젝트', icon: Trophy },
-              { number: '95%', label: '고객 만족도', icon: ThumbsUp },
-              { number: '25년', label: '전문가 경험', icon: Award },
-              { number: '300%', label: '평균 매출 증대', icon: TrendingUp }
-            ].map((stat, index) => (
-              <div key={index} className="mobile-card bg-white text-center">
-                <stat.icon className="w-8 h-8 text-blue-600 mx-auto mb-2" />
-                <div className="text-mobile-2xl font-bold text-gray-900 mb-1 text-overflow-safe">
-                  {stat.number}
-                </div>
-                <p className="text-mobile-sm text-gray-600 mobile-text">{stat.label}</p>
+            {/* AI 배지 */}
+            <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-100 to-purple-100 
+                            text-blue-700 rounded-full font-semibold text-sm mb-8 shadow-lg hover:shadow-xl transition-all duration-300
+                            border border-blue-200 hover:border-blue-300 animate-bounce-gentle">
+              <Brain className="w-5 h-5 animate-pulse" />
+              <span>AI 기반 프리미엄 컨설팅</span>
+              <Zap className="w-4 h-4 text-yellow-500 animate-pulse" />
+            </div>
+            
+            <h1 className="text-mobile-3xl lg:text-6xl font-bold text-gray-900 mb-6 mobile-centered">
+              <span className="text-overflow-safe animate-slide-in">ESG 인증원</span>
+              <br />
+              <span className="text-overflow-safe bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent animate-gradient-x">
+                프리미엄 컨설팅 서비스
+              </span>
+            </h1>
+            
+            <p className="text-mobile-lg lg:text-xl text-gray-600 mb-8 max-w-4xl mx-auto mobile-text animate-fade-in-up delay-300">
+              25년 전문가 경험과 최신 AI 기술로 기업의 성장 잠재력을 최대화합니다.<br />
+              매출 증대부터 디지털 혁신까지, 맞춤형 솔루션을 제공합니다.
+            </p>
+            
+            {/* 인터랙티브 통계 카드 */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12 max-w-4xl mx-auto">
+              <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 
+                              border border-gray-200 hover:border-blue-300 transform hover:scale-105 group">
+                <div className="text-2xl font-bold text-blue-600 mb-1 group-hover:text-blue-700">25년</div>
+                <div className="text-sm text-gray-600">전문가 경험</div>
               </div>
-            ))}
-          </div>
+              <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 
+                              border border-gray-200 hover:border-green-300 transform hover:scale-105 group">
+                <div className="text-2xl font-bold text-green-600 mb-1 group-hover:text-green-700">500+</div>
+                <div className="text-sm text-gray-600">성공 사례</div>
+              </div>
+              <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 
+                              border border-gray-200 hover:border-purple-300 transform hover:scale-105 group">
+                <div className="text-2xl font-bold text-purple-600 mb-1 group-hover:text-purple-700">95%</div>
+                <div className="text-sm text-gray-600">고객 만족도</div>
+              </div>
+              <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 
+                              border border-gray-200 hover:border-orange-300 transform hover:scale-105 group">
+                <div className="text-2xl font-bold text-orange-600 mb-1 group-hover:text-orange-700">AI</div>
+                <div className="text-sm text-gray-600">혁신 기술</div>
+              </div>
+            </div>
+            
+            {/* CTA 버튼 */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up delay-500">
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 
+                           text-white px-8 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl 
+                           transition-all duration-300 transform hover:scale-105 group"
+                onClick={() => router.push('/consultation')}
+              >
+                <span className="flex items-center gap-2">
+                  무료 상담 신청
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </span>
+              </Button>
+              
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="border-2 border-gray-300 hover:border-blue-500 text-gray-700 hover:text-blue-600 
+                           px-8 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl 
+                           transition-all duration-300 transform hover:scale-105 group bg-white/80 backdrop-blur-sm"
+                onClick={() => router.push('/diagnosis')}
+              >
+                <span className="flex items-center gap-2">
+                  <Brain className="w-5 h-5 group-hover:animate-pulse" />
+                  AI 진단 받기
+                </span>
+              </Button>
+            </div>
           </div>
         </div>
+        
+
       </section>
 
       {/* 서비스 카드 섹션 - 사용자 중심 완전 개선 */}

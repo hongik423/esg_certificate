@@ -653,7 +653,7 @@ export default function ConsultationPage() {
                   <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg">
                     <User className="w-10 h-10 text-white" />
                   </div>
-                  <h3 className="font-bold text-xl text-gray-900 mb-1">이후경 M센터장</h3>
+                  <h3 className="font-bold text-xl text-gray-900 mb-1">이후경 경영지도사</h3>
                   <p className="text-gray-600 font-medium">25년 경험 전문가</p>
                 </div>
 

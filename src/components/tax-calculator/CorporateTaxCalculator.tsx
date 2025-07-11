@@ -1225,7 +1225,7 @@ const CorporateTaxCalculatorComponent: React.FC = () => {
         <CardHeader>
           <CardTitle className="flex items-center space-x-2">
             <Calculator className="h-5 w-5 text-green-600" />
-            <span>⚡ 스마트 자동 계산 대시보드</span>
+            <span>스마트 자동 계산 대시보드</span>
           </CardTitle>
           <CardDescription>
             입력하는 즉시 관련 값들이 자동으로 연계 계산되고 세무 혜택이 분석됩니다

@@ -16,7 +16,11 @@ import {
   MapPin,
   Calculator,
   TrendingUp,
-  DollarSign
+  DollarSign,
+  Star,
+  Zap,
+  Target,
+  Brain
 } from 'lucide-react';
 import { getImagePath } from '@/lib/utils';
 import { COMPANY_INFO, CONSULTANT_INFO, CONTACT_INFO } from '@/lib/config/branding';
@@ -103,10 +107,17 @@ export default function Header() {
     { href: '/services/website', label: '웹사이트' }
   ];
 
-  // 금융 도구 섹션 추가
+  // 금융 도구 섹션 - UI 개선 적용
   const financialToolsItems = [
-    { href: '/tax-calculator', label: '세금계산기', icon: Calculator },
-    { href: '/services/policy-funding/investment-analysis', label: '투자분석', icon: TrendingUp }
+    { 
+      href: '/services/policy-funding/investment-analysis', 
+      label: '투자타당성분석기', 
+      icon: TrendingUp,
+      badge: 'AI',
+      badgeColor: 'bg-blue-500',
+      description: 'AI 기반 투자 분석',
+      highlight: true
+    }
   ];
 
   const actionItems = [
@@ -122,8 +133,8 @@ export default function Header() {
         ? 'bg-white/98 backdrop-blur-xl shadow-md border-b border-gray-100' 
         : 'bg-white/95 backdrop-blur-xl border-b border-gray-100'
     }`}>
-      <div className="w-full px-4 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+      <div className="w-full px-2 lg:px-4 xl:px-6 2xl:px-8">
+        <div className="flex items-center justify-between h-16 max-w-full overflow-hidden">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0 flex items-center" onClick={handleMenuClose}>
             <div className="flex items-center space-x-2">
@@ -139,8 +150,8 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation - 반응형 개선 */}
-          <nav className="hidden lg:flex items-center justify-center flex-1 mx-4">
-            <div className="flex items-center space-x-1 xl:space-x-2">
+          <nav className="hidden lg:flex items-center justify-center flex-1 mx-2 xl:mx-4 overflow-hidden">
+            <div className="flex items-center space-x-0.5 xl:space-x-1 2xl:space-x-2 min-w-0 flex-shrink">
               {/* ESG 인증원 메뉴 */}
               {mainNavItems.map((item) => {
                 const isActive = pathname.startsWith(item.href);
@@ -149,7 +160,7 @@ export default function Header() {
                   <div key={item.href} className="relative group">
                     <Link
                       href={item.href}
-                      className={`flex items-center text-xs xl:text-sm font-medium transition-all duration-300 whitespace-nowrap px-1 xl:px-2 py-2 rounded-md ${
+                      className={`flex items-center text-xs xl:text-sm font-medium transition-all duration-300 whitespace-nowrap px-1 xl:px-2 py-2 rounded-md min-w-0 flex-shrink ${
                         isActive
                           ? 'text-green-600 bg-green-50'
                           : 'text-gray-700 hover:text-green-600 hover:bg-green-50'
@@ -188,7 +199,7 @@ export default function Header() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`text-xs xl:text-sm font-medium transition-all duration-300 whitespace-nowrap px-1 xl:px-2 py-2 rounded-md ${
+                    className={`text-xs xl:text-sm font-medium transition-all duration-300 whitespace-nowrap px-1 xl:px-2 py-2 rounded-md min-w-0 flex-shrink ${
                       isActive
                         ? 'text-blue-600 bg-blue-50'
                         : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
@@ -202,38 +213,54 @@ export default function Header() {
               {/* 구분선 */}
               <div className="h-4 w-px bg-gray-300 mx-1"></div>
 
-              {/* 금융 도구 */}
+              {/* 금융 도구 - 개선된 UI */}
               {financialToolsItems.map((item) => {
                 const isActive = pathname === item.href;
                 
                 return (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className={`flex items-center text-xs xl:text-sm font-medium transition-all duration-300 whitespace-nowrap px-1 xl:px-2 py-2 rounded-md ${
-                      isActive
-                        ? 'text-purple-600 bg-purple-50'
-                        : 'text-gray-700 hover:text-purple-600 hover:bg-purple-50'
-                    }`}
-                  >
-                    <item.icon className="w-3 h-3 xl:w-4 xl:h-4 mr-1" />
-                    {item.label}
-                  </Link>
+                  <div key={item.href} className="relative group">
+                    <Link
+                      href={item.href}
+                      className={`flex items-center text-xs xl:text-sm font-medium transition-all duration-300 whitespace-nowrap px-1 xl:px-2 py-2 rounded-md relative min-w-0 flex-shrink ${
+                        isActive
+                          ? 'text-purple-600 bg-purple-50'
+                          : 'text-gray-700 hover:text-purple-600 hover:bg-purple-50'
+                      } ${item.highlight ? 'shadow-sm border border-purple-200' : ''}`}
+                    >
+                      <item.icon className="w-3 h-3 xl:w-4 xl:h-4 mr-1" />
+                      {item.label}
+                      {item.badge && (
+                        <span className={`ml-1 px-1.5 py-0.5 text-xs font-bold text-white rounded-full ${item.badgeColor}`}>
+                          {item.badge}
+                        </span>
+                      )}
+                      {item.highlight && (
+                        <Zap className="w-2 h-2 xl:w-3 xl:h-3 ml-1 text-yellow-500 animate-pulse" />
+                      )}
+                    </Link>
+                    
+                    {/* Enhanced tooltip */}
+                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-48 bg-gray-900 text-white text-xs rounded-lg p-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                      <div className="font-medium mb-1">{item.label}</div>
+                      <div className="text-gray-300">{item.description}</div>
+                      <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-gray-900 rotate-45"></div>
+                    </div>
+                  </div>
                 );
               })}
             </div>
           </nav>
 
           {/* Desktop Action Items - 전화번호 삭제 */}
-          <div className="hidden lg:flex items-center space-x-2 xl:space-x-3 flex-shrink-0">
+          <div className="hidden lg:flex items-center space-x-1 xl:space-x-2 2xl:space-x-3 flex-shrink-0 min-w-0">
             {actionItems.map((item) => {
               const isActive = pathname === item.href;
               
               return (
-                <Link
+                                  <Link
                   key={item.href}
                   href={item.href}
-                  className={`text-xs xl:text-sm font-semibold transition-all duration-300 whitespace-nowrap px-3 xl:px-4 py-2 rounded-full border ${
+                  className={`text-xs xl:text-sm font-semibold transition-all duration-300 whitespace-nowrap px-2 xl:px-3 2xl:px-4 py-2 rounded-full border min-w-0 flex-shrink ${
                     item.green
                       ? isActive
                         ? 'bg-green-600 text-white shadow-lg border-green-600 transform scale-105'
@@ -362,7 +389,7 @@ export default function Header() {
                 </div>
               </div>
 
-              {/* 금융 도구 */}
+              {/* 금융 도구 - 모바일에서도 개선된 UI */}
               <div className="mb-6 border-t border-gray-200 pt-4">
                 <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">
                   금융 도구
@@ -376,18 +403,31 @@ export default function Header() {
                         key={item.href}
                         href={item.href}
                         onClick={handleMenuClose}
-                        className={`flex items-center py-3 px-3 text-base font-medium transition-all duration-200 rounded-lg touch-manipulation ${
+                        className={`flex items-center py-3 px-3 text-base font-medium transition-all duration-200 rounded-lg touch-manipulation relative ${
                           isActive
                             ? 'text-purple-600 bg-purple-50 border-l-4 border-purple-500'
                             : 'text-gray-700 hover:text-gray-900 hover:bg-gray-50 active:bg-gray-100'
-                        }`}
+                        } ${item.highlight ? 'border border-purple-200 bg-gradient-to-r from-purple-50 to-blue-50' : ''}`}
                         style={{ 
                           minHeight: '48px',
                           WebkitTapHighlightColor: 'transparent'
                         }}
                       >
                         <item.icon className="w-5 h-5 mr-2" />
-                        {item.label}
+                        <div className="flex-1">
+                          <div className="flex items-center">
+                            <span>{item.label}</span>
+                            {item.badge && (
+                              <span className={`ml-2 px-2 py-1 text-xs font-bold text-white rounded-full ${item.badgeColor}`}>
+                                {item.badge}
+                              </span>
+                            )}
+                          </div>
+                          <div className="text-xs text-gray-500 mt-1">{item.description}</div>
+                        </div>
+                        {item.highlight && (
+                          <Zap className="w-4 h-4 text-yellow-500 animate-pulse" />
+                        )}
                       </Link>
                     );
                   })}

@@ -105,40 +105,179 @@ const qualityPolicies = [
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-green-50 via-blue-50 to-purple-50 py-20">
-        <div className="container mx-auto px-6">
+      {/* Enhanced Hero Section with AI-Powered Dual Effects */}
+      <section className="relative min-h-screen bg-gradient-to-br from-green-50 via-blue-50 to-purple-50 py-20 overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-10 left-10 w-32 h-32 bg-green-400 rounded-full blur-xl opacity-20 animate-pulse"></div>
+          <div className="absolute top-20 right-20 w-48 h-48 bg-blue-400 rounded-full blur-xl opacity-20 animate-pulse delay-1000"></div>
+          <div className="absolute bottom-10 left-1/3 w-40 h-40 bg-purple-400 rounded-full blur-xl opacity-20 animate-pulse delay-2000"></div>
+          <div className="absolute bottom-20 right-1/4 w-36 h-36 bg-indigo-400 rounded-full blur-xl opacity-20 animate-pulse delay-3000"></div>
+        </div>
+        
+        {/* Floating Particles */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-green-300 rounded-full animate-bounce delay-500"></div>
+          <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-blue-300 rounded-full animate-bounce delay-700"></div>
+          <div className="absolute bottom-1/4 left-1/2 w-2 h-2 bg-purple-300 rounded-full animate-bounce delay-1000"></div>
+          <div className="absolute bottom-1/3 right-1/4 w-3 h-3 bg-indigo-300 rounded-full animate-bounce delay-1200"></div>
+        </div>
+        
+        <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <Badge className="mb-4 bg-green-100 text-green-700 border-green-200">
-              <Award className="w-4 h-4 mr-1" />
+            {/* Animated Badge */}
+            <Badge className="mb-6 bg-green-100 text-green-700 border-green-200 animate-pulse hover:scale-105 transition-transform duration-300">
+              <Award className="w-4 h-4 mr-1 animate-spin-slow" />
               KAB 인정 인증기관
             </Badge>
             
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              {COMPANY_INFO.name} 소개
+            {/* Main Title with Gradient Animation */}
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 animate-fade-in-up">
+              <span className="bg-gradient-to-r from-green-600 via-blue-600 to-purple-600 bg-clip-text text-transparent animate-gradient-x">
+                {COMPANY_INFO.name}
+              </span>
+              <br />
+              <span className="text-gray-800">소개</span>
             </h1>
             
-            <p className="text-xl text-gray-600 mb-8">
+            {/* Subtitle with Typewriter Effect */}
+            <p className="text-xl md:text-2xl text-gray-600 mb-8 animate-fade-in-up delay-300">
               {COMPANY_INFO.slogan}
             </p>
             
-            <div className="flex flex-wrap justify-center gap-4">
+            {/* Enhanced Stats Cards */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 animate-fade-in-up delay-500">
+              <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <div className="text-2xl font-bold text-green-600">KAB</div>
+                <div className="text-sm text-gray-600">인정기관</div>
+              </div>
+              <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <div className="text-2xl font-bold text-blue-600">4+</div>
+                <div className="text-sm text-gray-600">인증분야</div>
+              </div>
+              <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <div className="text-2xl font-bold text-purple-600">100%</div>
+                <div className="text-sm text-gray-600">신뢰성</div>
+              </div>
+              <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <div className="text-2xl font-bold text-indigo-600">24/7</div>
+                <div className="text-sm text-gray-600">상담지원</div>
+              </div>
+            </div>
+            
+            {/* Enhanced Action Buttons */}
+            <div className="flex flex-wrap justify-center gap-4 mb-12 animate-fade-in-up delay-700">
               <Link href="/esg-certification/consultation">
-                <Button className="bg-green-600 hover:bg-green-700 text-white">
-                  <Award className="w-5 h-5 mr-2" />
+                <Button className="bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white px-8 py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group">
+                  <Award className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform duration-300" />
                   인증 신청하기
                 </Button>
               </Link>
-              <Link href="/about/impartiality">
-                <Button variant="outline">
-                  <Scale className="w-5 h-5 mr-2" />
-                  공평성 선언
+              <Link href="/consultation">
+                <Button variant="outline" className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group">
+                  <Phone className="w-5 h-5 mr-2 group-hover:animate-pulse" />
+                  전문가 상담
                 </Button>
               </Link>
             </div>
+            
+            {/* Core Values with Icons */}
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 animate-fade-in-up delay-1000">
+              {COMPANY_INFO.coreValues.map((value, index) => (
+                <div key={index} className="bg-white/60 backdrop-blur-sm rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group">
+                  <div className="text-3xl mb-2 group-hover:animate-bounce">
+                    {value.split(' ')[0]}
+                  </div>
+                  <div className="text-sm font-medium text-gray-700">
+                    {value.split(' ').slice(1).join(' ')}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+        
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-gray-400 rounded-full mt-2 animate-pulse"></div>
           </div>
         </div>
       </section>
+      
+      {/* Custom CSS for Additional Animations */}
+      <style jsx>{`
+        @keyframes gradient-x {
+          0%, 100% {
+            background-size: 200% 200%;
+            background-position: left center;
+          }
+          50% {
+            background-size: 200% 200%;
+            background-position: right center;
+          }
+        }
+        
+        @keyframes fade-in-up {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        @keyframes spin-slow {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        }
+        
+        .animate-gradient-x {
+          animation: gradient-x 3s ease infinite;
+        }
+        
+        .animate-fade-in-up {
+          animation: fade-in-up 0.6s ease-out forwards;
+        }
+        
+        .animate-spin-slow {
+          animation: spin-slow 3s linear infinite;
+        }
+        
+        .delay-300 {
+          animation-delay: 0.3s;
+        }
+        
+        .delay-500 {
+          animation-delay: 0.5s;
+        }
+        
+        .delay-700 {
+          animation-delay: 0.7s;
+        }
+        
+        .delay-1000 {
+          animation-delay: 1s;
+        }
+        
+        .delay-1200 {
+          animation-delay: 1.2s;
+        }
+        
+        .delay-2000 {
+          animation-delay: 2s;
+        }
+        
+        .delay-3000 {
+          animation-delay: 3s;
+        }
+      `}</style>
 
       {/* Main Content */}
       <section className="py-16">

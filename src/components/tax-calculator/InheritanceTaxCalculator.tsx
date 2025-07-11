@@ -364,7 +364,7 @@ export const InheritanceTaxCalculatorComponent: React.FC = () => {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                🏛️ 상속세 계산기
+                상속세 계산기
               </CardTitle>
               <CardDescription>
                 2024년 세법 기준으로 상속세를 계산합니다.

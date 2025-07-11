@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISO 45001 위험성평가 실무 가이드</title>
+    <style>
+        body {
+            font-family: 'Malgun Gothic', sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        .toc {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .toc h2 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .toc ol {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .toc li {
+            margin-bottom: 5px;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #e74c3c;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+        h2 {
+            color: #34495e;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #e74c3c;
+            margin-top: 25px;
+        }
+        h4 {
+            color: #7f8c8d;
+            margin-top: 20px;
+        }
+        ul, ol {
+            padding-left: 25px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        .highlight {
+            background-color: #fdf2f2;
+            padding: 15px;
+            border-left: 4px solid #e74c3c;
+            margin: 20px 0;
+        }
+        .contact-info {
+            background-color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        .procedure-box {
+            background-color: #e8f4fd;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #007bff;
+        }
+        .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        .matrix-table th, .matrix-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        .matrix-table th {
+            background-color: #f8f9fa;
+            font-weight: bold;
+        }
+        .risk-very-high {
+            background-color: #dc3545;
+            color: white;
+        }
+        .risk-high {
+            background-color: #fd7e14;
+            color: white;
+        }
+        .risk-medium {
+            background-color: #ffc107;
+            color: black;
+        }
+        .risk-low {
+            background-color: #28a745;
+            color: white;
+        }
+        .risk-very-low {
+            background-color: #6c757d;
+            color: white;
+        }
+        .checklist {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #28a745;
+            margin: 15px 0;
+        }
+        .form-box {
+            background-color: #f1f3f4;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: monospace;
+            white-space: pre-line;
+        }
+        @media print {
+            body { margin: 0; padding: 15px; }
+            .no-print { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <h1>ISO 45001 위험성평가 실무 가이드</h1>
+
+    <div class="toc">
+        <h2>목차</h2>
+        <ol>
+            <li><a href="#section1">위험성평가 개요</a></li>
+            <li><a href="#section2">위험성평가 절차</a></li>
+            <li><a href="#section3">위험요인 식별</a></li>
+            <li><a href="#section4">위험성 추정</a></li>
+            <li><a href="#section5">위험성 결정</a></li>
+            <li><a href="#section6">위험성 감소대책</a></li>
+            <li><a href="#section7">기록 및 관리</a></li>
+            <li><a href="#section8">실무 도구</a></li>
+        </ol>
+    </div>
+
+    <h2 id="section1">1. 위험성평가 개요</h2>
+
+    <h3>1.1 위험성평가의 정의</h3>
+    <p>위험성평가는 유해·위험요인을 찾아내어 해당 유해·위험요인에 의한 부상 또는 질병의 발생 가능성(빈도)과 중대성(강도)을 추정·결정하고 감소대책을 수립하여 실행하는 일련의 과정입니다.</p>
+
+    <h3>1.2 위험성평가의 목적</h3>
+    <ul>
+        <li><strong>사고 예방</strong>: 산업재해 및 직업병 예방</li>
+        <li><strong>법적 준수</strong>: 산업안전보건법 준수</li>
+        <li><strong>체계적 관리</strong>: 안전보건 위험요인의 체계적 관리</li>
+        <li><strong>지속적 개선</strong>: 작업환경 개선 및 안전보건 성과 향상</li>
+    </ul>
+
+    <h3>1.3 법적 근거</h3>
+    <ul>
+        <li><strong>산업안전보건법 제36조</strong>: 위험성평가 실시 의무</li>
+        <li><strong>산업안전보건법 시행규칙 제34조</strong>: 위험성평가 방법 및 절차</li>
+        <li><strong>위험성평가에 관한 지침</strong>: 고용노동부 고시</li>
+    </ul>
+
+    <h3>1.4 ISO 45001과의 연계</h3>
+    <ul>
+        <li><strong>조항 6.1.2</strong>: 위험요인 식별 및 리스크 평가</li>
+        <li><strong>조항 6.1.4</strong>: 리스크 및 기회에 대한 조치 계획</li>
+        <li><strong>조항 8.1.1</strong>: 위험요인 제거 및 리스크 감소</li>
+    </ul>
+
+    <h2 id="section2">2. 위험성평가 절차</h2>
+
+    <h3>2.1 위험성평가 5단계</h3>
+    <div class="procedure-box">
+        <strong>1단계: 사전준비</strong><br>
+        ├── 평가팀 구성<br>
+        ├── 교육 및 훈련<br>
+        ├── 계획 수립<br>
+        └── 자료 수집<br><br>
+
+        <strong>2단계: 유해·위험요인 파악</strong><br>
+        ├── 작업장 순회<br>
+        ├── 작업 관찰<br>
+        ├── 근로자 면담<br>
+        └── 자료 검토<br><br>
+
+        <strong>3단계: 위험성 추정</strong><br>
+        ├── 발생가능성 평가<br>
+        ├── 중대성 평가<br>
+        └── 위험성 산출<br><br>
+
+        <strong>4단계: 위험성 결정</strong><br>
+        ├── 허용 가능 위험성 설정<br>
+        ├── 위험성 등급 분류<br>
+        └── 우선순위 결정<br><br>
+
+        <strong>5단계: 위험성 감소대책 수립·실행</strong><br>
+        ├── 감소대책 수립<br>
+        ├── 실행 계획 작성<br>
+        ├── 대책 실행<br>
+        └── 효과 확인
+    </div>
+
+    <h3>2.2 위험성평가 실시 시기</h3>
+    <ul>
+        <li><strong>최초 평가</strong>: 사업 개시 시</li>
+        <li><strong>정기 평가</strong>: 연 1회 이상</li>
+        <li><strong>수시 평가</strong>:
+            <ul>
+                <li>중대재해 발생 시</li>
+                <li>새로운 기계·기구 도입 시</li>
+                <li>건설물 설치·이전·변경 시</li>
+                <li>새로운 화학물질 사용 시</li>
+                <li>작업방법 변경 시</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>2.3 위험성평가 대상</h3>
+    <ul>
+        <li><strong>모든 작업</strong>: 정상작업, 비정상작업, 비상작업</li>
+        <li><strong>모든 근로자</strong>: 정규직, 비정규직, 파견근로자 등</li>
+        <li><strong>모든 장소</strong>: 사업장 내 모든 작업장소</li>
+        <li><strong>모든 시간</strong>: 주간, 야간, 휴일 작업</li>
+    </ul>
+
+    <h2 id="section3">3. 위험요인 식별</h2>
+
+    <h3>3.1 위험요인 분류</h3>
+
+    <h4>3.1.1 물리적 위험요인</h4>
+    <ul>
+        <li><strong>기계적 위험</strong>: 끼임, 충돌, 절단, 찔림</li>
+        <li><strong>전기적 위험</strong>: 감전, 화재, 폭발</li>
+        <li><strong>온도</strong>: 고온, 저온, 화상</li>
+        <li><strong>소음</strong>: 소음성 난청</li>
+        <li><strong>진동</strong>: 진동병, 백납병</li>
+        <li><strong>방사선</strong>: 이온화 방사선, 비이온화 방사선</li>
+        <li><strong>조명</strong>: 부적절한 조명</li>
+    </ul>
+
+    <h4>3.1.2 화학적 위험요인</h4>
+    <ul>
+        <li><strong>유해화학물질</strong>: 독성물질, 부식성물질</li>
+        <li><strong>가스</strong>: 일산화탄소, 황화수소, 질소 등</li>
+        <li><strong>증기</strong>: 유기용제 증기</li>
+        <li><strong>분진</strong>: 석면, 실리카, 목분진</li>
+        <li><strong>흄</strong>: 용접흄, 금속흄</li>
+    </ul>
+
+    <h4>3.1.3 생물학적 위험요인</h4>
+    <ul>
+        <li><strong>세균</strong>: 결핵균, 레지오넬라균</li>
+        <li><strong>바이러스</strong>: 간염바이러스, 인플루엔자</li>
+        <li><strong>진균</strong>: 곰팡이</li>
+        <li><strong>기생충</strong>: 말라리아 등</li>
+    </ul>
+
+    <h4>3.1.4 인간공학적 위험요인</h4>
+    <ul>
+        <li><strong>부적절한 자세</strong>: 구부림, 비틀림, 뻗침</li>
+        <li><strong>반복작업</strong>: 단순반복작업</li>
+        <li><strong>과도한 힘</strong>: 중량물 취급</li>
+        <li><strong>진동</strong>: 국소진동</li>
+        <li><strong>작업공간</strong>: 협소한 공간</li>
+    </ul>
+
+    <h4>3.1.5 심리사회적 위험요인</h4>
+    <ul>
+        <li><strong>업무 스트레스</strong>: 과도한 업무량, 시간압박</li>
+        <li><strong>대인관계</strong>: 상사·동료와의 갈등</li>
+        <li><strong>직장 내 괴롭힘</strong>: 따돌림, 모욕</li>
+        <li><strong>폭력</strong>: 신체적·정신적 폭력</li>
+        <li><strong>교대근무</strong>: 야간근무, 불규칙한 근무</li>
+    </ul>
+
+    <h3>3.2 위험요인 식별 방법</h3>
+
+    <h4>3.2.1 작업장 순회</h4>
+    <div class="checklist">
+        <strong>체크포인트</strong>
+        <ul>
+            <li>☐ 작업환경 상태 확인</li>
+            <li>☐ 기계·설비 상태 점검</li>
+            <li>☐ 안전장치 작동 상태 확인</li>
+            <li>☐ 개인보호구 착용 상태 점검</li>
+            <li>☐ 작업방법 관찰</li>
+        </ul>
+    </div>
+
+    <h4>3.2.2 근로자 면담</h4>
+    <p><strong>면담 내용</strong></p>
+    <ul>
+        <li>작업 중 위험하다고 느끼는 상황</li>
+        <li>과거 아차사고 경험</li>
+        <li>개선이 필요한 사항</li>
+        <li>건강상 문제점</li>
+    </ul>
+
+    <h3>3.3 위험요인 기록 방법</h3>
+
+    <h4>3.3.1 위험요인 기록표</h4>
+    <table class="matrix-table">
+        <thead>
+            <tr>
+                <th>구분</th>
+                <th>작업명</th>
+                <th>위험요인</th>
+                <th>위험상황</th>
+                <th>발생가능한 재해</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>물리적</td>
+                <td>절단작업</td>
+                <td>원형톱</td>
+                <td>안전장치 미작동</td>
+                <td>절단</td>
+            </tr>
+            <tr>
+                <td>화학적</td>
+                <td>도장작업</td>
+                <td>유기용제</td>
+                <td>환기 불량</td>
+                <td>중독</td>
+            </tr>
+            <tr>
+                <td>생물학적</td>
+                <td>의료업무</td>
+                <td>혈액</td>
+                <td>주사바늘 찔림</td>
+                <td>감염</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2 id="section4">4. 위험성 추정</h2>
+
+    <h3>4.1 위험성 추정 방법</h3>
+
+    <h4>4.1.1 3×3 매트릭스법</h4>
+    <p><strong>발생가능성 (P: Probability)</strong></p>
+    <ul>
+        <li>3 (높음): 자주 발생 (월 1회 이상)</li>
+        <li>2 (보통): 가끔 발생 (년 1회 이상)</li>
+        <li>1 (낮음): 거의 발생하지 않음 (년 1회 미만)</li>
+    </ul>
+
+    <p><strong>중대성 (S: Severity)</strong></p>
+    <ul>
+        <li>3 (높음): 사망, 영구장애</li>
+        <li>2 (보통): 휴업재해 (3일 이상)</li>
+        <li>1 (낮음): 경미한 부상 (3일 미만)</li>
+    </ul>
+
+    <p><strong>위험성 (R: Risk) = P × S</strong></p>
+
+    <h4>4.1.2 위험성 매트릭스</h4>
+    <table class="matrix-table">
+        <thead>
+            <tr>
+                <th>발생가능성</th>
+                <th>중대성 1</th>
+                <th>중대성 2</th>
+                <th>중대성 3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>3 (높음)</strong></td>
+                <td class="risk-medium">3 (중간)</td>
+                <td class="risk-high">6 (높음)</td>
+                <td class="risk-very-high">9 (매우높음)</td>
+            </tr>
+            <tr>
+                <td><strong>2 (보통)</strong></td>
+                <td class="risk-low">2 (낮음)</td>
+                <td class="risk-medium">4 (중간)</td>
+                <td class="risk-high">6 (높음)</td>
+            </tr>
+            <tr>
+                <td><strong>1 (낮음)</strong></td>
+                <td class="risk-very-low">1 (매우낮음)</td>
+                <td class="risk-low">2 (낮음)</td>
+                <td class="risk-medium">3 (중간)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>4.2 위험성 추정 실무 예시</h3>
+
+    <h4>4.2.1 제조업 예시</h4>
+    <ul>
+        <li><strong>작업</strong>: 프레스 작업</li>
+        <li><strong>위험요인</strong>: 프레스 끼임</li>
+        <li><strong>발생가능성</strong>: 2 (보통) - 안전장치 있으나 가끔 오작동</li>
+        <li><strong>중대성</strong>: 3 (높음) - 손가락 절단 가능</li>
+        <li><strong>위험성</strong>: 2 × 3 = 6 (높음)</li>
+    </ul>
+
+    <h4>4.2.2 건설업 예시</h4>
+    <ul>
+        <li><strong>작업</strong>: 고소작업</li>
+        <li><strong>위험요인</strong>: 추락</li>
+        <li><strong>발생가능성</strong>: 2 (보통) - 안전대 착용하나 부주의 가능</li>
+        <li><strong>중대성</strong>: 3 (높음) - 사망 위험</li>
+        <li><strong>위험성</strong>: 2 × 3 = 6 (높음)</li>
+    </ul>
+
+    <h2 id="section5">5. 위험성 결정</h2>
+
+    <h3>5.1 허용 가능한 위험성 설정</h3>
+
+    <h4>5.1.1 3×3 매트릭스 기준</h4>
+    <ul>
+        <li><strong>9 (매우높음)</strong>: 즉시 개선 필요</li>
+        <li><strong>6 (높음)</strong>: 단기간 내 개선 필요</li>
+        <li><strong>3-4 (중간)</strong>: 중기간 내 개선 필요</li>
+        <li><strong>2 (낮음)</strong>: 장기간 내 개선 고려</li>
+        <li><strong>1 (매우낮음)</strong>: 현재 수준 유지</li>
+    </ul>
+
+    <h3>5.2 위험성 등급 분류</h3>
+
+    <table class="matrix-table">
+        <thead>
+            <tr>
+                <th>등급</th>
+                <th>위험성</th>
+                <th>조치 내용</th>
+                <th>조치 기간</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="risk-very-high">1등급</td>
+                <td>매우높음</td>
+                <td>즉시 작업 중단, 긴급 개선</td>
+                <td>즉시</td>
+            </tr>
+            <tr>
+                <td class="risk-high">2등급</td>
+                <td>높음</td>
+                <td>단기간 내 개선 필요</td>
+                <td>1개월 이내</td>
+            </tr>
+            <tr>
+                <td class="risk-medium">3등급</td>
+                <td>중간</td>
+                <td>중기간 내 개선 필요</td>
+                <td>3개월 이내</td>
+            </tr>
+            <tr>
+                <td class="risk-low">4등급</td>
+                <td>낮음</td>
+                <td>장기간 내 개선 고려</td>
+                <td>1년 이내</td>
+            </tr>
+            <tr>
+                <td class="risk-very-low">5등급</td>
+                <td>매우낮음</td>
+                <td>현재 수준 유지</td>
+                <td>모니터링</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2 id="section6">6. 위험성 감소대책</h2>
+
+    <h3>6.1 위험성 감소대책 수립 원칙</h3>
+
+    <h4>6.1.1 위험성 감소대책 우선순위</h4>
+    <ol>
+        <li><strong>위험요인 제거</strong>: 위험요인 자체를 제거</li>
+        <li><strong>안전한 것으로 대체</strong>: 덜 위험한 것으로 대체</li>
+        <li><strong>공학적 대책</strong>: 격리, 환기, 안전장치 등</li>
+        <li><strong>관리적 대책</strong>: 교육, 훈련, 절차 등</li>
+        <li><strong>개인보호구</strong>: 마지막 수단으로 활용</li>
+    </ol>
+
+    <h3>6.2 위험성 감소대책 유형</h3>
+
+    <h4>6.2.1 공학적 대책</h4>
+    <p><strong>기계적 안전장치</strong></p>
+    <ul>
+        <li>안전가드, 안전스위치</li>
+        <li>양손조작장치</li>
+        <li>비상정지장치</li>
+        <li>안전매트, 광선식 안전장치</li>
+    </ul>
+
+    <p><strong>환기 및 격리</strong></p>
+    <ul>
+        <li>국소배기장치</li>
+        <li>밀폐 또는 격리</li>
+        <li>자동화 시스템</li>
+        <li>원격 조작 시스템</li>
+    </ul>
+
+    <h4>6.2.2 관리적 대책</h4>
+    <p><strong>작업절차 개선</strong></p>
+    <ul>
+        <li>안전작업절차서 작성</li>
+        <li>작업 순서 변경</li>
+        <li>작업 시간 단축</li>
+        <li>작업자 순환 배치</li>
+    </ul>
+
+    <p><strong>교육 및 훈련</strong></p>
+    <ul>
+        <li>안전보건교육</li>
+        <li>위험요인 인식 교육</li>
+        <li>비상시 대응 훈련</li>
+        <li>개인보호구 사용법 교육</li>
+    </ul>
+
+    <h3>6.3 위험성 감소대책 실무 예시</h3>
+
+    <h4>6.3.1 끼임 재해 방지</h4>
+    <p><strong>위험요인</strong>: 프레스 끼임</p>
+    <p><strong>감소대책</strong>:</p>
+    <ol>
+        <li>양손조작장치 설치 (공학적)</li>
+        <li>안전작업절차 수립 (관리적)</li>
+        <li>안전교육 실시 (관리적)</li>
+        <li>보호장갑 착용 (개인보호구)</li>
+    </ol>
+
+    <h4>6.3.2 화학물질 중독 방지</h4>
+    <p><strong>위험요인</strong>: 유기용제 중독</p>
+    <p><strong>감소대책</strong>:</p>
+    <ol>
+        <li>저독성 물질로 대체 (대체)</li>
+        <li>국소배기장치 설치 (공학적)</li>
+        <li>작업시간 단축 (관리적)</li>
+        <li>방독마스크 착용 (개인보호구)</li>
+    </ol>
+
+    <h2 id="section7">7. 기록 및 관리</h2>
+
+    <h3>7.1 위험성평가 기록 양식</h3>
+
+    <h4>7.1.1 위험성평가표</h4>
+    <div class="form-box">위험성평가표
+
+사업장명: _________________ 평가일자: _____________
+평가대상: _________________ 평가자: ______________
+
+┌─────────────────────────────────────────────────────┐
+│ 위험요인 식별                                        │
+├─────────────────────────────────────────────────────┤
+│ 작업명: _______________________________________________│
+│ 위험요인: _____________________________________________│
+│ 위험상황: _____________________________________________│
+│ 발생가능한 재해: _____________________________________│
+└─────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────┐
+│ 위험성 추정                                          │
+├─────────────────────────────────────────────────────┤
+│ 발생가능성: _____ 중대성: _____ 위험성: _____________│
+│ 위험성 등급: __________________________________________│
+└─────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────┐
+│ 위험성 감소대책                                      │
+├─────────────────────────────────────────────────────┤
+│ 감소대책: _____________________________________________│
+│ 실행기간: _____________________________________________│
+│ 담당자: _______________________________________________│
+│ 완료일: _______________________________________________│
+└─────────────────────────────────────────────────────┘</div>
+
+    <h4>7.1.2 위험성평가 현황표</h4>
+    <table class="matrix-table">
+        <thead>
+            <tr>
+                <th>연번</th>
+                <th>작업명</th>
+                <th>위험요인</th>
+                <th>위험성</th>
+                <th>등급</th>
+                <th>감소대책</th>
+                <th>완료일</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>프레스작업</td>
+                <td>끼임</td>
+                <td>6</td>
+                <td>2등급</td>
+                <td>양손조작장치</td>
+                <td>2025.2.28</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>도장작업</td>
+                <td>중독</td>
+                <td>4</td>
+                <td>3등급</td>
+                <td>국소배기장치</td>
+                <td>2025.3.31</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>7.2 위험성평가 관리</h3>
+
+    <h4>7.2.1 문서 관리</h4>
+    <ul>
+        <li><strong>보관 기간</strong>: 3년간 보관</li>
+        <li><strong>보관 방법</strong>: 전자파일 및 종이문서 병행</li>
+        <li><strong>접근 권한</strong>: 관련자만 접근 가능</li>
+        <li><strong>백업</strong>: 정기적 백업 실시</li>
+    </ul>
+
+    <h4>7.2.2 변경 관리</h4>
+    <ul>
+        <li><strong>변경 사유</strong>: 작업 변경, 설비 변경, 재해 발생 등</li>
+        <li><strong>변경 절차</strong>: 재평가 → 승인 → 기록 → 전파</li>
+        <li><strong>변경 기록</strong>: 변경 내용 및 사유 기록</li>
+    </ul>
+
+    <h2 id="section8">8. 실무 도구</h2>
+
+    <h3>8.1 위험성평가 체크리스트</h3>
+
+    <h4>8.1.1 일반 안전 체크리스트</h4>
+    <div class="checklist">
+        <strong>기계 안전</strong>
+        <ul>
+            <li>☐ 안전장치 설치 및 작동 상태</li>
+            <li>☐ 비상정지장치 설치 및 작동 상태</li>
+            <li>☐ 안전가드 설치 및 고정 상태</li>
+            <li>☐ 기계 점검 및 정비 상태</li>
+        </ul>
+
+        <strong>전기 안전</strong>
+        <ul>
+            <li>☐ 접지 상태</li>
+            <li>☐ 누전차단기 설치 및 작동 상태</li>
+            <li>☐ 전선 피복 상태</li>
+            <li>☐ 전기 패널 잠금 상태</li>
+        </ul>
+
+        <strong>화재 안전</strong>
+        <ul>
+            <li>☐ 소화기 설치 및 점검 상태</li>
+            <li>☐ 화재감지기 설치 및 작동 상태</li>
+            <li>☐ 비상구 확보 상태</li>
+            <li>☐ 피난 경로 확보 상태</li>
+        </ul>
+    </div>
+
+    <h4>8.1.2 화학물질 안전 체크리스트</h4>
+    <div class="checklist">
+        <strong>취급 안전</strong>
+        <ul>
+            <li>☐ MSDS 비치 및 숙지</li>
+            <li>☐ 화학물질 표시 및 경고 표지</li>
+            <li>☐ 저장 용기 및 보관 상태</li>
+            <li>☐ 취급 절차 준수 상태</li>
+        </ul>
+
+        <strong>보호 장비</strong>
+        <ul>
+            <li>☐ 국소배기장치 설치 및 작동 상태</li>
+            <li>☐ 개인보호구 지급 및 착용 상태</li>
+            <li>☐ 비상 세안 및 샤워 시설</li>
+            <li>☐ 응급처치 용품 비치</li>
+        </ul>
+    </div>
+
+    <h4>8.1.3 인간공학적 체크리스트</h4>
+    <div class="checklist">
+        <strong>작업 자세</strong>
+        <ul>
+            <li>☐ 작업대 높이 적정성</li>
+            <li>☐ 작업 공간 충분성</li>
+            <li>☐ 무리한 자세 여부</li>
+            <li>☐ 반복 작업 여부</li>
+        </ul>
+
+        <strong>중량물 취급</strong>
+        <ul>
+            <li>☐ 중량물 중량 및 크기</li>
+            <li>☐ 취급 보조 도구 사용</li>
+            <li>☐ 취급 방법 적정성</li>
+            <li>☐ 운반 경로 안전성</li>
+        </ul>
+    </div>
+
+    <div class="highlight">
+        <h2>결론</h2>
+        <p>위험성평가는 안전보건경영시스템의 핵심 요소로서, 체계적이고 지속적인 실시를 통해 산업재해를 예방하고 근로자의 안전과 건강을 보호하는 중요한 도구입니다. 모든 조직은 자신의 특성에 맞는 위험성평가 체계를 구축하여 실무에 적용해야 합니다.</p>
+    </div>
+
+    <div class="contact-info">
+        <strong>발행기관</strong>: ESG 인증원 (ESGR)<br>
+        <strong>발행일</strong>: 2025년 1월<br>
+        <strong>문의</strong>: 031-8090-7175<br>
+        <strong>이메일</strong>: esgr7175@naver.com<br>
+        <strong>웹사이트</strong>: https://esg-certificate.vercel.app<br><br>
+        <em>본 가이드는 산업안전보건법과 ISO 45001 표준을 기반으로 작성되었으며, 실제 적용 시에는 조직의 특성과 해당 법규를 고려하여 활용하시기 바랍니다.</em>
+    </div>
+</body>
+</html> 

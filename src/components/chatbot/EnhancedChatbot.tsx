@@ -196,11 +196,11 @@ export default function EnhancedChatbot({ className = "", embedded = false }: Ch
   useEffect(() => {
     const welcomeMessage: Message = {
       id: generateMessageId(),
-      content: `안녕하세요! M-CENTER의 전문상담사입니다.
+              content: `안녕하세요! ESG 인증원의 전문상담사입니다.
 
-저는 28년간 수많은 기업과 함께 성장해온 이후경 M센터장의 노하우를 바탕으로 상담해드리고 있어요.
+저는 28년간 수많은 기업과 함께 성장해온 이후경 경영지도사의 노하우를 바탕으로 상담해드리고 있어요.
 
-실제 검증된 성과로 증명하는 M-CENTER
+실제 검증된 성과로 증명하는 ESG 인증원
 
 한국정밀기계 고객사와 함께 이뤄낸 놀라운 변화:
 - 생산성 42% 향상 (하루 100개 → 142개 생산)
@@ -426,10 +426,10 @@ export default function EnhancedChatbot({ className = "", embedded = false }: Ch
                     className="w-10 h-10 rounded-full"
                   />
                 </div>
-                <div>
-                  <h2 className="text-xl font-bold">M-CENTER 전문상담사</h2>
-                  <p className="text-sm text-gray-600">⭐ 이후경 M센터장 28년 노하우</p>
-                </div>
+                                  <div>
+                    <h2 className="text-xl font-bold">ESG 인증원 전문상담사</h2>
+                    <p className="text-sm text-gray-600">⭐ 이후경 경영지도사 28년 노하우</p>
+                  </div>
               <div className="ml-auto flex items-center gap-2">
                 <Badge 
                   variant={connectionStatus === 'connected' ? 'default' : 'destructive'}
@@ -542,7 +542,7 @@ export default function EnhancedChatbot({ className = "", embedded = false }: Ch
                 <div className="w-8 h-8 rounded-full flex items-center justify-center relative" style={{ backgroundColor: '#4285F4' }}>
                   <img 
                     src={getImagePath('/star-counselor-icon.svg')} 
-                    alt="M센터장" 
+                    alt="이후경 경영지도사" 
                     className="w-8 h-8 rounded-full"
                   />
                 </div>
@@ -619,7 +619,7 @@ export default function EnhancedChatbot({ className = "", embedded = false }: Ch
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyPress={(e) => e.key === 'Enter' && sendMessage(inputValue)}
-                placeholder="M-CENTER AI 상담사에게 질문해보세요..."
+                                  placeholder="ESG 인증원 전문상담사에게 질문해보세요..."
                 className="pr-12"
                 disabled={isTyping || connectionStatus === 'error'}
               />

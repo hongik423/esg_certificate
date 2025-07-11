@@ -194,7 +194,7 @@ function CalculatorSelector({ calculators, onSelect, selectedId }: CalculatorSel
             </div>
             <div className="flex-1 min-w-0">
               <h3 className="text-sm sm:text-base font-semibold text-white mb-2 sm:mb-3">
-                💡 빠른 계산 가이드
+                빠른 계산 가이드
               </h3>
               <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-3">
                 <div className="text-center p-2 bg-gray-700 rounded-lg border border-gray-600">
@@ -1307,7 +1307,7 @@ export default function TaxCalculatorPage() {
               
               <div className="mt-4 p-3 bg-blue-50 dark:bg-blue-900 rounded border border-blue-200">
                 <p className="text-sm text-blue-800 dark:text-blue-200">
-                  💡 <strong>팁:</strong> 계산기 내에서 Tab 키로 필드 간 이동, Enter로 계산 실행이 가능합니다.
+                  <strong>팁:</strong> 계산기 내에서 Tab 키로 필드 간 이동, Enter로 계산 실행이 가능합니다.
                 </p>
               </div>
             </div>
@@ -1324,7 +1324,7 @@ export default function TaxCalculatorPage() {
                 <RefreshCw className="w-5 h-5 animate-pulse" />
                 <div className="flex-1">
                   <p className="text-sm md:text-base font-medium">
-                    🎉 세금계산기가 업데이트되었습니다! 
+                    세금계산기가 업데이트되었습니다! 
                     <span className="hidden sm:inline"> 접근성 개선 및 키보드 단축키가 추가되었습니다.</span>
                   </p>
                   <p className="text-xs md:text-sm opacity-90">
@@ -1926,7 +1926,7 @@ export default function TaxCalculatorPage() {
               <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-3">
                 <RefreshCw className="w-6 h-6 text-orange-600" />
               </div>
-              <CardTitle className="text-orange-800">💡 개선 제안</CardTitle>
+                              <CardTitle className="text-orange-800">개선 제안</CardTitle>
               <CardDescription className="text-orange-600">
                 더 나은 서비스를 위한 아이디어나 의견을 들려주세요
               </CardDescription>
@@ -1953,7 +1953,7 @@ export default function TaxCalculatorPage() {
         <div className="mt-6 p-4 bg-white/60 rounded-lg border border-gray-200">
           <div className="text-center text-sm text-gray-600">
             <p className="mb-3">
-              <strong>📋 처리 절차:</strong> 24시간 내 접수 → 1-2일 검토 → 이메일로 결과 회신
+                              <strong>처리 절차:</strong> 24시간 내 접수 → 1-2일 검토 → 이메일로 결과 회신
             </p>
             <p className="mb-2">
               <strong>긴급 문의:</strong> 심각한 오류나 즉시 해결이 필요한 문제는

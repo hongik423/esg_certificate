@@ -118,8 +118,21 @@ export default function AIProductivityPage() {
       <Header />
       
       {/* Hero Section */}
-      <section className="py-12 md:py-20">
-        <div className="container mx-auto px-4">
+      <section className="py-12 md:py-20 relative overflow-hidden">
+        {/* 배경 패턴 - AI 이중 효과 */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 left-20 w-40 h-40 bg-gradient-to-br from-purple-400 to-blue-400 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute top-10 right-10 w-60 h-60 bg-gradient-to-br from-blue-400 to-indigo-400 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute bottom-20 left-1/3 w-50 h-50 bg-gradient-to-br from-indigo-400 to-purple-400 rounded-full blur-3xl animate-pulse delay-2000"></div>
+          <div className="absolute bottom-10 right-1/4 w-32 h-32 bg-gradient-to-br from-pink-400 to-purple-400 rounded-full blur-2xl animate-pulse delay-3000"></div>
+        </div>
+        
+        {/* 동적 그리드 패턴 */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="w-full h-full grid-animation-purple"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto">
             {/* M-CENTER 고객지원 Q&A 버튼 */}
             <div className="mb-4">
@@ -158,13 +171,14 @@ export default function AIProductivityPage() {
 
             <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
               <div>
-                <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-100 to-blue-100 px-4 py-2 rounded-full mb-6">
-                  <Zap className="w-5 h-5 text-purple-600" />
-                  <span className="text-sm font-medium text-purple-800">고용노동부 노사발전재단 주관</span>
+                <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-100 to-blue-100 px-6 py-3 rounded-full mb-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-purple-200 hover:border-purple-300 animate-bounce-gentle">
+                  <Brain className="w-5 h-5 text-purple-600 animate-pulse" />
+                  <span className="text-sm font-medium text-purple-800">정부 공식 AI 일터혁신 지원사업</span>
+                  <Award className="w-4 h-4 text-yellow-500 animate-pulse" />
                 </div>
                 
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-                  <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 animate-slide-in">
+                  <span className="bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent animate-gradient-x">
                     2025년 일터혁신 상생컨설팅 AI 활용 생산성향상
                   </span>
                 </h1>
@@ -273,6 +287,8 @@ export default function AIProductivityPage() {
             </div>
           </div>
         </div>
+        
+
       </section>
 
       {/* Navigation Tabs */}

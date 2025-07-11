@@ -344,7 +344,7 @@ export default function DSCRDetailedAnalysis({
           <CardHeader className="pb-3 md:pb-4">
             <CardTitle className="flex items-center gap-2 text-lg md:text-xl">
               <Target className="h-5 w-5 md:h-6 md:w-6 text-blue-600" />
-              📊 분석기간 평균 DSCR 대시보드
+              분석기간 평균 DSCR 대시보드
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -383,7 +383,7 @@ export default function DSCRDetailedAnalysis({
 
               {/* 평가 기준 - 모바일 최적화 */}
               <div className="p-4 bg-white rounded-xl border border-gray-200 order-3">
-                <h4 className="font-bold text-gray-800 mb-3 text-sm md:text-base">📋 평가 기준</h4>
+                <h4 className="font-bold text-gray-800 mb-3 text-sm md:text-base">평가 기준</h4>
                 <div className="space-y-2 text-xs md:text-sm">
                   <div className="flex items-center gap-2">
                     <CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-green-600 flex-shrink-0" />
@@ -435,7 +435,7 @@ export default function DSCRDetailedAnalysis({
           <CardHeader className="pb-3 md:pb-4">
             <CardTitle className="flex items-center gap-2 text-lg md:text-xl">
               <Calculator className="h-5 w-5 md:h-6 md:w-6 text-green-600" />
-              📊 연도별 DSCR 상세 내역
+              연도별 DSCR 상세 내역
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -550,7 +550,7 @@ export default function DSCRDetailedAnalysis({
             {/* 표 하단 설명 추가 */}
             <div className="mt-4 p-3 md:p-4 bg-blue-50 rounded-lg">
               <p className="text-sm text-blue-800">
-                <strong>💡 DSCR (Debt Service Coverage Ratio)</strong>: 영업이익 ÷ 총상환액으로 계산되며, 1.25 이상이면 안정적인 상환능력을 의미합니다.
+                <strong>DSCR (Debt Service Coverage Ratio)</strong>: 영업이익 ÷ 총상환액으로 계산되며, 1.25 이상이면 안정적인 상환능력을 의미합니다.
               </p>
             </div>
           </CardContent>
@@ -589,7 +589,7 @@ export default function DSCRDetailedAnalysis({
               <div className="block md:hidden space-y-3">
                 <details className="group">
                   <summary className="cursor-pointer p-3 bg-green-100 rounded-lg text-sm font-medium text-green-800 hover:bg-green-200 transition-colors">
-                    💰 영업이익 계산 방식 보기
+                    영업이익 계산 방식 보기
                   </summary>
                   <div className="mt-3 p-3 bg-white rounded-lg border border-green-200 text-sm">
                     <ul className="space-y-1 text-green-700">
@@ -633,7 +633,7 @@ export default function DSCRDetailedAnalysis({
               {/* 🔥 데스크톱 버전: 기존 2열 레이아웃 유지 */}
               <div className="hidden md:grid md:grid-cols-2 gap-6">
                 <div className="p-4 bg-green-50 border border-green-200 rounded-xl">
-                  <h4 className="font-bold text-green-900 mb-3">💰 영업이익 계산</h4>
+                  <h4 className="font-bold text-green-900 mb-3">영업이익 계산</h4>
                   <ul className="space-y-2 text-sm text-green-700">
                     <li>• <strong>기본 공식:</strong> 매출액 × 영업이익률</li>
                     <li>• <strong>매출 성장:</strong> 연평균 {advancedSettings.revenueGrowthRate}% 반영</li>
@@ -669,7 +669,7 @@ export default function DSCRDetailedAnalysis({
 
               {/* 실제 계산 예시 */}
               <div className="p-3 md:p-4 bg-gray-50 border border-gray-200 rounded-xl">
-                <h4 className="font-bold text-gray-900 mb-2 md:mb-3 text-sm md:text-base">📊 1년차 계산 예시</h4>
+                <h4 className="font-bold text-gray-900 mb-2 md:mb-3 text-sm md:text-base">1년차 계산 예시</h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 text-sm">
                   <div>
                     <h5 className="font-semibold text-green-700 mb-2">영업이익 계산:</h5>
@@ -709,7 +709,7 @@ export default function DSCRDetailedAnalysis({
           <CardHeader className="pb-3 md:pb-4">
             <CardTitle className="flex items-center gap-2 text-lg md:text-xl">
               <BarChart3 className="h-5 w-5 md:h-6 md:w-6 text-purple-600" />
-              📈 DSCR 연도별 추세 분석
+              DSCR 연도별 추세 분석
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -718,7 +718,7 @@ export default function DSCRDetailedAnalysis({
                 {/* 🔥 모바일 알림 */}
                 <div className="block md:hidden p-3 bg-amber-50 border border-amber-200 rounded-lg">
                   <p className="text-sm text-amber-800">
-                    💡 <strong>모바일 차트 안내:</strong> 차트를 좌우로 스크롤하거나 확대/축소할 수 있습니다.
+                    <strong>모바일 차트 안내:</strong> 차트를 좌우로 스크롤하거나 확대/축소할 수 있습니다.
                   </p>
                 </div>
                 

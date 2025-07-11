@@ -39,11 +39,11 @@ export default function FloatingChatbot() {
     if (isOpen && messages.length === 0) {
       const welcomeMessage: Message = {
         id: Date.now().toString(),
-        content: `안녕하세요! 기업의별 M-CENTER M센터장 이후경입니다!
+        content: `안녕하세요! ESG 인증원 선임심사원 이후경 경영지도사입니다!
 
 28년간 500개 이상 기업의 성장을 함께해온 경험을 바탕으로 상담해드리겠습니다.
 
-저희 M-CENTER에서 전문적으로 상담해드리는 분야들이에요.
+저희 ESG 인증원에서 전문적으로 상담해드리는 분야들이에요.
 
 BM ZEN 사업분석으로는 생산성을 42% 향상시키고 ROI를 290% 달성한 케이스들이 많아요. AI 생산성향상은 20-99인 기업이라면 정부에서 100% 지원해주니까 완전 무료로 받으실 수 있어요.
 
@@ -458,10 +458,10 @@ BM ZEN 사업분석으로는 생산성을 42% 향상시키고 ROI를 290% 달성
         }}
         data-floating-chatbot="true"
       >
-        {/* M센터장 사진 */}
+        {/* ESG 인증원 선임심사원 사진 */}
         <img
           src={getImagePath('/images/M-Center-leader.png')}
-          alt="M센터장 이후경 경영지도사"
+          alt="이후경 경영지도사"
           style={{
             width: isMobile ? '50px' : '60px',
             height: isMobile ? '50px' : '60px',
@@ -584,7 +584,7 @@ BM ZEN 사업분석으로는 생산성을 42% 향상시키고 ROI를 290% 달성
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
               <img
                 src={getImagePath('/star-counselor-icon.svg')}
-                alt="M센터장"
+                alt="이후경 경영지도사"
                 style={{
                   width: '35px',
                   height: '35px',
@@ -594,7 +594,7 @@ BM ZEN 사업분석으로는 생산성을 42% 향상시키고 ROI를 290% 달성
               />
               <div>
                 <div style={{ fontWeight: 'bold', fontSize: '16px' }}>
-                  M센터장 AI
+                  ESG 인증원 전문상담사
                 </div>
                 <div style={{ fontSize: '12px', opacity: 0.9 }}>
                   이후경 경영지도사 • 25년 경험

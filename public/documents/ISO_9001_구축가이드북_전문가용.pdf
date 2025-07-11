@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISO 9001:2015 구축가이드북 - 전문가용</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 20mm;
+        }
+        
+        body {
+            font-family: 'Malgun Gothic', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #059669;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            color: #059669;
+            font-size: 24px;
+            margin: 0;
+            font-weight: bold;
+        }
+        
+        .header h2 {
+            color: #64748b;
+            font-size: 16px;
+            margin: 10px 0 0 0;
+            font-weight: normal;
+        }
+        
+        .toc {
+            background: #f0fdf4;
+            padding: 20px;
+            border-left: 4px solid #059669;
+            margin-bottom: 30px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            page-break-inside: avoid;
+        }
+        
+        .section h2 {
+            color: #059669;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+            font-size: 20px;
+        }
+        
+        .section h3 {
+            color: #475569;
+            font-size: 16px;
+            margin-top: 25px;
+        }
+        
+        .implementation-box {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .timeline-box {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .checklist {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            border: 1px solid #e2e8f0;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        th {
+            background: #f8fafc;
+            font-weight: bold;
+            color: #374151;
+        }
+        
+        .page-break {
+            page-break-before: always;
+        }
+        
+        .footer {
+            text-align: center;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 20px;
+            margin-top: 40px;
+            font-size: 12px;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>ISO 9001:2015 품질경영시스템 구축가이드북</h1>
+        <h2>전문가용 상세 구축 매뉴얼</h2>
+        <p style="margin-top: 20px; font-size: 14px;">
+            발행기관: ESG 인증원 (ESGR) | 발행일: 2025년 1월<br>
+            문의: 031-8090-7175 | 이메일: esgr7175@naver.com
+        </p>
+    </div>
+
+    <div class="toc">
+        <h3>목차</h3>
+        <ol>
+            <li>구축 프로젝트 기획 및 준비</li>
+            <li>조직 진단 및 Gap 분석</li>
+            <li>단계별 상세 구축 가이드</li>
+            <li>프로세스 맵핑 및 설계</li>
+            <li>문서 체계 구축</li>
+            <li>교육 및 인식 제고</li>
+            <li>내부심사 시스템 구축</li>
+            <li>인증심사 준비 및 대응</li>
+            <li>사후 관리 및 지속적 개선</li>
+            <li>구축 도구 및 템플릿</li>
+        </ol>
+    </div>
+
+    <div class="section">
+        <h2>1. 구축 프로젝트 기획 및 준비</h2>
+        
+        <h3>1.1 프로젝트 Charter 작성</h3>
+        <div class="implementation-box">
+            <h4>프로젝트 목표 설정</h4>
+            <ul>
+                <li><strong>비즈니스 목표:</strong> 고객 만족도 향상, 품질 개선, 비용 절감</li>
+                <li><strong>인증 목표:</strong> ISO 9001:2015 인증 취득 및 유지</li>
+                <li><strong>성과 목표:</strong> 구체적, 측정 가능한 KPI 설정</li>
+                <li><strong>일정 목표:</strong> 단계별 마일스톤 및 최종 완료일</li>
+            </ul>
+        </div>
+
+        <h3>1.2 추진 조직 구성</h3>
+        <table>
+            <tr>
+                <th>역할</th>
+                <th>책임자</th>
+                <th>주요 업무</th>
+                <th>필요 역량</th>
+            </tr>
+            <tr>
+                <td>프로젝트 스폰서</td>
+                <td>최고경영진</td>
+                <td>전략 방향 제시, 자원 지원</td>
+                <td>리더십, 의사결정</td>
+            </tr>
+            <tr>
+                <td>프로젝트 매니저</td>
+                <td>품질경영책임자</td>
+                <td>전체 프로젝트 관리</td>
+                <td>PM 기법, ISO 지식</td>
+            </tr>
+            <tr>
+                <td>실무 팀장</td>
+                <td>각 부서 팀장</td>
+                <td>부서별 구축 활동</td>
+                <td>부서 업무 이해</td>
+            </tr>
+            <tr>
+                <td>실무진</td>
+                <td>각 부서 담당자</td>
+                <td>실제 구축 작업</td>
+                <td>업무 전문성</td>
+            </tr>
+            <tr>
+                <td>외부 컨설턴트</td>
+                <td>전문 컨설팅 업체</td>
+                <td>전문 지식 제공</td>
+                <td>ISO 전문성</td>
+            </tr>
+        </table>
+
+        <h3>1.3 자원 계획</h3>
+        <div class="timeline-box">
+            <h4>필요 자원</h4>
+            <ul>
+                <li><strong>인적 자원:</strong> 전담 인력 배정 (20-30% 업무시간)</li>
+                <li><strong>재정 자원:</strong> 컨설팅, 교육, 인증 비용</li>
+                <li><strong>시설 자원:</strong> 회의실, 교육장 확보</li>
+                <li><strong>IT 자원:</strong> 문서 관리 시스템, 협업 도구</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section page-break">
+        <h2>2. 조직 진단 및 Gap 분석</h2>
+        
+        <h3>2.1 현황 진단 체크리스트</h3>
+        <div class="checklist">
+            <h4>조항 4: 조직의 상황</h4>
+            <ul>
+                <li>□ 내외부 이슈 분석 완료</li>
+                <li>□ 이해관계자 요구사항 파악</li>
+                <li>□ 적용범위 정의</li>
+                <li>□ 프로세스 현황 파악</li>
+            </ul>
+            
+            <h4>조항 5: 리더십</h4>
+            <ul>
+                <li>□ 최고경영진 의지 표명</li>
+                <li>□ 품질정책 수립</li>
+                <li>□ 조직 역할과 책임 정의</li>
+                <li>□ 고객 중심 문화</li>
+            </ul>
+            
+            <h4>조항 6: 기획</h4>
+            <ul>
+                <li>□ 리스크와 기회 식별</li>
+                <li>□ 품질목표 설정</li>
+                <li>□ 달성 계획 수립</li>
+                <li>□ 변경 관리 체계</li>
+            </ul>
+        </div>
+
+        <h3>2.2 Gap 분석 매트릭스</h3>
+        <table>
+            <tr>
+                <th>조항</th>
+                <th>요구사항</th>
+                <th>현재 수준</th>
+                <th>Gap</th>
+                <th>우선순위</th>
+                <th>필요 조치</th>
+            </tr>
+            <tr>
+                <td>4.1</td>
+                <td>내외부 이슈 분석</td>
+                <td>부분적</td>
+                <td>중간</td>
+                <td>높음</td>
+                <td>SWOT 분석 실시</td>
+            </tr>
+            <tr>
+                <td>5.1</td>
+                <td>리더십과 의지표명</td>
+                <td>미흡</td>
+                <td>큼</td>
+                <td>높음</td>
+                <td>경영진 교육</td>
+            </tr>
+            <tr>
+                <td>6.1</td>
+                <td>리스크와 기회</td>
+                <td>없음</td>
+                <td>큼</td>
+                <td>높음</td>
+                <td>리스크 관리 체계 구축</td>
+            </tr>
+            <tr>
+                <td>7.5</td>
+                <td>문서화된 정보</td>
+                <td>부분적</td>
+                <td>중간</td>
+                <td>중간</td>
+                <td>문서 체계 정비</td>
+            </tr>
+            <tr>
+                <td>9.2</td>
+                <td>내부심사</td>
+                <td>없음</td>
+                <td>큼</td>
+                <td>높음</td>
+                <td>내부심사 시스템 구축</td>
+            </tr>
+        </table>
+
+        <h3>2.3 구축 우선순위 결정</h3>
+        <div class="implementation-box">
+            <h4>우선순위 기준</h4>
+            <ol>
+                <li><strong>필수 요구사항:</strong> 인증을 위한 필수 조항</li>
+                <li><strong>비즈니스 영향도:</strong> 사업 성과에 미치는 영향</li>
+                <li><strong>구축 용이성:</strong> 구축 난이도 및 자원 소요</li>
+                <li><strong>상호 의존성:</strong> 다른 요구사항과의 연관성</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="section page-break">
+        <h2>3. 단계별 상세 구축 가이드</h2>
+        
+        <h3>3.1 1단계: 기반 구축 (1-2개월)</h3>
+        <div class="timeline-box">
+            <h4>주요 활동</h4>
+            <ul>
+                <li><strong>Week 1-2:</strong> 프로젝트 킥오프, 팀 구성</li>
+                <li><strong>Week 3-4:</strong> 현황 진단 및 Gap 분석</li>
+                <li><strong>Week 5-6:</strong> 품질정책 수립, 목표 설정</li>
+                <li><strong>Week 7-8:</strong> 프로세스 맵 작성</li>
+            </ul>
+        </div>
+
+        <h3>3.2 2단계: 시스템 설계 (2-3개월)</h3>
+        <div class="timeline-box">
+            <h4>주요 활동</h4>
+            <ul>
+                <li><strong>Week 9-12:</strong> 프로세스 상세 설계</li>
+                <li><strong>Week 13-16:</strong> 문서 체계 구축</li>
+                <li><strong>Week 17-20:</strong> 절차서 및 지시서 작성</li>
+            </ul>
+        </div>
+
+        <h3>3.3 3단계: 시스템 구현 (2-3개월)</h3>
+        <div class="timeline-box">
+            <h4>주요 활동</h4>
+            <ul>
+                <li><strong>Week 21-24:</strong> 시스템 시범 운영</li>
+                <li><strong>Week 25-28:</strong> 교육 및 훈련</li>
+                <li><strong>Week 29-32:</strong> 내부심사 실시</li>
+            </ul>
+        </div>
+
+        <h3>3.4 4단계: 인증 준비 (1개월)</h3>
+        <div class="timeline-box">
+            <h4>주요 활동</h4>
+            <ul>
+                <li><strong>Week 33-34:</strong> 시정조치 완료</li>
+                <li><strong>Week 35-36:</strong> 인증심사 준비</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section page-break">
+        <h2>4. 프로세스 맵핑 및 설계</h2>
+        
+        <h3>4.1 프로세스 식별</h3>
+        <table>
+            <tr>
+                <th>프로세스 유형</th>
+                <th>프로세스명</th>
+                <th>목적</th>
+                <th>소유자</th>
+            </tr>
+            <tr>
+                <td rowspan="3">관리 프로세스</td>
+                <td>경영검토</td>
+                <td>시스템 성과 검토</td>
+                <td>최고경영진</td>
+            </tr>
+            <tr>
+                <td>내부심사</td>
+                <td>시스템 적합성 확인</td>
+                <td>품질경영책임자</td>
+            </tr>
+            <tr>
+                <td>시정조치</td>
+                <td>부적합 해결</td>
+                <td>각 부서장</td>
+            </tr>
+            <tr>
+                <td rowspan="4">핵심 프로세스</td>
+                <td>영업</td>
+                <td>고객 요구사항 파악</td>
+                <td>영업팀장</td>
+            </tr>
+            <tr>
+                <td>설계개발</td>
+                <td>제품/서비스 설계</td>
+                <td>개발팀장</td>
+            </tr>
+            <tr>
+                <td>생산</td>
+                <td>제품 제조</td>
+                <td>생산팀장</td>
+            </tr>
+            <tr>
+                <td>출하</td>
+                <td>제품 납품</td>
+                <td>물류팀장</td>
+            </tr>
+            <tr>
+                <td rowspan="3">지원 프로세스</td>
+                <td>구매</td>
+                <td>원자재 조달</td>
+                <td>구매팀장</td>
+            </tr>
+            <tr>
+                <td>인사</td>
+                <td>인적자원 관리</td>
+                <td>인사팀장</td>
+            </tr>
+            <tr>
+                <td>시설관리</td>
+                <td>인프라 관리</td>
+                <td>관리팀장</td>
+            </tr>
+        </table>
+
+        <h3>4.2 프로세스 상세 설계</h3>
+        <div class="implementation-box">
+            <h4>프로세스 설계 요소</h4>
+            <ul>
+                <li><strong>입력(Input):</strong> 프로세스 시작을 위한 요구사항</li>
+                <li><strong>활동(Activity):</strong> 가치를 창출하는 세부 활동</li>
+                <li><strong>출력(Output):</strong> 프로세스 결과물</li>
+                <li><strong>자원(Resource):</strong> 필요한 인력, 장비, 정보</li>
+                <li><strong>통제(Control):</strong> 프로세스 관리 기준</li>
+                <li><strong>측정(Measure):</strong> 성과 지표 및 측정 방법</li>
+            </ul>
+        </div>
+
+        <h3>4.3 프로세스 상호작용 다이어그램</h3>
+        <div class="implementation-box">
+            <h4>상호작용 관계</h4>
+            <p><strong>고객 요구사항</strong> → <strong>영업</strong> → <strong>설계개발</strong> → <strong>구매</strong> → <strong>생산</strong> → <strong>검사</strong> → <strong>출하</strong> → <strong>고객</strong></p>
+            
+            <p><strong>지원 프로세스:</strong></p>
+            <ul>
+                <li>인사: 모든 프로세스에 인력 지원</li>
+                <li>시설관리: 인프라 및 작업환경 지원</li>
+                <li>문서관리: 정보 및 지식 지원</li>
+            </ul>
+            
+            <p><strong>관리 프로세스:</strong></p>
+            <ul>
+                <li>경영검토: 전체 시스템 성과 관리</li>
+                <li>내부심사: 프로세스 적합성 확인</li>
+                <li>시정조치: 부적합 해결 및 개선</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section page-break">
+        <h2>5. 문서 체계 구축</h2>
+        
+        <h3>5.1 문서 계층 구조</h3>
+        <table>
+            <tr>
+                <th>레벨</th>
+                <th>문서 유형</th>
+                <th>작성 기준</th>
+                <th>승인 권한</th>
+                <th>배포 범위</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>품질매뉴얼</td>
+                <td>조직 전체 적용</td>
+                <td>최고경영진</td>
+                <td>전 직원</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>절차서</td>
+                <td>부서간 업무</td>
+                <td>부서장</td>
+                <td>관련 부서</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>작업지시서</td>
+                <td>세부 작업</td>
+                <td>팀장</td>
+                <td>해당 팀</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>양식/기록</td>
+                <td>업무 증거</td>
+                <td>담당자</td>
+                <td>작성자</td>
+            </tr>
+        </table>
+
+        <h3>5.2 필수 문서 목록</h3>
+        <div class="checklist">
+            <h4>1레벨: 품질매뉴얼</h4>
+            <ul>
+                <li>□ 조직 소개 및 사업 개요</li>
+                <li>□ 품질경영시스템 적용범위</li>
+                <li>□ 품질정책 및 목표</li>
+                <li>□ 조직도 및 책임과 권한</li>
+                <li>□ 프로세스 상호작용 다이어그램</li>
+                <li>□ 10개 조항별 접근방법</li>
+            </ul>
+            
+            <h4>2레벨: 필수 절차서</h4>
+            <ul>
+                <li>□ 문서 및 기록 관리 절차</li>
+                <li>□ 내부심사 절차</li>
+                <li>□ 부적합 및 시정조치 절차</li>
+                <li>□ 경영검토 절차</li>
+                <li>□ 리스크 및 기회 관리 절차</li>
+            </ul>
+        </div>
+
+        <h3>5.3 문서 작성 가이드라인</h3>
+        <div class="implementation-box">
+            <h4>작성 원칙</h4>
+            <ul>
+                <li><strong>명확성:</strong> 이해하기 쉬운 언어 사용</li>
+                <li><strong>간결성:</strong> 불필요한 내용 제거</li>
+                <li><strong>일관성:</strong> 용어 및 형식 통일</li>
+                <li><strong>실용성:</strong> 실제 업무에 활용 가능</li>
+                <li><strong>추적성:</strong> 관련 문서와의 연결</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section page-break">
+        <h2>6. 교육 및 인식 제고</h2>
+        
+        <h3>6.1 교육 체계</h3>
+        <table>
+            <tr>
+                <th>대상</th>
+                <th>교육 내용</th>
+                <th>시간</th>
+                <th>방법</th>
+                <th>평가</th>
+            </tr>
+            <tr>
+                <td>최고경영진</td>
+                <td>ISO 9001 개요, 리더십</td>
+                <td>4시간</td>
+                <td>집합교육</td>
+                <td>이해도 확인</td>
+            </tr>
+            <tr>
+                <td>중간관리자</td>
+                <td>표준 요구사항, 프로세스</td>
+                <td>8시간</td>
+                <td>집합교육</td>
+                <td>시험</td>
+            </tr>
+            <tr>
+                <td>내부심사원</td>
+                <td>심사 기법, 실습</td>
+                <td>16시간</td>
+                <td>워크숍</td>
+                <td>자격 인증</td>
+            </tr>
+            <tr>
+                <td>일반 직원</td>
+                <td>품질정책, 개인 역할</td>
+                <td>2시간</td>
+                <td>온라인/집합</td>
+                <td>퀴즈</td>
+            </tr>
+        </table>
+
+        <h3>6.2 교육 프로그램</h3>
+        <div class="implementation-box">
+            <h4>1단계: 기본 교육</h4>
+            <ul>
+                <li>ISO 9001:2015 표준 이해</li>
+                <li>품질경영시스템 개념</li>
+                <li>조직의 품질정책 및 목표</li>
+                <li>개인의 역할과 책임</li>
+            </ul>
+            
+            <h4>2단계: 심화 교육</h4>
+            <ul>
+                <li>프로세스 접근법</li>
+                <li>리스크 기반 사고</li>
+                <li>문서 작성 및 관리</li>
+                <li>성과 측정 및 개선</li>
+            </ul>
+            
+            <h4>3단계: 전문 교육</h4>
+            <ul>
+                <li>내부심사원 양성</li>
+                <li>품질 도구 활용</li>
+                <li>통계적 기법</li>
+                <li>고급 품질 기법</li>
+            </ul>
+        </div>
+
+        <h3>6.3 인식 제고 활동</h3>
+        <div class="checklist">
+            <h4>커뮤니케이션 채널</h4>
+            <ul>
+                <li>□ 전사 회의에서 정기 공유</li>
+                <li>□ 사내 게시판 활용</li>
+                <li>□ 이메일 뉴스레터</li>
+                <li>□ 품질 캠페인 실시</li>
+                <li>□ 성공 사례 공유</li>
+                <li>□ 포스터 및 배너 게시</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section page-break">
+        <h2>7. 내부심사 시스템 구축</h2>
+        
+        <h3>7.1 내부심사 계획</h3>
+        <table>
+            <tr>
+                <th>구분</th>
+                <th>1분기</th>
+                <th>2분기</th>
+                <th>3분기</th>
+                <th>4분기</th>
+            </tr>
+            <tr>
+                <td>조항 4-6</td>
+                <td>●</td>
+                <td></td>
+                <td>●</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>조항 7-8</td>
+                <td></td>
+                <td>●</td>
+                <td></td>
+                <td>●</td>
+            </tr>
+            <tr>
+                <td>조항 9-10</td>
+                <td>●</td>
+                <td>●</td>
+                <td>●</td>
+                <td>●</td>
+            </tr>
+            <tr>
+                <td>전체 심사</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>●</td>
+            </tr>
+        </table>
+
+        <h3>7.2 내부심사원 자격 요건</h3>
+        <div class="implementation-box">
+            <h4>필수 요건</h4>
+            <ul>
+                <li><strong>교육:</strong> 내부심사원 과정 이수 (16시간)</li>
+                <li><strong>경험:</strong> 해당 업무 경험 2년 이상</li>
+                <li><strong>독립성:</strong> 피심사 부서와 독립</li>
+                <li><strong>객관성:</strong> 공정하고 객관적 판단 능력</li>
+            </ul>
+            
+            <h4>권장 요건</h4>
+            <ul>
+                <li>ISO 9001 표준 이해</li>
+                <li>의사소통 능력</li>
+                <li>분석적 사고</li>
+                <li>문서 작성 능력</li>
+            </ul>
+        </div>
+
+        <h3>7.3 심사 프로세스</h3>
+        <div class="timeline-box">
+            <h4>심사 단계</h4>
+            <ol>
+                <li><strong>계획 수립:</strong> 연간/개별 심사 계획</li>
+                <li><strong>심사 준비:</strong> 체크리스트, 일정 조정</li>
+                <li><strong>개회 회의:</strong> 심사 목적, 범위, 일정 공유</li>
+                <li><strong>현장 심사:</strong> 인터뷰, 문서 검토, 현장 확인</li>
+                <li><strong>부적합 작성:</strong> 발견 사항 문서화</li>
+                <li><strong>폐회 회의:</strong> 심사 결과 공유</li>
+                <li><strong>보고서 작성:</strong> 심사 결과 종합 보고</li>
+                <li><strong>후속 조치:</strong> 시정조치 확인</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="section page-break">
+        <h2>8. 인증심사 준비 및 대응</h2>
+        
+        <h3>8.1 인증기관 선정</h3>
+        <table>
+            <tr>
+                <th>평가 기준</th>
+                <th>가중치</th>
+                <th>A기관</th>
+                <th>B기관</th>
+                <th>C기관</th>
+            </tr>
+            <tr>
+                <td>KAB 인정</td>
+                <td>25%</td>
+                <td>100</td>
+                <td>100</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>업종 경험</td>
+                <td>20%</td>
+                <td>90</td>
+                <td>80</td>
+                <td>70</td>
+            </tr>
+            <tr>
+                <td>심사원 자격</td>
+                <td>20%</td>
+                <td>85</td>
+                <td>90</td>
+                <td>75</td>
+            </tr>
+            <tr>
+                <td>비용</td>
+                <td>15%</td>
+                <td>70</td>
+                <td>85</td>
+                <td>90</td>
+            </tr>
+            <tr>
+                <td>일정</td>
+                <td>10%</td>
+                <td>80</td>
+                <td>75</td>
+                <td>85</td>
+            </tr>
+            <tr>
+                <td>서비스</td>
+                <td>10%</td>
+                <td>85</td>
+                <td>80</td>
+                <td>70</td>
+            </tr>
+            <tr>
+                <td><strong>총점</strong></td>
+                <td><strong>100%</strong></td>
+                <td><strong>84.5</strong></td>
+                <td><strong>84.0</strong></td>
+                <td><strong>78.0</strong></td>
+            </tr>
+        </table>
+
+        <h3>8.2 심사 준비 체크리스트</h3>
+        <div class="checklist">
+            <h4>문서 준비</h4>
+            <ul>
+                <li>□ 품질매뉴얼 최신 버전</li>
+                <li>□ 절차서 및 지시서</li>
+                <li>□ 기록 정리 및 보관</li>
+                <li>□ 내부심사 결과</li>
+                <li>□ 경영검토 결과</li>
+                <li>□ 시정조치 완료 증빙</li>
+            </ul>
+            
+            <h4>현장 준비</h4>
+            <ul>
+                <li>□ 심사 일정 및 동선 계획</li>
+                <li>□ 인터뷰 대상자 사전 교육</li>
+                <li>□ 회의실 및 시설 준비</li>
+                <li>□ 질문 예상 및 답변 준비</li>
+            </ul>
+        </div>
+
+        <h3>8.3 심사 대응 요령</h3>
+        <div class="implementation-box">
+            <h4>Do's (해야 할 것)</h4>
+            <ul>
+                <li>정확하고 솔직한 답변</li>
+                <li>요청 자료 즉시 제공</li>
+                <li>협조적이고 적극적인 태도</li>
+                <li>개선 의지 표명</li>
+            </ul>
+            
+            <h4>Don'ts (하지 말아야 할 것)</h4>
+            <ul>
+                <li>추측이나 임의 답변</li>
+                <li>과장되거나 허위 설명</li>
+                <li>방어적이거나 공격적 태도</li>
+                <li>심사원과의 논쟁</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section page-break">
+        <h2>9. 사후 관리 및 지속적 개선</h2>
+        
+        <h3>9.1 사후심사 준비</h3>
+        <table>
+            <tr>
+                <th>심사 유형</th>
+                <th>주기</th>
+                <th>범위</th>
+                <th>준비사항</th>
+            </tr>
+            <tr>
+                <td>1차 사후심사</td>
+                <td>12개월</td>
+                <td>주요 변경사항</td>
+                <td>변경 관리, 개선 활동</td>
+            </tr>
+            <tr>
+                <td>2차 사후심사</td>
+                <td>24개월</td>
+                <td>시스템 효과성</td>
+                <td>성과 데이터, KPI 달성</td>
+            </tr>
+            <tr>
+                <td>갱신심사</td>
+                <td>36개월</td>
+                <td>전체 시스템</td>
+                <td>3년간 운영 실적</td>
+            </tr>
+        </table>
+
+        <h3>9.2 지속적 개선 체계</h3>
+        <div class="implementation-box">
+            <h4>개선 기회 식별</h4>
+            <ul>
+                <li>고객 불만 및 피드백</li>
+                <li>내부심사 결과</li>
+                <li>성과 지표 분석</li>
+                <li>직원 제안</li>
+                <li>벤치마킹</li>
+            </ul>
+            
+            <h4>개선 활동</h4>
+            <ul>
+                <li>소개선(Kaizen) 활동</li>
+                <li>품질분임조 운영</li>
+                <li>6시그마 프로젝트</li>
+                <li>린(Lean) 활동</li>
+                <li>혁신 프로젝트</li>
+            </ul>
+        </div>
+
+        <h3>9.3 성과 관리</h3>
+        <div class="checklist">
+            <h4>KPI 모니터링</h4>
+            <ul>
+                <li>□ 고객 만족도: 월별 측정</li>
+                <li>□ 품질 지표: 주별 모니터링</li>
+                <li>□ 프로세스 성과: 일별 확인</li>
+                <li>□ 재무 성과: 월별 분석</li>
+                <li>□ 직원 만족도: 분기별 조사</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section page-break">
+        <h2>10. 구축 도구 및 템플릿</h2>
+        
+        <h3>10.1 제공 템플릿 목록</h3>
+        <table>
+            <tr>
+                <th>구분</th>
+                <th>템플릿명</th>
+                <th>용도</th>
+                <th>형식</th>
+            </tr>
+            <tr>
+                <td rowspan="3">기획</td>
+                <td>프로젝트 Charter</td>
+                <td>프로젝트 기획</td>
+                <td>Word</td>
+            </tr>
+            <tr>
+                <td>Gap 분석 매트릭스</td>
+                <td>현황 진단</td>
+                <td>Excel</td>
+            </tr>
+            <tr>
+                <td>구축 일정표</td>
+                <td>일정 관리</td>
+                <td>Excel</td>
+            </tr>
+            <tr>
+                <td rowspan="4">문서</td>
+                <td>품질매뉴얼 양식</td>
+                <td>매뉴얼 작성</td>
+                <td>Word</td>
+            </tr>
+            <tr>
+                <td>절차서 양식</td>
+                <td>절차서 작성</td>
+                <td>Word</td>
+            </tr>
+            <tr>
+                <td>작업지시서 양식</td>
+                <td>지시서 작성</td>
+                <td>Word</td>
+            </tr>
+            <tr>
+                <td>기록 양식</td>
+                <td>각종 기록</td>
+                <td>Excel</td>
+            </tr>
+            <tr>
+                <td rowspan="3">심사</td>
+                <td>내부심사 체크리스트</td>
+                <td>내부심사</td>
+                <td>Excel</td>
+            </tr>
+            <tr>
+                <td>부적합 보고서</td>
+                <td>부적합 관리</td>
+                <td>Word</td>
+            </tr>
+            <tr>
+                <td>시정조치 계획서</td>
+                <td>시정조치</td>
+                <td>Excel</td>
+            </tr>
+        </table>
+
+        <h3>10.2 유용한 도구</h3>
+        <div class="implementation-box">
+            <h4>분석 도구</h4>
+            <ul>
+                <li><strong>SWOT 분석:</strong> 내외부 환경 분석</li>
+                <li><strong>5Why 분석:</strong> 근본 원인 분석</li>
+                <li><strong>Fishbone Diagram:</strong> 원인 분석</li>
+                <li><strong>Pareto 분석:</strong> 중요 문제 식별</li>
+            </ul>
+            
+            <h4>관리 도구</h4>
+            <ul>
+                <li><strong>Gantt Chart:</strong> 일정 관리</li>
+                <li><strong>RACI Matrix:</strong> 역할과 책임</li>
+                <li><strong>Risk Register:</strong> 리스크 관리</li>
+                <li><strong>Action Plan:</strong> 실행 계획</li>
+            </ul>
+        </div>
+
+        <h3>10.3 온라인 자료</h3>
+        <div class="checklist">
+            <h4>참고 사이트</h4>
+            <ul>
+                <li>□ ISO 공식 사이트: www.iso.org</li>
+                <li>□ 한국인정기구: www.kab.go.kr</li>
+                <li>□ 기술표준원: www.kats.go.kr</li>
+                <li>□ 품질경영학회: www.ksqm.org</li>
+                <li>□ ESG 인증원: https://esg-certificate.vercel.app</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p><strong>ISO 9001:2015 품질경영시스템 구축가이드북 - 전문가용</strong></p>
+        <p>발행기관: ESG 인증원 (ESGR) | 발행일: 2025년 1월</p>
+        <p>문의: 031-8090-7175 | 이메일: esgr7175@naver.com</p>
+        <p>웹사이트: https://esg-certificate.vercel.app</p>
+        <br>
+        <p style="font-style: italic;">
+            본 가이드북은 실무진의 실제 구축 경험을 바탕으로 작성되었으며, 
+            조직의 특성에 맞게 조정하여 활용하시기 바랍니다.
+        </p>
+    </div>
+</body>
+</html> 

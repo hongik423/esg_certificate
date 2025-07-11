@@ -25,7 +25,7 @@ export default function ChatbotPage() {
   useEffect(() => {
     const welcomeMessage: Message = {
       id: Date.now().toString(),
-      content: `🎯 안녕하세요! **기업의별 M-CENTER** M센터장입니다!
+      content: `🎯 안녕하세요! **ESG 인증원 선임심사원** 이후경 경영지도사입니다!
 
 28년간 500개 이상 기업의 성장을 함께해온 **이후경 경영지도사**를 대표하여 상담해드리겠습니다.
 
@@ -118,7 +118,7 @@ export default function ChatbotPage() {
 
   // 폴백 응답 생성
   const generateFallbackResponse = (message: string): string => {
-    return `✨ **기업의별 M-CENTER**에서 도움드리겠습니다!
+          return `✨ **ESG 인증원**에서 도움드리겠습니다!
 
 🎯 **맞춤형 솔루션 제공 분야:**
 • 📈 **매출 증대** - BM ZEN 사업분석으로 20-40% 성장
@@ -231,7 +231,7 @@ export default function ChatbotPage() {
             
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 animate-slide-in">
               <Sparkles className="inline-block w-16 h-16 mr-4 text-yellow-500" />
-              M센터장과 채팅
+              ESG 인증원 전문상담사와 채팅
             </h1>
             
             <p className="text-body-lg text-gray-600 max-w-4xl mx-auto leading-relaxed animate-slide-in mb-8"
@@ -269,7 +269,7 @@ export default function ChatbotPage() {
                   <Bot className="w-6 h-6" />
                 </div>
                 <div>
-                  <span className="text-xl font-bold">M-CENTER AI 상담센터</span>
+                  <span className="text-xl font-bold">ESG 인증원 AI 상담센터</span>
                   <div className="flex items-center gap-2 mt-1">
                     <span className="text-sm bg-white/20 px-2 py-1 rounded-full">25년 전문 노하우</span>
                     <span className="text-sm bg-green-500 px-2 py-1 rounded-full">● 온라인</span>

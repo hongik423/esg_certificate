@@ -698,20 +698,20 @@ export default function CapitalGainsTaxCalculatorComponent() {
               </div>
               <div>
                 <CardTitle className="text-xl font-bold text-gray-900">
-                  🤖 AI 자동판정 양도소득세 계산기
+                  AI 자동판정 양도소득세 계산기
                 </CardTitle>
                 <CardDescription className="text-gray-600">
                   2024년 최신 세율 기준 · 실시간 자동 계산 및 판정 시스템
                 </CardDescription>
                 <div className="mt-2 space-y-1">
                   <p className="text-sm text-blue-600">
-                    💡 "샘플 데이터" 버튼을 클릭하여 예시 데이터로 테스트해보세요
+                    "샘플 데이터" 버튼을 클릭하여 예시 데이터로 테스트해보세요
                   </p>
                   <div className="flex items-center space-x-4 text-xs text-green-600">
-                    <span>🔄 보유기간 자동계산</span>
-                    <span>🏠 1세대1주택 자동판정</span>
-                    <span>⚠️ 중과세 자동감지</span>
-                    <span>📊 실시간 세율 미리보기</span>
+                                          <span>보유기간 자동계산</span>
+                      <span>1세대1주택 자동판정</span>
+                      <span>중과세 자동감지</span>
+                      <span>실시간 세율 미리보기</span>
                   </div>
                 </div>
               </div>

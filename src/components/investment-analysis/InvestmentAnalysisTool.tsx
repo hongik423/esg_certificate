@@ -264,11 +264,11 @@ export default function InvestmentAnalysisTool() {
           {/* Analysis Results */}
           <Tabs defaultValue="ai-evaluation" className="space-y-4 md:space-y-6">
             <TabsList className="grid grid-cols-2 md:grid-cols-5 w-full">
-              <TabsTrigger value="ai-evaluation" className="text-xs md:text-sm">🤖 AI 종합평가</TabsTrigger>
-              <TabsTrigger value="financial" className="text-xs md:text-sm">💎 재무분석</TabsTrigger>
-              <TabsTrigger value="summary" className="text-xs md:text-sm">📊 핵심지표</TabsTrigger>
-              <TabsTrigger value="scenarios" className="text-xs md:text-sm">📈 시나리오</TabsTrigger>
-              <TabsTrigger value="ai-report" className="text-xs md:text-sm">🧠 AI 리포트</TabsTrigger>
+              <TabsTrigger value="ai-evaluation" className="text-xs md:text-sm">AI 종합평가</TabsTrigger>
+              <TabsTrigger value="financial" className="text-xs md:text-sm">재무분석</TabsTrigger>
+              <TabsTrigger value="summary" className="text-xs md:text-sm">핵심지표</TabsTrigger>
+              <TabsTrigger value="scenarios" className="text-xs md:text-sm">시나리오</TabsTrigger>
+              <TabsTrigger value="ai-report" className="text-xs md:text-sm">AI 리포트</TabsTrigger>
             </TabsList>
 
             {/* 오류 진단 및 성공 알림 */}
@@ -284,7 +284,7 @@ export default function InvestmentAnalysisTool() {
                           <li key={index}>{error}</li>
                         ))}
                       </ul>
-                      <div className="mt-2 font-semibold">🔧 수정 방안:</div>
+                      <div className="mt-2 font-semibold">수정 방안:</div>
                       <ul className="list-disc pl-5 space-y-1">
                         {diagnosticResults.fixes.map((fix: string, index: number) => (
                           <li key={index}>{fix}</li>
@@ -306,7 +306,7 @@ export default function InvestmentAnalysisTool() {
                   <Alert className="border-yellow-200 bg-yellow-50">
                     <AlertTriangle className="h-4 w-4 text-yellow-600" />
                     <AlertDescription className="text-yellow-800">
-                      <div className="font-semibold mb-2">⚠️ 주의 사항:</div>
+                      <div className="font-semibold mb-2">주의 사항:</div>
                       <ul className="list-disc pl-5 space-y-1">
                         {diagnosticResults.warnings.map((warning: string, index: number) => (
                           <li key={index}>{warning}</li>
@@ -679,7 +679,7 @@ export default function InvestmentAnalysisTool() {
                       
                       {/* 🔧 디버깅 정보 */}
                       <div className="mt-4 p-4 bg-gray-100 rounded-lg text-left">
-                        <h4 className="font-semibold text-gray-700 mb-2">🔍 디버깅 정보:</h4>
+                        <h4 className="font-semibold text-gray-700 mb-2">디버깅 정보:</h4>
                         <ul className="text-sm text-gray-600 space-y-1">
                           <li>• 투자분석 결과: {analysisResult ? '✅ 완료' : '❌ 없음'}</li>
                           <li>• 투자입력 데이터: {investmentInput ? '✅ 있음' : '❌ 없음'}</li>
@@ -714,7 +714,7 @@ export default function InvestmentAnalysisTool() {
                 className="block md:hidden w-full bg-green-50 hover:bg-green-100 text-green-700 border-green-300"
               >
                 <Shield className="w-4 h-4 mr-2" />
-                📊 DSCR 상세분석 보기
+                DSCR 상세분석 보기
               </Button>
               
               <Button onClick={handleDownloadReport} className="w-full md:w-auto">
@@ -726,7 +726,7 @@ export default function InvestmentAnalysisTool() {
           
           {/* 🔥 모바일 전용 스크롤 가이드 */}
           <div className="block md:hidden mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
-            <h4 className="font-semibold text-blue-900 mb-2">📱 모바일 이용 가이드</h4>
+                            <h4 className="font-semibold text-blue-900 mb-2">모바일 이용 가이드</h4>
             <ul className="text-sm text-blue-800 space-y-1">
               <li>• 차트는 좌우로 스크롤하여 확인할 수 있습니다</li>
               <li>• 탭을 터치하여 다양한 분석 결과를 확인하세요</li>
