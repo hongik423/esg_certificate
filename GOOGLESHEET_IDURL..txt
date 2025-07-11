@@ -1,13 +1,61 @@
-배포가 업데이트되었습니다.
-버전 1(2025. 6. 17., 오후 10:13)
-배포 ID
+# ===========================================
+# ESG Certificate 환경변수 설정 (Vercel 배포용)
+# ===========================================
+# 이 파일을 .env.local로 복사하여 사용하세요.
 
-AKfycbzE4eVxGetQ3Z_xsikwoonK45T4wtryGLorQ4UmGaGRAz-BuZQIzm2VgXcxmJoQ04WX
+# Google Gemini API 키 (AI 상담사 챗봇용)
+GEMINI_API_KEY=AIzaSyAP-Qa4TVNmsc-KAPTuQFjLalDNcvMHoiM
 
+# ===========================================
+# Google Apps Script 설정 (기존 M-CENTER 시스템 재사용)
+# ===========================================
+# 🔥 중요: 기존 작동 확인된 Apps Script 사용 (진단+상담+베타피드백)
+NEXT_PUBLIC_GOOGLE_SCRIPT_URL=https://script.google.com/macros/s/AKfycbyXZxMH337s6RyVDYwDW0Y6YiXyavQ8onnUtBSJEP-6sjSrIIUd7FVrIt4Du2JVGjoD/exec
+NEXT_PUBLIC_GOOGLE_SCRIPT_ID=1XdX8JW8Q9EBF_ApRr8XEMXAm_8MYDxsqwsXMqUFdNvzx3fkvIepxoG3G
+NEXT_PUBLIC_GOOGLE_SCRIPT_DEPLOYMENT_ID=AKfycbyXZxMH337s6RyVDYwDW0Y6YiXyavQ8onnUtBSJEP-6sjSrIIUd7FVrIt4Du2JVGjoD
 
+# ===========================================
+# 통합 구글시트 설정 (기존 M-CENTER 시트 재사용)
+# ===========================================
+# 🔥 중요: 모든 데이터가 이 하나의 시트에 저장됨 (기존 작동 확인된 ID)
+NEXT_PUBLIC_GOOGLE_SHEETS_ID=1-xdABrno18ogullhqx3UXcudUGbc1O4Def50jVEJ9i4
+NEXT_PUBLIC_GOOGLE_SHEETS_URL=https://docs.google.com/spreadsheets/d/1-xdABrno18ogullhqx3UXcudUGbc1O4Def50jVEJ9i4/edit?gid=0#gid=0
 
+# ===========================================
+# ESG Certificate 관리자 설정 (통일된 이메일)
+# ===========================================
+# 모든 피드백과 관리자 이메일을 hongik423@gmail.com으로 통일
+ESG_ADMIN_EMAIL=hongik423@gmail.com
+BETA_ADMIN_EMAIL=hongik423@gmail.com
+NEXT_PUBLIC_SUPPORT_EMAIL=hongik423@gmail.com
+NEXT_PUBLIC_COMPANY_EMAIL=hongik423@gmail.com
 
+# ===========================================
+# ESG Certificate 앱 설정
+# ===========================================
+NEXT_PUBLIC_APP_NAME=ESG 인증센터
+NEXT_PUBLIC_APP_DESCRIPTION=ESG 인증 및 컨설팅 서비스
+NEXT_PUBLIC_COMPANY_NAME=ESG-CENTER
+NEXT_PUBLIC_BASE_URL=https://esg-certificate.vercel.app
 
-웹 앱
-URL
-https://script.google.com/macros/s/AKfycbzE4eVxGetQ3Z_xsikwoonK45T4wtryGLorQ4UmGaGRAz-BuZQIzm2VgXcxmJoQ04WX/exec
+# ===========================================
+# 시스템 설정
+# ===========================================
+NODE_ENV=production
+NEXT_PUBLIC_BETA_FEEDBACK_ENABLED=true
+AUTO_REPLY_ENABLED=true
+
+# ===========================================
+# ESG Certificate 기능 설정
+# ===========================================
+# ESG 인증 관련 기능들
+NEXT_PUBLIC_ESG_CONSULTATION_ENABLED=true
+NEXT_PUBLIC_ESG_CERTIFICATION_ENABLED=true
+NEXT_PUBLIC_ESG_AUDIT_ENABLED=true
+NEXT_PUBLIC_ESG_REPORT_ENABLED=true
+
+# ===========================================
+# 배포 환경 설정
+# ===========================================
+VERCEL_ENV=production
+NEXT_TELEMETRY_DISABLED=1 
