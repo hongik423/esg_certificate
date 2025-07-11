@@ -33,7 +33,7 @@ import {
 import Link from 'next/link';
 import { COMPANY_INFO, CONSULTANT_INFO, CONTACT_INFO } from '@/lib/config/branding';
 import DownloadSection from '@/components/ui/download-section';
-import { getDocumentsByCategory } from '@/lib/utils/download-handler';
+import { getDocumentsByCategory, handleDownload } from '@/lib/utils/download-handler';
 
 // 인증 종류별 기본 정보
 const certificationTypes = [
@@ -442,7 +442,13 @@ export default function CertificationCostPage() {
                     <ul className="space-y-2">
                       <li className="flex items-center gap-2">
                         <FileText className="w-4 h-4 text-blue-500" />
-                        인증 신청서
+                        <button 
+                          onClick={() => handleDownload('2인증서비스_심사비용및신청_인증신청서_양식.pdf', '인증 신청서 양식')}
+                          className="text-blue-600 hover:text-blue-800 hover:underline font-medium cursor-pointer"
+                        >
+                          인증 신청서
+                        </button>
+                        <Download className="w-4 h-4 text-blue-500 ml-1" />
                       </li>
                       <li className="flex items-center gap-2">
                         <FileText className="w-4 h-4 text-blue-500" />
