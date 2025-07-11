@@ -63,8 +63,8 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex-shrink-0" onClick={handleMenuClose}>
             <img 
-              src={getImagePath('/LOGO.svg')} 
-              alt="M-Center Logo" 
+              src={getImagePath('/LOGO.JPG')} 
+              alt="기업의별 M-Center Logo" 
               className="h-7 w-auto transition-opacity duration-300 hover:opacity-70"
             />
           </Link>
