@@ -268,8 +268,8 @@ export default function ImpartialityPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <h5 className="font-semibold text-gray-800 mb-2">연락처</h5>
-                  <p className="text-gray-600">전화: 02-1234-5678</p>
-                  <p className="text-gray-600">이메일: impartiality@esgrr.co.kr</p>
+                                      <p className="text-gray-600">전화: 010-9251-9743</p>
+                  <p className="text-gray-600">이메일: hongik423@gmail.com</p>
                 </div>
                 <div>
                   <h5 className="font-semibold text-gray-800 mb-2">접수 시간</h5>

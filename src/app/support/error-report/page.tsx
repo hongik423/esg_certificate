@@ -263,7 +263,7 @@ export default function ErrorReportPage() {
                       <Mail className="h-5 w-5 text-green-600" />
                       <div>
                         <p className="font-semibold">이메일 문의</p>
-                        <p className="text-sm text-gray-600">support@mcenter.co.kr</p>
+                        <p className="text-sm text-gray-600">hongik423@gmail.com</p>
                       </div>
                     </div>
                   </CardContent>

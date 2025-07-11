@@ -75,8 +75,8 @@ export default function LocationPage() {
                 <div>
                   <h3 className="font-semibold mb-1">연락처</h3>
                   <p className="text-gray-600">
-                    전화: 02-588-5114<br />
-                    팩스: 02-6280-2084
+                                    전화: 010-9251-9743<br />
+                팩스: 02-6280-2084
                   </p>
                 </div>
               </div>
@@ -269,7 +269,7 @@ export default function LocationPage() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button className="bg-blue-600 hover:bg-blue-700">
                 <Phone className="h-4 w-4 mr-2" />
-                전화 예약: 02-588-5114
+                전화 예약: 010-9251-9743
               </Button>
               <Button variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-100">
                 <Mail className="h-4 w-4 mr-2" />

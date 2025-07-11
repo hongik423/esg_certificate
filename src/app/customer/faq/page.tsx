@@ -369,7 +369,7 @@ export default function FAQPage() {
             </p>
             <div className="flex justify-center gap-4">
               <div className="text-blue-900">
-                <strong>전화:</strong> 02-588-5114
+                <strong>전화:</strong> 010-9251-9743
               </div>
               <div className="text-blue-900">
                 <strong>이메일:</strong> hongik423@gmail.com

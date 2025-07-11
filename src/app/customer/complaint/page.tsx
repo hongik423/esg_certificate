@@ -182,7 +182,7 @@ export default function ComplaintPage() {
                     <Phone className="h-5 w-5 text-green-600" />
                     <div>
                       <p className="font-medium">전화 접수</p>
-                      <p className="text-sm text-gray-600">02-588-5114</p>
+                      <p className="text-sm text-gray-600">010-9251-9743</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
@@ -390,7 +390,7 @@ export default function ComplaintPage() {
 
                   <Alert className="mt-6">
                     <AlertDescription>
-                      접수번호를 분실하신 경우, 고객센터(02-588-5114)로 문의해주시기 바랍니다.
+                      접수번호를 분실하신 경우, 고객센터(010-9251-9743)로 문의해주시기 바랍니다.
                     </AlertDescription>
                   </Alert>
                 </div>

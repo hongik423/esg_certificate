@@ -55,7 +55,7 @@ export const CONTACT_INFO = {
   emergencyPhone: '010-9251-9743',
   mainEmail: 'hongik423@gmail.com',
   email: 'hongik423@gmail.com',
-  officePhone: '02-588-5114',
+  officePhone: '010-9251-9743',
   fax: '02-588-5115',
   kakaoTalk: '@esgrr',
   businessHours: '평일 09:00-18:00',

@@ -108,7 +108,7 @@ export default function PrivacyPage() {
                 </p>
                 <ul>
                   <li>개인정보 보호책임자: 이후경</li>
-                  <li>연락처: 1588-0000, privacy@m-center.co.kr</li>
+                  <li>연락처: 010-9251-9743, hongik423@gmail.com</li>
                 </ul>
 
                 <h2>제10조 (권익침해 구제방법)</h2>
