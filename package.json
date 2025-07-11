@@ -90,6 +90,6 @@
     "cross-env": "^7.0.3",
     "esbuild-register": "^3.6.0",
     "eslint": "^9.29.0",
-    "eslint-config-next": "^15.1.0"
+    "eslint-config-next": "^15.3.5"
   }
 }
