@@ -92,13 +92,18 @@ export default function ResourcesPage() {
   const [activeMenu, setActiveMenu] = useState('iso-documents');
 
   const handleDownload = (downloadUrl: string, title: string) => {
-    // PDF 다운로드 처리
-    const link = document.createElement('a');
-    link.href = downloadUrl;
-    link.download = `${title}.pdf`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    // 플랫폼 기능 가이드는 HTML 버전으로 열기
+    if (downloadUrl.includes('esg_platform_features_guide')) {
+      window.open('/docs/esg_platform_features_guide.html', '_blank');
+    } else {
+      // 기타 PDF 파일은 기존 방식으로 다운로드
+      const link = document.createElement('a');
+      link.href = downloadUrl;
+      link.download = `${title}.pdf`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
   };
 
   return (

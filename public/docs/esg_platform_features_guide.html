@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESG 인증원 플랫폼 종합 기능 가이드</title>
+    <style>
+        @media print {
+            body { margin: 0; padding: 20px; font-size: 12px; }
+            .no-print { display: none; }
+            .page-break { page-break-before: always; }
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+        }
+        
+        h1 {
+            color: #2563eb;
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            color: #1e40af;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-left: 4px solid #3b82f6;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            color: #1e3a8a;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        .overview-box {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            border: 1px solid #93c5fd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .feature-box {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .benefits-list {
+            background: #f0f9ff;
+            border-left: 4px solid #0ea5e9;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .stat-card {
+            background: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1e40af;
+        }
+        
+        .contact-box {
+            background: #fef3c7;
+            border: 1px solid #fbbf24;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        
+        .download-btn {
+            background: #2563eb;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 20px 0;
+            display: inline-block;
+            text-decoration: none;
+        }
+        
+        .download-btn:hover {
+            background: #1d4ed8;
+        }
+        
+        ul, ol {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        
+        li {
+            margin: 5px 0;
+        }
+        
+        .emoji {
+            font-size: 1.2em;
+            margin-right: 8px;
+        }
+        
+        .highlight {
+            background: #fef3c7;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        
+        .conclusion-box {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border: 2px solid #0ea5e9;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="no-print">
+        <button onclick="window.print()" class="download-btn">📄 PDF로 저장하기</button>
+        <button onclick="window.close()" class="download-btn" style="background: #6b7280;">창 닫기</button>
+    </div>
+
+    <h1><span class="emoji">🌟</span>ESG 인증원 플랫폼 종합 기능 가이드</h1>
+
+    <div class="overview-box">
+        <h2><span class="emoji">🌟</span>플랫폼 개요</h2>
+        <p><strong>ESG 인증원 플랫폼</strong>은 AI 기술을 활용한 차세대 인증 및 경영 지원 통합 솔루션입니다. 기업의 지속가능한 성장을 위한 모든 도구와 서비스를 한 곳에서 제공합니다.</p>
+    </div>
+
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-number">90%</div>
+            <div>업무 효율성 향상</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">70%</div>
+            <div>비용 절감 효과</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">24시간</div>
+            <div>무인 서비스 제공</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">95%</div>
+            <div>고객 만족도</div>
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <h2><span class="emoji">🤖</span>AI 기반 핵심 기능</h2>
+
+    <div class="feature-box">
+        <h3>1. AI 챗봇 상담 시스템</h3>
+        <ul>
+            <li><strong>24시간 무인 상담 서비스</strong></li>
+            <li><strong>실시간 답변 제공</strong></li>
+            <li><strong>전문 상담원 연결 기능</strong></li>
+            <li><strong>상담 내역 자동 저장</strong></li>
+            <li><strong>다국어 지원</strong> (한국어, 영어)</li>
+        </ul>
+        
+        <div class="benefits-list">
+            <strong>주요 혜택:</strong>
+            <ul>
+                <li>언제든지 전문 상담 가능</li>
+                <li>즉시 답변으로 시간 절약</li>
+                <li>상담 품질의 일관성 보장</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="feature-box">
+        <h3>2. 세금계산기 시스템</h3>
+        <ul>
+            <li><strong>법인세 계산기</strong></li>
+            <li><strong>소득세 계산기</strong></li>
+            <li><strong>부가가치세 계산기</strong></li>
+            <li><strong>양도소득세 계산기</strong></li>
+            <li><strong>상속세 계산기</strong></li>
+            <li><strong>증여세 계산기</strong></li>
+        </ul>
+        
+        <div class="benefits-list">
+            <strong>핵심 특징:</strong>
+            <ul>
+                <li>2024년 최신 세법 반영</li>
+                <li>실시간 계산 결과 제공</li>
+                <li>세무 절약 효과 시뮬레이션</li>
+                <li>PDF 리포트 생성 및 다운로드</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="feature-box">
+        <h3>3. 투자타당성분석기 (NPV 분석)</h3>
+        <ul>
+            <li><strong>현금흐름 분석</strong></li>
+            <li><strong>순현재가치(NPV) 계산</strong></li>
+            <li><strong>내부수익률(IRR) 분석</strong></li>
+            <li><strong>회수기간 분석</strong></li>
+            <li><strong>민감도 분석</strong></li>
+            <li><strong>AI 기반 투자 리포트 생성</strong></li>
+        </ul>
+        
+        <div class="benefits-list">
+            <strong>분석 기능:</strong>
+            <ul>
+                <li>다양한 할인율 시나리오 분석</li>
+                <li>리스크 평가 및 대응 방안 제시</li>
+                <li>투자 결정 지원 데이터 제공</li>
+                <li>전문가 수준의 분석 리포트</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <h2><span class="emoji">🏢</span>기업 진단 및 관리 시스템</h2>
+
+    <div class="feature-box">
+        <h3>4. 통합 기업 진단 시스템</h3>
+        <ul>
+            <li><strong>ISO 9001 품질경영 진단</strong></li>
+            <li><strong>ISO 14001 환경경영 진단</strong></li>
+            <li><strong>ISO 45001 안전보건 진단</strong></li>
+            <li><strong>ESG 경영 진단</strong></li>
+            <li><strong>종합 경영 진단</strong></li>
+        </ul>
+        
+        <div class="benefits-list">
+            <strong>진단 프로세스:</strong>
+            <ol>
+                <li>온라인 진단 설문 실시</li>
+                <li>AI 기반 자동 분석</li>
+                <li>개선 방안 제시</li>
+                <li>전문가 검토 및 피드백</li>
+                <li>맞춤형 컨설팅 연계</li>
+            </ol>
+        </div>
+    </div>
+
+    <h2><span class="emoji">📊</span>데이터 관리 및 자동화</h2>
+
+    <div class="feature-box">
+        <h3>5. 구글 시트 연동 DB 관리</h3>
+        <ul>
+            <li><strong>실시간 데이터 동기화</strong></li>
+            <li><strong>자동 데이터 백업</strong></li>
+            <li><strong>클라우드 기반 접근</strong></li>
+            <li><strong>권한별 접근 제어</strong></li>
+            <li><strong>데이터 분석 및 리포팅</strong></li>
+        </ul>
+    </div>
+
+    <div class="feature-box">
+        <h3>6. 자동 이메일 알림 시스템</h3>
+        <ul>
+            <li><strong>신청자 자동 확인 메일</strong></li>
+            <li><strong>관리자 알림 메일</strong></li>
+            <li><strong>진행 상황 업데이트</strong></li>
+            <li><strong>일정 리마인더</strong></li>
+            <li><strong>완료 확인 메일</strong></li>
+        </ul>
+    </div>
+
+    <div class="page-break"></div>
+
+    <h2><span class="emoji">🎓</span>교육 및 인증 서비스</h2>
+
+    <div class="feature-box">
+        <h3>7. AI 기반 교육 시스템</h3>
+        <ul>
+            <li>ISO 9001 내부심사원 과정</li>
+            <li>ISO 14001 내부심사원 과정</li>
+            <li>ISO 45001 내부심사원 과정</li>
+            <li>ESG 경영 기본 과정</li>
+            <li>맞춤형 기업 교육</li>
+        </ul>
+    </div>
+
+    <h2><span class="emoji">💼</span>비즈니스 지원 도구</h2>
+
+    <div class="feature-box">
+        <h3>8. 정책자금 연계 서비스</h3>
+        <ul>
+            <li>정부 지원 사업 정보</li>
+            <li>신청 자격 진단</li>
+            <li>신청서 작성 지원</li>
+            <li>진행 상황 관리</li>
+            <li>성공 사례 공유</li>
+        </ul>
+    </div>
+
+    <div class="feature-box">
+        <h3>9. 기술창업 지원 시스템</h3>
+        <ul>
+            <li>사업 계획서 작성 도구</li>
+            <li>시장 분석 리포트</li>
+            <li>경쟁사 분석</li>
+            <li>투자 유치 지원</li>
+            <li>멘토링 연결</li>
+        </ul>
+    </div>
+
+    <div class="page-break"></div>
+
+    <h2><span class="emoji">📈</span>성과 및 효과</h2>
+
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-number">90%</div>
+            <div>업무 자동화</div>
+            <small>업무 효율성 극대화</small>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">70%</div>
+            <div>비용 절감</div>
+            <small>인건비 및 운영비 절감</small>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">80%</div>
+            <div>시간 단축</div>
+            <small>처리 시간 대폭 단축</small>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">95%</div>
+            <div>고객 만족도</div>
+            <small>24시간 서비스 제공</small>
+        </div>
+    </div>
+
+    <h2><span class="emoji">🌐</span>플랫폼 접근성</h2>
+
+    <div class="feature-box">
+        <h3>다양한 디바이스 지원</h3>
+        <ul>
+            <li>데스크톱 최적화</li>
+            <li>모바일 반응형</li>
+            <li>태블릿 지원</li>
+            <li>크로스 브라우저 호환</li>
+        </ul>
+    </div>
+
+    <div class="feature-box">
+        <h3>사용자 친화적 인터페이스</h3>
+        <ul>
+            <li>직관적인 UI/UX</li>
+            <li>간편한 네비게이션</li>
+            <li>접근성 표준 준수</li>
+            <li>다국어 지원</li>
+        </ul>
+    </div>
+
+    <div class="contact-box">
+        <h2><span class="emoji">📞</span>문의 및 지원</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+            <div>
+                <strong>전화:</strong> 010-9251-9743
+            </div>
+            <div>
+                <strong>이메일:</strong> hongik423@gmail.com
+            </div>
+            <div>
+                <strong>웹사이트:</strong> https://esg-certificate.vercel.app
+            </div>
+            <div>
+                <strong>주소:</strong> 서울특별시 강남구 테헤란로 123
+            </div>
+        </div>
+    </div>
+
+    <div class="conclusion-box">
+        <h2><span class="emoji">📋</span>결론</h2>
+        <p>ESG 인증원 플랫폼은 AI 기술을 활용한 혁신적인 통합 솔루션으로, 기업의 디지털 전환과 지속가능한 성장을 지원합니다.</p>
+        
+        <div style="margin-top: 20px;">
+            <strong>핵심 가치:</strong>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-top: 10px;">
+                <div>🚀 <strong>혁신성</strong><br>최첨단 AI 기술 활용</div>
+                <div>🎯 <strong>효율성</strong><br>업무 프로세스 자동화</div>
+                <div>🛡️ <strong>신뢰성</strong><br>높은 보안성과 안정성</div>
+                <div>🌱 <strong>지속가능성</strong><br>환경과 사회를 고려한 경영 지원</div>
+            </div>
+        </div>
+        
+        <div style="margin-top: 30px; font-size: 18px; font-weight: bold; color: #1e40af;">
+            지금 바로 ESG 인증원 플랫폼을 경험해보세요!
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 30px; font-style: italic; color: #6b7280;">
+        <em>본 문서는 2025년 1월 기준으로 작성되었으며, 지속적으로 업데이트됩니다.</em>
+    </div>
+
+    <script>
+        // 인쇄 시 자동으로 PDF 저장 대화상자 열기
+        function printToPDF() {
+            window.print();
+        }
+        
+        // 페이지 로드 시 자동으로 인쇄 대화상자 열기 (선택사항)
+        // window.onload = function() {
+        //     setTimeout(printToPDF, 1000);
+        // };
+    </script>
+</body>
+</html> 

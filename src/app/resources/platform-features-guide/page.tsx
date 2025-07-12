@@ -89,13 +89,8 @@ const businessBenefits = [
 
 export default function PlatformFeaturesGuidePage() {
   const handleDownload = () => {
-    // PDF 다운로드 처리
-    const link = document.createElement('a');
-    link.href = '/docs/esg_platform_features_guide.pdf';
-    link.download = 'ESG_인증원_플랫폼_종합_기능_가이드.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    // HTML 버전을 새 창에서 열어서 PDF 인쇄 가능하도록 처리
+    window.open('/docs/esg_platform_features_guide.html', '_blank');
   };
 
   return (
