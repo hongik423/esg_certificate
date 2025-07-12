@@ -48,14 +48,14 @@ export const metadata: Metadata = {
     siteName: 'ESG 인증원',
     images: [
       {
-        url: '/esgr_logo.svg',
+        url: 'https://esg-certificate.vercel.app/esgr_logo.svg',
         width: 1200,
         height: 630,
         alt: 'ESG 인증원 - KAB 인정 ESG 경영시스템 시범 인증기관',
         type: 'image/svg+xml',
       },
       {
-        url: '/company-logo-new.svg',
+        url: 'https://esg-certificate.vercel.app/company-logo-new.svg',
         width: 800,
         height: 600,
         alt: 'ESG 인증원 로고',
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     creator: '@esg_certificate',
     title: 'ESG 인증원 | KAB 인정 ESG 경영시스템 시범 인증기관',
     description: 'AI 기반 ISO 인증 서비스와 24시간 AI 상담, 세금계산기, 투자분석기를 제공하는 신뢰받는 인증기관입니다.',
-    images: ['/esgr_logo.svg'],
+    images: ['https://esg-certificate.vercel.app/esgr_logo.svg'],
   },
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION,
@@ -86,6 +86,16 @@ export const metadata: Metadata = {
     'og:locality': '서울특별시',
     'og:region': '강남구',
     'og:country-name': '대한민국',
+    'og:site_name': 'ESG 인증원',
+    'og:type': 'website',
+    'og:logo': 'https://esg-certificate.vercel.app/esgr_logo.svg',
+    'article:author': 'ESG 인증원',
+    'article:publisher': 'ESG 인증원',
+    'business:contact_data:street_address': '서울특별시 강남구',
+    'business:contact_data:locality': '서울특별시',
+    'business:contact_data:region': '강남구',
+    'business:contact_data:postal_code': '06000',
+    'business:contact_data:country_name': '대한민국',
   },
 };
 
@@ -137,6 +147,55 @@ export default function RootLayout({
         
         {/* Vercel 배포 최적화 설정 */}
         <link rel="canonical" href={process.env.NEXT_PUBLIC_BASE_URL || 'https://esg-certificate.vercel.app'} />
+        
+        {/* 구조화된 데이터 (JSON-LD) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "ESG 인증원",
+              "alternateName": "ESGR",
+              "description": "KAB 인정 ESG 경영시스템 시범 인증기관. AI 기반 ISO 9001, ISO 14001, ISO 45001, ESG 인증 서비스 제공.",
+              "url": "https://esg-certificate.vercel.app",
+              "logo": "https://esg-certificate.vercel.app/esgr_logo.svg",
+              "image": "https://esg-certificate.vercel.app/esgr_logo.svg",
+              "telephone": "010-9251-9743",
+              "email": "hongik423@gmail.com",
+              "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "KR",
+                "addressRegion": "서울특별시",
+                "addressLocality": "강남구",
+                "postalCode": "06000",
+                "streetAddress": "서울특별시 강남구"
+              },
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "010-9251-9743",
+                "contactType": "customer service",
+                "availableLanguage": "Korean"
+              },
+              "sameAs": [
+                "https://esg-certificate.vercel.app"
+              ],
+              "founder": {
+                "@type": "Person",
+                "name": "이후경영지도사",
+                "jobTitle": "ESG인증원 선임심사원"
+              },
+              "areaServed": "KR",
+              "knowsAbout": [
+                "ESG 경영시스템 인증",
+                "ISO 9001 품질경영시스템",
+                "ISO 14001 환경경영시스템", 
+                "ISO 45001 안전보건경영시스템",
+                "AI 기반 인증 서비스"
+              ]
+            })
+          }}
+        />
 
       </head>
       <body className={inter.className} suppressHydrationWarning>        
