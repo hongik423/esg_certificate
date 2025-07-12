@@ -105,9 +105,8 @@ const educationPrograms = {
         experience: '30년',
         certifications: [
           'KAB 인정 심사원',
-          'ISO 9001 선임심사원',
-          '경영지도사 (품질경영)',
-          '품질관리기술사'
+          'ISO 9001/14001/45001 선임심사원',
+          '경영학박사'
         ],
         description: '30년간의 풍부한 현장 경험을 바탕으로 실무 중심의 교육을 제공하며, 수많은 기업의 품질경영시스템 구축 및 개선을 지원해왔습니다.'
       },
@@ -117,9 +116,9 @@ const educationPrograms = {
         experience: '25년',
         certifications: [
           'KAB 인정 심사원',
-          'ISO 9001 선임심사원',
-          '경영지도사 (품질경영)',
-          '품질관리기술사'
+          'ISO 9001/14001/45001 선임심사원',
+          '경영지도사',
+          '기술경영 석사'
         ],
         description: '25년간의 풍부한 현장 경험을 바탕으로 실무 중심의 교육을 제공하며, 수많은 기업의 품질경영시스템 구축 및 개선을 지원해왔습니다.'
       },
@@ -129,9 +128,9 @@ const educationPrograms = {
         experience: '20년',
         certifications: [
           'KAB 인정 심사원',
-          'ISO 9001 선임심사원',
-          '경영지도사 (품질경영)',
-          '품질관리기술사'
+          'ISO 9001/14001/45001 선임심사원',
+          '경영지도사',
+          '컨설팅학 박사'
         ],
         description: '20년간의 풍부한 현장 경험을 바탕으로 실무 중심의 교육을 제공하며, 수많은 기업의 품질경영시스템 구축 및 개선을 지원해왔습니다.'
       }
@@ -272,7 +271,7 @@ const educationPrograms = {
         experience: '30년',
         certifications: [
           'KAB 인정 심사원',
-          'ISO 14001 선임심사원',
+          'ISO 14001/9001/45001 선임심사원',
           '경영지도사 (환경경영)',
           '환경관리기술사'
         ],
@@ -284,7 +283,7 @@ const educationPrograms = {
         experience: '25년',
         certifications: [
           'KAB 인정 심사원',
-          'ISO 14001 선임심사원',
+          'ISO 14001/9001/45001 선임심사원',
           '경영지도사 (환경경영)',
           '환경관리기술사'
         ],
@@ -296,7 +295,7 @@ const educationPrograms = {
         experience: '20년',
         certifications: [
           'KAB 인정 심사원',
-          'ISO 14001 선임심사원',
+          'ISO 14001/9001/45001 선임심사원',
           '경영지도사 (환경경영)',
           '환경관리기술사'
         ],
@@ -435,7 +434,7 @@ const educationPrograms = {
         experience: '30년',
         certifications: [
           'KAB 인정 심사원',
-          'ISO 45001 선임심사원',
+          'ISO 45001/9001/14001 선임심사원',
           '경영지도사 (안전경영)',
           '산업안전기사'
         ],
@@ -447,7 +446,7 @@ const educationPrograms = {
         experience: '25년',
         certifications: [
           'KAB 인정 심사원',
-          'ISO 45001 선임심사원',
+          'ISO 45001/9001/14001 선임심사원',
           '경영지도사 (안전경영)',
           '산업안전기사'
         ],
@@ -459,7 +458,7 @@ const educationPrograms = {
         experience: '20년',
         certifications: [
           'KAB 인정 심사원',
-          'ISO 45001 선임심사원',
+          'ISO 45001/9001/14001 선임심사원',
           '경영지도사 (안전경영)',
           '산업안전기사'
         ],

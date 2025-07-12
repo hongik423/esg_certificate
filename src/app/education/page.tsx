@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -21,7 +21,14 @@ import {
   Mail,
   BookOpen,
   Target,
-  Briefcase
+  Briefcase,
+  Brain,
+  Cpu,
+  Bot,
+  Zap,
+  Settings,
+  Lightbulb,
+  TrendingUp
 } from 'lucide-react';
 import Link from 'next/link';
 import { COMPANY_INFO, CONSULTANT_INFO, CONTACT_INFO } from '@/lib/config/branding';
@@ -148,6 +155,20 @@ const calendarEvents = [
 export default function EducationPage() {
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(new Date());
   const [selectedProgram, setSelectedProgram] = useState<string>('all');
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isHovered, setIsHovered] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+    
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
 
   const filteredPrograms = selectedProgram === 'all' 
     ? educationPrograms 
@@ -155,38 +176,209 @@ export default function EducationPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-green-50 via-blue-50 to-purple-50 py-20">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <Badge className="mb-4 bg-green-100 text-green-700 border-green-200">
-              <GraduationCap className="w-4 h-4 mr-1" />
-              전문 교육 기관
-            </Badge>
+      {/* 🌟 AI-Enhanced Hero Section */}
+      <section className="relative min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-indigo-900 overflow-hidden">
+        {/* AI-Powered Background Effects Layer 1 */}
+        <div className="absolute inset-0 will-change-transform">
+          {/* Animated Gradient Mesh */}
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 via-indigo-600/20 to-blue-600/20 animate-pulse"></div>
+          
+          {/* Floating Education Icons */}
+          {isClient && (
+            <div className="absolute inset-0">
+              {[GraduationCap, BookOpen, Award, Target, Briefcase].map((Icon, i) => (
+                <div
+                  key={i}
+                  className="absolute animate-float will-change-transform"
+                  style={{
+                    left: `${15 + (i * 18)}%`,
+                    top: `${25 + (i * 8)}%`,
+                    animationDelay: `${i * 0.7}s`,
+                    animationDuration: `${4.5 + i * 0.5}s`
+                  }}
+                >
+                  <Icon className="w-5 h-5 text-white/20 animate-pulse" />
+                </div>
+              ))}
+            </div>
+          )}
+          
+          {/* Interactive Light Trails */}
+          {isClient && (
+            <div 
+              className="absolute w-96 h-96 bg-gradient-radial from-purple-400/20 to-transparent rounded-full blur-3xl transition-all duration-300 ease-out will-change-transform"
+              style={{
+                left: mousePosition.x - 192,
+                top: mousePosition.y - 192,
+                transform: `scale(${isHovered ? 1.5 : 1})`
+              }}
+            />
+          )}
+          
+          {/* Learning Network Pattern */}
+          <div className="absolute inset-0 opacity-10 hidden md:block">
+            <svg className="w-full h-full" viewBox="0 0 1200 800">
+              <defs>
+                <pattern id="edu-grid" width="70" height="70" patternUnits="userSpaceOnUse">
+                  <circle cx="35" cy="35" r="2.5" fill="currentColor" className="text-white">
+                    <animate attributeName="opacity" values="0.3;1;0.3" dur="3.5s" repeatCount="indefinite" />
+                  </circle>
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#edu-grid)" />
+              
+              {/* Connecting Lines for Learning Network */}
+              {[...Array(10)].map((_, i) => (
+                <line
+                  key={i}
+                  x1={Math.random() * 1200}
+                  y1={Math.random() * 800}
+                  x2={Math.random() * 1200}
+                  y2={Math.random() * 800}
+                  stroke="currentColor"
+                  strokeWidth="0.8"
+                  className="text-white/20"
+                >
+                  <animate
+                    attributeName="opacity"
+                    values="0;0.6;0"
+                    dur={`${2.5 + Math.random() * 2}s`}
+                    repeatCount="indefinite"
+                  />
+                </line>
+              ))}
+            </svg>
+          </div>
+        </div>
+
+        {/* AI-Powered Background Effects Layer 2 */}
+        <div className="absolute inset-0 will-change-transform">
+          {/* Morphing Education Shapes */}
+          <div className="absolute top-20 left-20 w-32 h-32 md:w-52 md:h-52 bg-gradient-to-br from-purple-400/20 to-indigo-400/20 rounded-full blur-2xl animate-morph"></div>
+          <div className="absolute top-40 right-16 w-40 h-40 md:w-60 md:h-60 bg-gradient-to-br from-indigo-400/20 to-blue-400/20 rounded-full blur-2xl animate-morph-reverse"></div>
+          <div className="absolute bottom-32 left-1/3 w-36 h-36 md:w-48 md:h-48 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-2xl animate-morph-slow"></div>
+          
+          {/* Knowledge Circuit Pattern */}
+          <div className="absolute inset-0 opacity-5 hidden lg:block">
+            <div className="absolute top-1/4 left-1/4 w-28 h-28 border border-white/30 rounded-lg animate-pulse-slow-ai">
+              <div className="absolute top-1 left-1 w-3 h-3 bg-purple-400 rounded-full animate-ping"></div>
+              <div className="absolute bottom-1 right-1 w-2 h-2 bg-indigo-400 rounded-full animate-ping" style={{animationDelay: '1s'}}></div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white/20 text-xs font-bold">EDU</div>
+            </div>
+            <div className="absolute top-1/3 right-1/4 w-22 h-22 border border-white/30 rounded-lg animate-pulse-slow-ai" style={{animationDelay: '2s'}}>
+              <div className="absolute top-1 right-1 w-2 h-2 bg-blue-400 rounded-full animate-ping" style={{animationDelay: '3s'}}></div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white/20 text-xs font-bold">AI</div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Main Content */}
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-16 md:py-20 lg:py-24 xl:py-32 relative z-10">
+          <div className="max-w-6xl mx-auto text-center">
+            {/* AI-Enhanced Status Badge */}
+            <div 
+              className="inline-flex items-center bg-white/10 backdrop-blur-md border border-white/20 px-4 sm:px-6 py-2 sm:py-3 rounded-full mb-6 sm:mb-8 shadow-2xl hover:bg-white/20 transition-all duration-300 group cursor-pointer"
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+            >
+              <div className="relative">
+                <GraduationCap className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 text-purple-400" />
+                <div className="absolute -top-1 -right-1 w-2 h-2 sm:w-3 sm:h-3 bg-purple-400 rounded-full animate-ping"></div>
+              </div>
+              <span className="font-semibold text-white text-xs sm:text-sm mr-2">전문 교육 기관</span>
+              <div className="flex items-center space-x-1 ml-2">
+                <Brain className="w-3 h-3 sm:w-4 sm:h-4 text-indigo-400 animate-pulse" />
+                <Lightbulb className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400 animate-pulse" style={{animationDelay: '0.5s'}} />
+              </div>
+            </div>
             
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              ESG 인증원 교육서비스
+            {/* AI-Enhanced Main Title */}
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 sm:mb-8 leading-tight hero-title">
+              <span className="block text-white mb-2 sm:mb-4 animate-fade-in-up-ai">
+                AI 기반 스마트 교육서비스
+              </span>
+              <span className="block bg-gradient-to-r from-purple-400 via-indigo-400 to-blue-400 bg-clip-text text-transparent animate-gradient-x animate-fade-in-up-ai" style={{animationDelay: '0.3s'}}>
+                전문가 양성 플랫폼
+              </span>
             </h1>
             
-            <p className="text-xl text-gray-600 mb-8">
-              ISO 및 ESG 경영시스템 전문가 양성을 위한<br />
-              체계적이고 실무 중심의 교육 프로그램
+            {/* AI-Enhanced Subtitle */}
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed animate-fade-in-up-ai" style={{animationDelay: '0.6s'}}>
+              <strong className="text-white bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">
+                {COMPANY_INFO.name}
+              </strong>의 AI 기반 교육 시스템으로<br className="hidden sm:block" />
+              ISO 및 ESG 경영시스템 전문가로 성장하세요
             </p>
             
-            <div className="flex flex-wrap justify-center gap-4">
+            {/* AI-Enhanced Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-12 sm:mb-16 animate-fade-in-up-ai" style={{animationDelay: '0.9s'}}>
               <Link href="/education/apply">
-                <Button className="bg-green-600 hover:bg-green-700 text-white">
-                  <GraduationCap className="w-5 h-5 mr-2" />
-                  교육 신청하기
+                <Button 
+                  size="lg"
+                  className="w-full sm:w-auto relative bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600 text-white px-8 sm:px-10 py-4 sm:py-6 text-lg sm:text-xl shadow-2xl hover:shadow-purple-500/25 transform hover:scale-[1.05] transition-all duration-300 group overflow-hidden"
+                  onMouseEnter={() => setIsHovered(true)}
+                  onMouseLeave={() => setIsHovered(false)}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-indigo-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                  <GraduationCap className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 relative z-10" />
+                  <span className="relative z-10">AI 교육 신청하기</span>
+                  <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 ml-2 sm:ml-3 relative z-10 group-hover:translate-x-2 transition-transform duration-300" />
+                  <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
                 </Button>
               </Link>
+              
               <Link href="/education/schedule">
-                <Button variant="outline">
-                  <CalendarIcon className="w-5 h-5 mr-2" />
-                  교육 일정 보기
+                <Button 
+                  variant="outline"
+                  size="lg"
+                  className="w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-6 text-lg sm:text-xl border-2 border-white/30 text-white hover:border-purple-400 hover:text-purple-400 hover:bg-white/10 backdrop-blur-sm transition-all duration-300 group"
+                >
+                  <div className="flex items-center justify-center">
+                    <Bot className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 group-hover:animate-bounce" />
+                    <span>AI 교육 일정 보기</span>
+                  </div>
                 </Button>
               </Link>
             </div>
+
+            {/* AI-Enhanced Education Features Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16 animate-fade-in-up-ai" style={{animationDelay: '1.2s'}}>
+              {[
+                { icon: Target, title: '맞춤형 교육', desc: 'AI 기반 개인화 학습', color: 'purple' },
+                { icon: TrendingUp, title: '실무 중심', desc: '현장 적용 가능한 교육', color: 'indigo' },
+                { icon: Award, title: '자격증 취득', desc: '공인 수료증 발급', color: 'blue' },
+                { icon: Users, title: '전문 강사진', desc: '현장 경험 풍부한 전문가', color: 'cyan' }
+              ].map((feature, index) => (
+                <div 
+                  key={index}
+                  className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-4 sm:p-6 hover:bg-white/10 transition-all duration-300 group cursor-pointer"
+                  style={{animationDelay: `${1.2 + index * 0.15}s`}}
+                >
+                  <feature.icon className={`w-6 h-6 sm:w-8 sm:h-8 text-${feature.color}-400 mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300 mx-auto sm:mx-0`} />
+                  <h3 className="text-white font-semibold mb-2 text-sm sm:text-base">{feature.title}</h3>
+                  <p className="text-gray-300 text-xs sm:text-sm">{feature.desc}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* AI-Enhanced Contact Info */}
+            <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-8 text-gray-300 text-sm sm:text-base animate-fade-in-up-ai" style={{animationDelay: '1.5s'}}>
+              <div className="flex items-center justify-center hover:text-purple-400 transition-colors duration-300 cursor-pointer group">
+                <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 text-purple-400 group-hover:animate-pulse" />
+                <span className="text-center">{CONSULTANT_INFO.fullTitle}: {CONTACT_INFO.mainPhone}</span>
+              </div>
+              <div className="flex items-center justify-center hover:text-indigo-400 transition-colors duration-300 cursor-pointer group">
+                <Bot className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 text-indigo-400 group-hover:animate-pulse" />
+                <span>24시간 AI 교육 상담</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="w-5 h-8 sm:w-6 sm:h-10 border-2 border-white/30 rounded-full flex justify-center">
+            <div className="w-1 h-2 sm:h-3 bg-white/50 rounded-full mt-1 sm:mt-2 animate-ping"></div>
           </div>
         </div>
       </section>

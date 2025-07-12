@@ -10,7 +10,11 @@ import {
   Search,
   ChevronRight,
   Mail,
-  Phone
+  Phone,
+  MapPin,
+  Bell,
+  MessageSquare,
+  HelpCircle
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -20,16 +24,46 @@ import { Label } from '@/components/ui/label'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Alert, AlertDescription } from '@/components/ui/alert'
+import Link from 'next/link'
+import Header from '@/components/layout/header'
+
+// 고객서비스 메뉴 데이터
+const customerMenus = [
+  {
+    id: 'notice',
+    title: '공지사항',
+    icon: Bell,
+    href: '/customer/notice',
+    description: 'ESG 인증원의 새로운 소식',
+    isActive: false
+  },
+  {
+    id: 'complaint',
+    title: '불만 및 이의제기',
+    icon: MessageSquare,
+    href: '/customer/complaint',
+    description: '서비스 개선을 위한 의견',
+    isActive: true
+  },
+  {
+    id: 'faq',
+    title: 'FAQ',
+    icon: HelpCircle,
+    href: '/customer/faq',
+    description: '자주 묻는 질문과 답변',
+    isActive: false
+  }
+]
 
 // 처리 프로세스 단계
 const processSteps = [
-  { id: 1, title: '접수', icon: FileText, description: '온라인/유선 접수' },
-  { id: 2, title: '검토', icon: Search, description: '내용 검토 및 분류' },
-  { id: 3, title: '조사', icon: Clock, description: '사실관계 조사' },
-  { id: 4, title: '심의', icon: AlertTriangle, description: '처리방안 심의' },
-  { id: 5, title: '통보', icon: Mail, description: '결과 통보' },
-  { id: 6, title: '조치', icon: Check, description: '시정/개선 조치' },
-  { id: 7, title: '완료', icon: Check, description: '처리 완료' }
+  { id: 1, title: '불만제기', description: '고객의 불만을 제기하고\n불만사항을 이에스지 인증원\n이메일로 접수한다.' },
+  { id: 2, title: '접수사항 등록', description: '법인사항에 해당되는지 여부\n검토 후 접수 절차 접수 사항\n등록' },
+  { id: 3, title: '불만 및 이의제기 타당성\n검토', description: '기업이나 접수 사항 및\n처리계획 통지' },
+  { id: 4, title: '세부내용 구성', description: '불만, 이의 처리방법 구성' },
+  { id: 5, title: '조사 및 분석', description: '접수 불만 또는 이의제기\n내용 분석하여 조사한다.' },
+  { id: 6, title: '수집 및 사례', description: '불만 또는 이의제기의 해결을\n위하여 조치계획을 수립하여\n시행한다.' },
+  { id: 7, title: '처리결과 보고 및 조치 공문', description: '불만 또는 이의제기의 해결을\n위하여 조치계획을 수립하여\n시행한다.' }
 ]
 
 export default function ComplaintPage() {
@@ -99,305 +133,160 @@ export default function ComplaintPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <Header />
+      
       {/* 상단 배너 */}
       <div className="bg-green-800 text-white py-16">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl font-bold mb-4">불만 및 이의제기</h1>
-          <p className="text-xl">고객님의 소중한 의견을 듣고 개선하겠습니다</p>
+          <div className="flex items-center gap-2 text-sm mb-4">
+            <span>HOME</span>
+            <ChevronRight className="w-4 h-4" />
+            <span>고객서비스</span>
+            <ChevronRight className="w-4 h-4" />
+            <span className="text-green-200">불만 및 이의제기</span>
+          </div>
+          <h1 className="text-4xl font-bold">불만 및 이의제기</h1>
         </div>
       </div>
 
       <div className="container mx-auto px-4 py-8">
-        <Tabs value={activeTab} onValueChange={setActiveTab}>
-          <TabsList className="grid w-full grid-cols-3">
-            <TabsTrigger value="process">처리 프로세스</TabsTrigger>
-            <TabsTrigger value="submit">온라인 접수</TabsTrigger>
-            <TabsTrigger value="status">처리현황 조회</TabsTrigger>
-          </TabsList>
-
-          {/* 처리 프로세스 탭 */}
-          <TabsContent value="process" className="mt-8">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+          {/* 사이드바 */}
+          <div className="lg:col-span-1">
             <Card>
               <CardHeader>
-                <CardTitle>불만 및 이의제기 처리 프로세스</CardTitle>
+                <CardTitle className="text-lg">고객서비스</CardTitle>
               </CardHeader>
-              <CardContent>
-                <div className="relative">
-                  {/* 프로세스 단계 */}
-                  <div className="grid grid-cols-1 md:grid-cols-7 gap-4">
-                    {processSteps.map((step, index) => (
-                      <div key={step.id} className="relative">
-                        <div className="text-center">
-                          <div className={`mx-auto w-16 h-16 rounded-full flex items-center justify-center ${
-                            index === 0 ? 'bg-green-600 text-white' : 'bg-gray-200 text-gray-600'
-                          }`}>
-                            <step.icon className="h-8 w-8" />
-                          </div>
-                          <h3 className="mt-2 font-semibold">{step.title}</h3>
-                          <p className="text-sm text-gray-600">{step.description}</p>
-                        </div>
-                        
-                        {/* 화살표 */}
-                        {index < processSteps.length - 1 && (
-                          <div className="hidden md:block absolute top-8 left-full w-full">
-                            <ChevronRight className="h-6 w-6 text-gray-400 -ml-3" />
-                          </div>
-                        )}
+              <CardContent className="p-0">
+                <nav className="space-y-1">
+                  {customerMenus.map((menu) => (
+                    <Link
+                      key={menu.id}
+                      href={menu.href}
+                      className={`flex items-center gap-3 px-4 py-3 text-sm transition-colors hover:bg-gray-50 ${
+                        menu.isActive 
+                          ? 'bg-green-50 text-green-700 border-r-2 border-green-600' 
+                          : 'text-gray-600 hover:text-gray-900'
+                      }`}
+                    >
+                      <menu.icon className="w-4 h-4" />
+                      <div>
+                        <div className="font-medium">{menu.title}</div>
+                        <div className="text-xs text-gray-500">{menu.description}</div>
                       </div>
-                    ))}
-                  </div>
-
-                  {/* 처리 기준 */}
-                  <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="bg-blue-50 p-6 rounded-lg">
-                      <h4 className="font-semibold text-blue-900 mb-3">불만사항 처리기준</h4>
-                      <ul className="space-y-2 text-sm text-blue-800">
-                        <li>• 접수 후 24시간 이내 담당자 배정</li>
-                        <li>• 7일 이내 1차 답변</li>
-                        <li>• 30일 이내 최종 처리 완료</li>
-                        <li>• 처리 결과에 대한 만족도 조사 실시</li>
-                      </ul>
-                    </div>
-
-                    <div className="bg-orange-50 p-6 rounded-lg">
-                      <h4 className="font-semibold text-orange-900 mb-3">이의제기 처리기준</h4>
-                      <ul className="space-y-2 text-sm text-orange-800">
-                        <li>• 접수 후 48시간 이내 검토 착수</li>
-                        <li>• 14일 이내 심의위원회 개최</li>
-                        <li>• 45일 이내 최종 결정 및 통보</li>
-                        <li>• 필요시 외부 전문가 자문 실시</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
+                      <ChevronRight className="w-4 h-4 ml-auto" />
+                    </Link>
+                  ))}
+                </nav>
               </CardContent>
             </Card>
 
-            {/* 연락처 정보 */}
+            {/* 고객 정보 */}
             <Card className="mt-6">
-              <CardContent className="p-6">
-                <h3 className="font-semibold mb-4">다른 방법으로 접수하기</h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div className="flex items-center gap-3">
-                    <Phone className="h-5 w-5 text-green-600" />
-                    <div>
-                      <p className="font-medium">전화 접수</p>
-                      <p className="text-sm text-gray-600">010-9251-9743</p>
+              <CardHeader>
+                <CardTitle className="text-lg">CUSTOMER</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex items-start gap-2">
+                  <MapPin className="w-4 h-4 text-gray-400 mt-1" />
+                  <div className="text-sm">
+                    <div className="font-medium">Address :</div>
+                    <div className="text-gray-600">
+                      (06653) 서울특별시<br />
+                      서초구 효령로53길 21 6층<br />
+                      603호
                     </div>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <Mail className="h-5 w-5 text-green-600" />
-                    <div>
-                      <p className="font-medium">이메일 접수</p>
-                      <p className="text-sm text-gray-600">hongik423@gmail.com</p>
-                    </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Mail className="w-4 h-4 text-gray-400" />
+                  <div className="text-sm">
+                    <span className="font-medium">Mail Us :</span>
+                    <span className="text-gray-600 ml-1">ycpark55@naver.com</span>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <FileText className="h-5 w-5 text-green-600" />
-                    <div>
-                      <p className="font-medium">우편 접수</p>
-                      <p className="text-sm text-gray-600">서울시 구로구 디지털로 273</p>
-                    </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Phone className="w-4 h-4 text-gray-400" />
+                  <div className="text-sm">
+                    <span className="font-medium">Tel :</span>
+                    <span className="text-gray-600 ml-1">02-588-5114</span>
                   </div>
                 </div>
               </CardContent>
             </Card>
-          </TabsContent>
+          </div>
 
-          {/* 온라인 접수 탭 */}
-          <TabsContent value="submit" className="mt-8">
-            <Card>
+          {/* 메인 콘텐츠 */}
+          <div className="lg:col-span-3">
+            {/* 불만처리절차 안내 */}
+            <Card className="mb-8">
               <CardHeader>
-                <CardTitle>온라인 접수</CardTitle>
+                <CardTitle className="text-center text-xl text-green-700">불만처리절차</CardTitle>
+                <p className="text-center text-gray-600">
+                  이의제기나 불만사항이 있을 경우
+                </p>
+                <p className="text-center text-gray-600">
+                  이에스지인증원의 고객은 이에스지 심사 및 운영사항에 대한 의의제기나 불만사항이 있을 경우
+                  이에스지인증원에 아래 및 불만접수 제기할 수 있습니다.
+                </p>
               </CardHeader>
               <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  {/* 접수 유형 */}
-                  <div className="space-y-3">
-                    <Label>접수 유형 *</Label>
-                    <RadioGroup 
-                      value={formData.type} 
-                      onValueChange={(value) => setFormData({ ...formData, type: value })}
-                    >
-                      <div className="flex items-center space-x-2">
-                        <RadioGroupItem value="complaint" id="complaint" />
-                        <Label htmlFor="complaint" className="font-normal">
-                          불만사항 (서비스 개선 요청)
-                        </Label>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <RadioGroupItem value="appeal" id="appeal" />
-                        <Label htmlFor="appeal" className="font-normal">
-                          이의제기 (심사 결과에 대한 이의신청)
-                        </Label>
-                      </div>
-                    </RadioGroup>
-                  </div>
-
-                  {/* 신청자 정보 */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="name">성명 *</Label>
-                      <Input
-                        id="name"
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        required
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="company">회사명</Label>
-                      <Input
-                        id="company"
-                        value={formData.company}
-                        onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="email">이메일 *</Label>
-                      <Input
-                        id="email"
-                        type="email"
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        required
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="phone">연락처 *</Label>
-                      <Input
-                        id="phone"
-                        type="tel"
-                        value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        required
-                      />
-                    </div>
-                  </div>
-
-                  {/* 접수 내용 */}
-                  <div className="space-y-2">
-                    <Label htmlFor="title">제목 *</Label>
-                    <Input
-                      id="title"
-                      value={formData.title}
-                      onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                      required
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="content">내용 * (최소 100자 이상)</Label>
-                    <Textarea
-                      id="content"
-                      rows={8}
-                      value={formData.content}
-                      onChange={(e) => setFormData({ ...formData, content: e.target.value })}
-                      placeholder="구체적인 내용을 작성해주세요. 사실관계, 발생일시, 관련자 등을 포함하여 상세히 기술해주시면 빠른 처리에 도움이 됩니다."
-                      required
-                    />
-                    <p className="text-sm text-gray-600">
-                      {formData.content.length}/100자 {formData.content.length < 100 && '(최소 100자 이상 작성해주세요)'}
-                    </p>
-                  </div>
-
-                  {/* 파일 첨부 */}
-                  <div className="space-y-2">
-                    <Label htmlFor="files">첨부파일</Label>
-                    <Input
-                      id="files"
-                      type="file"
-                      multiple
-                      onChange={handleFileChange}
-                      className="cursor-pointer"
-                    />
-                    <p className="text-sm text-gray-600">
-                      최대 10MB, 지원 형식: PDF, DOC, DOCX, JPG, PNG
-                    </p>
-                  </div>
-
-                  {/* 개인정보 동의 */}
-                  <Alert>
-                    <AlertDescription>
-                      <strong>개인정보 수집·이용 동의</strong><br />
-                      수집항목: 성명, 연락처, 이메일, 회사명<br />
-                      이용목적: 불만/이의제기 처리 및 결과 통보<br />
-                      보유기간: 처리 완료 후 3년
-                    </AlertDescription>
-                  </Alert>
-
-                  {/* 제출 버튼 */}
-                  <div className="flex justify-end gap-4">
-                    <Button
-                      type="button"
-                      variant="outline"
-                      onClick={() => setFormData({
-                        type: 'complaint',
-                        name: '',
-                        company: '',
-                        email: '',
-                        phone: '',
-                        title: '',
-                        content: '',
-                        files: []
-                      })}
-                    >
-                      초기화
-                    </Button>
-                    <Button
-                      type="submit"
-                      disabled={!isFormValid()}
-                      className="bg-green-600 hover:bg-green-700"
-                    >
-                      <Upload className="h-4 w-4 mr-2" />
-                      접수하기
-                    </Button>
-                  </div>
-                </form>
-              </CardContent>
-            </Card>
-          </TabsContent>
-
-          {/* 처리현황 조회 탭 */}
-          <TabsContent value="status" className="mt-8">
-            <Card>
-              <CardHeader>
-                <CardTitle>처리현황 조회</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="max-w-2xl mx-auto">
-                  <p className="text-gray-600 mb-6">
-                    접수하신 불만 또는 이의제기의 처리현황을 조회하실 수 있습니다.
-                    접수 시 발급받은 접수번호를 입력해주세요.
+                <div className="bg-blue-50 p-4 rounded-lg mb-6">
+                  <h4 className="font-semibold text-blue-900 mb-2">불만처리절차</h4>
+                  <p className="text-sm text-blue-800">
+                    의의제기 및 불만이 접수되면 다음과 같은 절차를 통해 처리됩니다.
                   </p>
+                  <p className="text-sm text-blue-800 mt-2">
+                    이에스지 인증원 이메일 : ycpark55@naver.com
+                  </p>
+                </div>
 
-                  <div className="flex gap-4">
-                    <Input
-                      placeholder="접수번호 입력 (예: C1234567890)"
-                      value={searchNumber}
-                      onChange={(e) => setSearchNumber(e.target.value)}
-                      className="flex-1"
-                    />
-                    <Button
-                      onClick={handleSearch}
-                      disabled={!searchNumber}
-                      className="bg-green-600 hover:bg-green-700"
-                    >
-                      <Search className="h-4 w-4 mr-2" />
-                      조회
-                    </Button>
+                {/* 처리 단계 */}
+                <div className="grid grid-cols-1 md:grid-cols-7 gap-4">
+                  {processSteps.map((step, index) => (
+                    <div key={step.id} className="text-center">
+                      <div className="bg-blue-100 text-blue-800 rounded-lg p-4 mb-2">
+                        <div className="font-semibold text-sm mb-2">STEP{String(step.id).padStart(2, '0')}</div>
+                        <div className="font-bold text-base mb-2">{step.title}</div>
+                        <div className="text-xs leading-relaxed whitespace-pre-line">
+                          {step.description}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* 연락처 정보 */}
+                <div className="mt-8 bg-gray-50 p-6 rounded-lg">
+                  <h3 className="font-semibold mb-4">다른 방법으로 접수하기</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div className="flex items-center gap-3">
+                      <Phone className="h-5 w-5 text-green-600" />
+                      <div>
+                        <p className="font-medium">전화 접수</p>
+                        <p className="text-sm text-gray-600">02-588-5114</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Mail className="h-5 w-5 text-green-600" />
+                      <div>
+                        <p className="font-medium">이메일 접수</p>
+                        <p className="text-sm text-gray-600">ycpark55@naver.com</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <FileText className="h-5 w-5 text-green-600" />
+                      <div>
+                        <p className="font-medium">우편 접수</p>
+                        <p className="text-sm text-gray-600">(06653)서울특별시 서초구 효령로53길 21 6층 603호</p>
+                      </div>
+                    </div>
                   </div>
-
-                  <Alert className="mt-6">
-                    <AlertDescription>
-                      접수번호를 분실하신 경우, 고객센터(010-9251-9743)로 문의해주시기 바랍니다.
-                    </AlertDescription>
-                  </Alert>
                 </div>
               </CardContent>
             </Card>
-          </TabsContent>
-        </Tabs>
+          </div>
+        </div>
       </div>
     </div>
   )

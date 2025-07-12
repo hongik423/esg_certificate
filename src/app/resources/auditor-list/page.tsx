@@ -35,83 +35,43 @@ interface Auditor {
 const mockAuditors: Auditor[] = [
   {
     id: '1',
-    name: '김철수',
-    qualification: '선임심사원',
-    certificationField: 'ISO 9001, ISO 14001',
-    contractType: '전속',
-    registrationDate: '2020-03-15'
+    name: '고민수',
+    qualification: '심사원',
+    certificationField: 'Q,E,OH',
+    contractType: '상임',
+    registrationDate: '2023-01-15'
   },
   {
     id: '2',
-    name: '이영희',
+    name: '박윤철',
     qualification: '심사원',
-    certificationField: 'ISO 9001',
-    contractType: '계약',
-    registrationDate: '2021-06-20'
+    certificationField: '선임심사원',
+    contractType: '비상임',
+    registrationDate: '2022-03-20'
   },
   {
     id: '3',
-    name: '박민수',
-    qualification: '선임심사원',
-    certificationField: 'ISO 45001',
-    contractType: '전속',
-    registrationDate: '2019-11-10'
+    name: '유충현',
+    qualification: '심사원',
+    certificationField: 'Q',
+    contractType: '비상임',
+    registrationDate: '2021-11-10'
   },
   {
     id: '4',
-    name: '정수진',
-    qualification: '심사원보',
-    certificationField: 'ISO 14001',
-    contractType: '계약',
-    registrationDate: '2023-02-28'
+    name: '이후경',
+    qualification: '심사원',
+    certificationField: '선임심사원',
+    contractType: '비상임',
+    registrationDate: '2020-06-28'
   },
   {
     id: '5',
-    name: '강동원',
-    qualification: '선임심사원',
-    certificationField: 'ISO 9001, ISO 45001',
-    contractType: '전속',
-    registrationDate: '2018-08-05'
-  },
-  {
-    id: '6',
-    name: '김미영',
+    name: '홍용기',
     qualification: '심사원',
-    certificationField: 'ESG 경영시스템',
-    contractType: '전속',
-    registrationDate: '2022-12-01'
-  },
-  {
-    id: '7',
-    name: '이준호',
-    qualification: '선임심사원',
-    certificationField: 'ISO 9001, ISO 14001, ISO 45001',
-    contractType: '전속',
-    registrationDate: '2017-05-15'
-  },
-  {
-    id: '8',
-    name: '최유진',
-    qualification: '심사원',
-    certificationField: 'ESG 경영시스템',
-    contractType: '계약',
-    registrationDate: '2023-08-20'
-  },
-  {
-    id: '9',
-    name: '장성훈',
-    qualification: '심사원보',
-    certificationField: 'ISO 9001',
-    contractType: '계약',
-    registrationDate: '2023-10-05'
-  },
-  {
-    id: '10',
-    name: '윤서연',
-    qualification: '선임심사원',
-    certificationField: 'ISO 14001, ESG 경영시스템',
-    contractType: '전속',
-    registrationDate: '2020-09-12'
+    certificationField: '선임심사원',
+    contractType: '상임',
+    registrationDate: '2019-08-05'
   }
 ]
 
@@ -178,9 +138,7 @@ export default function AuditorListPage() {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="all">전체</SelectItem>
-                    <SelectItem value="선임심사원">선임심사원</SelectItem>
                     <SelectItem value="심사원">심사원</SelectItem>
-                    <SelectItem value="심사원보">심사원보</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -225,20 +183,14 @@ export default function AuditorListPage() {
                         </div>
                       </TableCell>
                       <TableCell>
-                        <span className={`px-2 py-1 rounded text-xs font-medium ${
-                          auditor.qualification === '선임심사원' 
-                            ? 'bg-blue-100 text-blue-700'
-                            : auditor.qualification === '심사원'
-                            ? 'bg-green-100 text-green-700'
-                            : 'bg-gray-100 text-gray-700'
-                        }`}>
+                        <span className="px-2 py-1 rounded text-xs font-medium bg-green-100 text-green-700">
                           {auditor.qualification}
                         </span>
                       </TableCell>
                       <TableCell>{auditor.certificationField}</TableCell>
                       <TableCell>
                         <span className={`px-2 py-1 rounded text-xs font-medium ${
-                          auditor.contractType === '전속' 
+                          auditor.contractType === '상임' 
                             ? 'bg-purple-100 text-purple-700'
                             : 'bg-orange-100 text-orange-700'
                         }`}>
@@ -309,21 +261,21 @@ export default function AuditorListPage() {
               </div>
               <div className="text-center p-4 bg-gray-50 rounded">
                 <p className="text-2xl font-bold text-blue-600">
-                  {mockAuditors.filter(a => a.qualification === '선임심사원').length}
-                </p>
-                <p className="text-sm text-gray-600">선임심사원</p>
-              </div>
-              <div className="text-center p-4 bg-gray-50 rounded">
-                <p className="text-2xl font-bold text-green-600">
                   {mockAuditors.filter(a => a.qualification === '심사원').length}
                 </p>
                 <p className="text-sm text-gray-600">심사원</p>
               </div>
               <div className="text-center p-4 bg-gray-50 rounded">
-                <p className="text-2xl font-bold text-orange-600">
-                  {mockAuditors.filter(a => a.contractType === '전속').length}
+                <p className="text-2xl font-bold text-green-600">
+                  {mockAuditors.filter(a => a.contractType === '비상임').length}
                 </p>
-                <p className="text-sm text-gray-600">전속 심사원</p>
+                <p className="text-sm text-gray-600">비상임 심사원</p>
+              </div>
+              <div className="text-center p-4 bg-gray-50 rounded">
+                <p className="text-2xl font-bold text-orange-600">
+                  {mockAuditors.filter(a => a.contractType === '상임').length}
+                </p>
+                <p className="text-sm text-gray-600">상임 심사원</p>
               </div>
             </div>
           </CardContent>

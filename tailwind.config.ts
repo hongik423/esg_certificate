@@ -282,6 +282,129 @@ const config = {
             boxShadow: '0 6px 24px rgba(59, 130, 246, 0.25)',
           },
         },
+        // AI-Enhanced Animations
+        'float': {
+          '0%, 100%': { transform: 'translateY(0px) translateX(0px)' },
+          '25%': { transform: 'translateY(-10px) translateX(5px)' },
+          '50%': { transform: 'translateY(-5px) translateX(-5px)' },
+          '75%': { transform: 'translateY(-15px) translateX(3px)' },
+        },
+        'morph': {
+          '0%, 100%': { 
+            transform: 'scale(1) rotate(0deg)',
+            borderRadius: '50%',
+          },
+          '25%': { 
+            transform: 'scale(1.2) rotate(90deg)',
+            borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70%',
+          },
+          '50%': { 
+            transform: 'scale(0.8) rotate(180deg)',
+            borderRadius: '70% 30% 30% 70% / 70% 70% 30% 30%',
+          },
+          '75%': { 
+            transform: 'scale(1.1) rotate(270deg)',
+            borderRadius: '30% 70% 30% 70% / 70% 30% 70% 30%',
+          },
+        },
+        'morph-reverse': {
+          '0%, 100%': { 
+            transform: 'scale(1) rotate(360deg)',
+            borderRadius: '50%',
+          },
+          '25%': { 
+            transform: 'scale(0.9) rotate(270deg)',
+            borderRadius: '70% 30% 70% 30% / 30% 70% 30% 70%',
+          },
+          '50%': { 
+            transform: 'scale(1.3) rotate(180deg)',
+            borderRadius: '30% 70% 30% 70% / 70% 30% 70% 30%',
+          },
+          '75%': { 
+            transform: 'scale(0.7) rotate(90deg)',
+            borderRadius: '70% 30% 70% 30% / 30% 70% 30% 70%',
+          },
+        },
+        'morph-slow': {
+          '0%, 100%': { 
+            transform: 'scale(1) rotate(0deg)',
+            borderRadius: '50%',
+          },
+          '33%': { 
+            transform: 'scale(1.1) rotate(120deg)',
+            borderRadius: '60% 40% 60% 40% / 40% 60% 40% 60%',
+          },
+          '66%': { 
+            transform: 'scale(0.9) rotate(240deg)',
+            borderRadius: '40% 60% 40% 60% / 60% 40% 60% 40%',
+          },
+        },
+        'gradient-x': {
+          '0%, 100%': {
+            backgroundSize: '200% 200%',
+            backgroundPosition: 'left center',
+          },
+          '50%': {
+            backgroundSize: '200% 200%',
+            backgroundPosition: 'right center',
+          },
+        },
+        'fade-in-up': {
+          '0%': {
+            opacity: '0',
+            transform: 'translateY(30px)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateY(0)',
+          },
+        },
+        'pulse-slow-ai': {
+          '0%, 100%': {
+            opacity: '0.3',
+            transform: 'scale(1)',
+          },
+          '50%': {
+            opacity: '0.8',
+            transform: 'scale(1.05)',
+          },
+        },
+        'glow-ai': {
+          '0%, 100%': {
+            boxShadow: '0 0 20px rgba(59, 130, 246, 0.3)',
+          },
+          '50%': {
+            boxShadow: '0 0 40px rgba(59, 130, 246, 0.6), 0 0 60px rgba(16, 185, 129, 0.3)',
+          },
+        },
+        'shimmer': {
+          '0%': {
+            backgroundPosition: '-200% 0',
+          },
+          '100%': {
+            backgroundPosition: '200% 0',
+          },
+        },
+        'neural-pulse': {
+          '0%, 100%': {
+            opacity: '0.3',
+            transform: 'scale(1)',
+          },
+          '50%': {
+            opacity: '1',
+            transform: 'scale(1.1)',
+          },
+        },
+        'circuit-glow': {
+          '0%, 100%': {
+            borderColor: 'rgba(255, 255, 255, 0.1)',
+            boxShadow: '0 0 5px rgba(16, 185, 129, 0.2)',
+          },
+          '50%': {
+            borderColor: 'rgba(16, 185, 129, 0.5)',
+            boxShadow: '0 0 20px rgba(16, 185, 129, 0.4)',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -298,6 +421,18 @@ const config = {
         'fade-in-up-delay-3': 'fadeInUp 0.6s ease-out 0.3s both',
         'bounce-gentle': 'bounceGentle 2s ease-in-out infinite',
         'glow': 'glow 3s ease-in-out infinite',
+        // AI-Enhanced Animations
+        'float': 'float 6s ease-in-out infinite',
+        'morph': 'morph 8s ease-in-out infinite',
+        'morph-reverse': 'morph-reverse 10s ease-in-out infinite',
+        'morph-slow': 'morph-slow 12s ease-in-out infinite',
+        'gradient-x': 'gradient-x 3s ease infinite',
+        'fade-in-up-ai': 'fade-in-up 0.8s ease-out forwards',
+        'pulse-slow-ai': 'pulse-slow-ai 4s ease-in-out infinite',
+        'glow-ai': 'glow-ai 2s ease-in-out infinite',
+        'shimmer': 'shimmer 2s infinite',
+        'neural-pulse': 'neural-pulse 3s ease-in-out infinite',
+        'circuit-glow': 'circuit-glow 2s ease-in-out infinite',
       },
 
       spacing: {
@@ -318,6 +453,30 @@ const config = {
         'apple-hover': '0 8px 40px rgba(0, 0, 0, 0.12)',
         'apple-button': '0 2px 8px rgba(0, 122, 255, 0.3)',
         'apple-button-hover': '0 4px 12px rgba(0, 122, 255, 0.4)',
+        // AI-Enhanced Shadows
+        'ai-glow': '0 0 20px rgba(59, 130, 246, 0.3)',
+        'ai-glow-lg': '0 0 40px rgba(59, 130, 246, 0.4)',
+        'ai-glow-xl': '0 0 60px rgba(59, 130, 246, 0.5)',
+        'neural-glow': '0 0 30px rgba(16, 185, 129, 0.3)',
+        'neural-glow-lg': '0 0 50px rgba(16, 185, 129, 0.4)',
+        'circuit-glow': '0 0 15px rgba(168, 85, 247, 0.3)',
+        'cyber-glow': '0 0 25px rgba(34, 197, 94, 0.4)',
+      },
+      backgroundImage: {
+        // AI-Enhanced Gradients
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'ai-neural': 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        'ai-cyber': 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+        'ai-matrix': 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+        'ai-quantum': 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)',
+        'ai-hologram': 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
+        'neural-mesh': 'linear-gradient(45deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%)',
+        'cyber-grid': 'linear-gradient(90deg, transparent 24%, rgba(255,255,255,0.05) 25%, rgba(255,255,255,0.05) 26%, transparent 27%, transparent 74%, rgba(255,255,255,0.05) 75%, rgba(255,255,255,0.05) 76%, transparent 77%, transparent), linear-gradient(transparent 24%, rgba(255,255,255,0.05) 25%, rgba(255,255,255,0.05) 26%, transparent 27%, transparent 74%, rgba(255,255,255,0.05) 75%, rgba(255,255,255,0.05) 76%, transparent 77%, transparent)',
+        'shimmer-gradient': 'linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent)',
+      },
+      backgroundSize: {
+        'cyber-grid': '50px 50px',
       },
       backdropBlur: {
         xs: '2px',

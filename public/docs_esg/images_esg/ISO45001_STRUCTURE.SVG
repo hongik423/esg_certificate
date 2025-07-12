@@ -1,0 +1,135 @@
+<svg width="800" height="700" viewBox="0 0 800 700" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="14px">
+  <!-- 
+    ISO 45001 Occupational Health and Safety Management System Framework Diagram
+    This SVG is a vector recreation of the provided reference image.
+    Final version with central circle size adjusted for better fit.
+  -->
+  <style>
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+      text-anchor: middle;
+    }
+    .main-text {
+      text-anchor: middle;
+    }
+    .sub-text {
+      font-size: 12px;
+      text-anchor: middle;
+    }
+    .label-text {
+        font-size: 22px;
+        font-weight: bold;
+        text-anchor: middle;
+    }
+    .connector {
+      fill: none;
+      stroke: black;
+      stroke-width: 1.5;
+    }
+    .arrow {
+      marker-end: url(#arrowhead);
+    }
+  </style>
+
+  <!-- Definition for the arrowhead marker -->
+  <defs>
+    <marker id="arrowhead" viewBox="0 0 10 10" refX="8" refY="5"
+        markerWidth="6" markerHeight="6"
+        orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="black" />
+    </marker>
+  </defs>
+
+  <!-- Main Title -->
+  <text x="400" y="40" class="title">ISO 45001 안전보건경영시스템 체계</text>
+
+  <!-- Outer Context Elements -->
+  <g id="outer-context">
+    <!-- Top Left -->
+    <text x="130" y="90" class="main-text">조직과 조직 상황의</text>
+    <text x="130" y="110" class="main-text">이해 (4.1)</text>
+    <path class="connector arrow" d="M 170 125 Q 220 150, 260 180" />
+
+    <!-- Top Right -->
+    <text x="670" y="90" class="main-text">근로자 및 기타 이해관계자의</text>
+    <text x="670" y="110" class="main-text">니즈와 기대 이해 (4.2)</text>
+    <path class="connector arrow" d="M 610 125 Q 560 150, 520 180" />
+    
+    <!-- Bottom -->
+    <g id="intended-outcomes">
+        <rect x="290" y="600" width="220" height="30" fill="none" stroke="black" stroke-width="1.5" />
+        <text x="400" y="618" class="main-text">안전보건경영시스템의 의도된 결과</text>
+        <path class="connector arrow" d="M 340 600 L 340 580" />
+        <path class="connector arrow" d="M 460 600 L 460 580" />
+    </g>
+  </g>
+  
+  <!-- Text above the main box -->
+  <text x="400" y="140" class="main-text">조직 상황 (4)</text>
+
+  <!-- Main PDCA Cycle Container -->
+  <g id="pdca-container">
+    <!-- Dashed border -->
+    <rect x="200" y="150" width="400" height="430" rx="20" ry="20"
+          fill="none" stroke="black" stroke-width="2" stroke-dasharray="8 4" />
+    
+    <!-- Text inside the top of the box -->
+    <text x="400" y="175" class="main-text">안전보건경영시스템 적용범위 결정 (4.3/4.4)</text>
+
+    <!-- Outer PDCA Flow Arrows (Complete circular path) -->
+    <g id="pdca-flow" class="connector arrow" stroke-width="2">
+      <path d="M 400 185 A 180 180 0 0 1 580 365" />
+      <path d="M 580 365 A 180 180 0 0 1 400 545" />
+      <path d="M 400 545 A 180 180 0 0 1 220 365" />
+      <path d="M 220 365 A 180 180 0 0 1 400 185" />
+    </g>
+
+    <!-- PDCA Labels (Positioned on top of the outer circle) -->
+    <text x="400" y="180" class="label-text">P</text>
+    <text x="595" y="370" class="label-text">D</text>
+    <text x="400" y="565" class="label-text">C</text>
+    <text x="205" y="370" class="label-text">A</text>
+
+    <!-- Central Element - Drawn first to be in the background -->
+    <g id="center-element">
+      <circle cx="400" cy="365" r="125" fill="white" stroke="black" stroke-width="1.5" />
+      <text x="400" y="355" class="main-text">리더십과</text>
+      <text x="400" y="375" class="main-text">근로자 참여</text>
+      <text x="400" y="395" class="sub-text">(5)</text>
+    </g>
+
+    <!-- PDCA Cycle Nodes - Drawn after the central circle to appear on top -->
+    <g id="pdca-nodes">
+      <!-- P: Planning (기획) -->
+      <g id="planning-node">
+        <circle cx="400" cy="240" r="45" fill="white" stroke="black" stroke-width="1.5" />
+        <text x="400" y="235" class="main-text">기획</text>
+        <text x="400" y="255" class="sub-text">(6)</text>
+      </g>
+      
+      <!-- D: Support & Operation (지원 및 운용) -->
+      <g id="operation-node">
+        <circle cx="530" cy="365" r="55" fill="white" stroke="black" stroke-width="1.5" />
+        <text x="530" y="355" class="main-text">지원 (7)</text>
+        <text x="530" y="375" class="main-text">및</text>
+        <text x="530" y="395" class="main-text">운용 (8)</text>
+      </g>
+      
+      <!-- C: Performance Evaluation (성과평가) -->
+      <g id="evaluation-node">
+        <circle cx="400" cy="490" r="45" fill="white" stroke="black" stroke-width="1.5" />
+        <text x="400" y="485" class="main-text">성과평가</text>
+        <text x="400" y="505" class="sub-text">(9)</text>
+      </g>
+      
+      <!-- A: Improvement (개선) -->
+      <g id="improvement-node">
+        <circle cx="270" cy="365" r="45" fill="white" stroke="black" stroke-width="1.5" />
+        <text x="270" y="360" class="main-text">개선</text>
+        <text x="270" y="380" class="sub-text">(10)</text>
+      </g>
+    </g>
+    
+  </g>
+</svg>

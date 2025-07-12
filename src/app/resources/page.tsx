@@ -46,30 +46,44 @@ const resourceMenus = [
 const recentDocuments = [
   {
     id: 1,
+    title: 'ESG 인증원 플랫폼 종합 기능 가이드',
+    category: 'AI 플랫폼',
+    date: '2025.01.20 10:00',
+    views: 156,
+    isNew: true,
+    href: '/resources/platform-features-guide',
+    downloadUrl: '/docs/esg_platform_features_guide.pdf',
+    description: 'AI 챗봇, 세금계산기, 투자분석기 등 모든 기능 상세 설명'
+  },
+  {
+    id: 2,
     title: 'ESG 경영시스템(ESG-MS-001)',
     category: 'ESG',
     date: '2025.03.16 15:30',
     views: 34,
     isNew: true,
-    href: '/resources/iso-documents/esg-ms-001'
+    href: '/resources/iso-documents/esg-ms-001',
+    downloadUrl: '/documents/esg-ms-001.pdf'
   },
   {
-    id: 2,
+    id: 3,
     title: 'ISO45001 인증',
     category: 'ISO 45001',
     date: '2025.03.16 15:21',
     views: 31,
     isNew: true,
-    href: '/resources/iso-documents/iso45001'
+    href: '/resources/iso-documents/iso45001',
+    downloadUrl: '/documents/iso45001.pdf'
   },
   {
-    id: 3,
+    id: 4,
     title: 'ISO9001/ISO14001 인증제도',
     category: 'ISO 9001/14001',
     date: '2022.01.12 18:10',
     views: 129,
     isNew: false,
-    href: '/resources/iso-documents/iso9001-14001'
+    href: '/resources/iso-documents/iso9001-14001',
+    downloadUrl: '/documents/iso9001-14001.pdf'
   }
 ];
 
@@ -77,12 +91,22 @@ export default function ResourcesPage() {
   const router = useRouter();
   const [activeMenu, setActiveMenu] = useState('iso-documents');
 
+  const handleDownload = (downloadUrl: string, title: string) => {
+    // PDF 다운로드 처리
+    const link = document.createElement('a');
+    link.href = downloadUrl;
+    link.download = `${title}.pdf`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
       
       {/* 상단 배너 */}
-      <div className="bg-green-800 text-white py-16">
+      <div className="bg-gradient-to-r from-green-800 to-blue-800 text-white py-16">
         <div className="container mx-auto px-4">
           <div className="flex items-center gap-2 text-sm mb-4">
             <span>HOME</span>
@@ -92,6 +116,7 @@ export default function ResourcesPage() {
             <span className="text-green-200">ISO자료</span>
           </div>
           <h1 className="text-4xl font-bold">자료실</h1>
+          <p className="text-xl mt-2 opacity-90">AI 기반 플랫폼 자료 및 ISO 인증 관련 문서</p>
         </div>
       </div>
 
@@ -169,7 +194,7 @@ export default function ResourcesPage() {
             <Card>
               <CardHeader>
                 <div className="flex items-center justify-between">
-                  <CardTitle className="text-xl">ISO자료</CardTitle>
+                  <CardTitle className="text-xl">ISO자료 및 플랫폼 가이드</CardTitle>
                   <div className="flex items-center gap-2">
                     <span className="text-sm text-gray-500">총 {recentDocuments.length}건</span>
                     <Button variant="outline" size="sm">
@@ -182,7 +207,7 @@ export default function ResourcesPage() {
               <CardContent>
                 <div className="space-y-4">
                   {recentDocuments.map((doc) => (
-                    <div key={doc.id} className="border-b border-gray-200 pb-4 last:border-b-0">
+                    <div key={doc.id} className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
                       <div className="flex items-start justify-between">
                         <div className="flex-1">
                           <div className="flex items-center gap-2 mb-2">
@@ -198,10 +223,15 @@ export default function ResourcesPage() {
                               </Badge>
                             )}
                           </div>
+                          
+                          {doc.description && (
+                            <p className="text-sm text-gray-600 mb-2">{doc.description}</p>
+                          )}
+                          
                           <div className="flex items-center gap-4 text-sm text-gray-500">
                             <div className="flex items-center gap-1">
                               <User className="w-4 h-4" />
-                              <span>이에스지인증원</span>
+                              <span>ESG인증원</span>
                             </div>
                             <div className="flex items-center gap-1">
                               <Calendar className="w-4 h-4" />
@@ -214,10 +244,22 @@ export default function ResourcesPage() {
                           </div>
                         </div>
                         <div className="flex items-center gap-2">
-                          <Badge variant="outline" className="text-xs">
+                          <Badge 
+                            variant="outline" 
+                            className={`text-xs ${
+                              doc.category === 'AI 플랫폼' 
+                                ? 'bg-blue-50 text-blue-700 border-blue-200' 
+                                : 'bg-gray-50 text-gray-700'
+                            }`}
+                          >
                             {doc.category}
                           </Badge>
-                          <Button size="sm" variant="outline">
+                          <Button 
+                            size="sm" 
+                            variant="outline"
+                            onClick={() => handleDownload(doc.downloadUrl, doc.title)}
+                            className="hover:bg-green-50 hover:text-green-700 hover:border-green-300"
+                          >
                             <Download className="w-4 h-4 mr-1" />
                             다운로드
                           </Button>
@@ -225,6 +267,16 @@ export default function ResourcesPage() {
                       </div>
                     </div>
                   ))}
+                </div>
+
+                {/* 특별 안내 */}
+                <div className="mt-8 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                  <h3 className="font-semibold text-blue-900 mb-2">🌟 플랫폼 기능 가이드 특별 제공</h3>
+                  <p className="text-sm text-blue-800">
+                    ESG 인증원의 AI 기반 플랫폼에 대한 상세한 기능 설명과 활용 방법을 담은 
+                    종합 가이드를 무료로 제공합니다. AI 챗봇, 세금계산기, 투자타당성분석기 등 
+                    모든 기능의 혜택과 사용법을 확인하세요.
+                  </p>
                 </div>
 
                 {/* 페이지네이션 */}

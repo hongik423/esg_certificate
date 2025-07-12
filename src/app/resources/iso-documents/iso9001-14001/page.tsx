@@ -41,10 +41,7 @@ const resourceMenus = [
 ];
 
 export default function ISO9001_14001Page() {
-  const handleDownload = () => {
-    // 실제 다운로드 로직 구현
-    alert('ISO9001/ISO14001 인증제도 자료를 다운로드합니다.');
-  };
+  const FILE_URL = '/documents/ISO_9001_구축가이드북.html';
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -162,10 +159,14 @@ export default function ISO9001_14001Page() {
                       </div>
                     </div>
                   </div>
-                  <Button onClick={handleDownload} className="bg-green-600 hover:bg-green-700">
-                    <Download className="w-4 h-4 mr-2" />
-                    다운로드
-                  </Button>
+                  <Link href={FILE_URL} download target="_blank" rel="noopener noreferrer">
+                    <Button className="bg-green-600 hover:bg-green-700" asChild={false}>
+                      <>
+                        <Download className="w-4 h-4 mr-2" />
+                        다운로드
+                      </>
+                    </Button>
+                  </Link>
                 </div>
               </CardHeader>
               <CardContent className="pt-8">

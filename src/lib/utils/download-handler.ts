@@ -78,7 +78,7 @@ export const certificationDocuments: DownloadDocument[] = [
   // ISO 9001 관련
   {
     id: 'iso-9001-overview',
-    title: 'ISO 9001 표준개요',
+    title: 'ISO 9001 구축가이드북 (표준개요)',
     description: '품질경영시스템 개요 및 요구사항 가이드 (HTML)',
     fileName: 'ISO_9001_표준개요.html',
     fileType: 'html',
@@ -91,7 +91,7 @@ export const certificationDocuments: DownloadDocument[] = [
     id: 'iso-9001-guide',
     title: 'ISO 9001 구축가이드북',
     description: '시스템 구축 단계별 상세 가이드 (HTML)',
-    fileName: 'ISO_9001_구축가이드북.html',
+    fileName: 'ISO_9001_표준개요.html',
     fileType: 'html',
     size: '549KB',
     category: 'iso-9001',
@@ -102,7 +102,7 @@ export const certificationDocuments: DownloadDocument[] = [
   // ISO 14001 관련
   {
     id: 'iso-14001-overview',
-    title: 'ISO 14001 표준개요',
+    title: 'ISO 14001 구축가이드북',
     description: '환경경영시스템 개요 및 요구사항 가이드 (HTML)',
     fileName: 'ISO_14001_표준개요.html',
     fileType: 'html',
@@ -113,9 +113,9 @@ export const certificationDocuments: DownloadDocument[] = [
   },
   {
     id: 'iso-14001-env-guide',
-    title: 'ISO 14001 환경법규가이드',
+    title: 'ISO 14001 환경법규 구축가이드북',
     description: '환경법규 준수 실무 가이드 (HTML)',
-    fileName: 'ISO_14001_환경법규가이드.html',
+    fileName: 'ISO_14001_환경법규_구축가이드북.html',
     fileType: 'html',
     size: '620KB',
     category: 'iso-14001',
@@ -126,7 +126,7 @@ export const certificationDocuments: DownloadDocument[] = [
   // ISO 45001 관련
   {
     id: 'iso-45001-overview',
-    title: 'ISO 45001 표준개요',
+    title: 'ISO 45001 구축가이드북',
     description: '안전보건경영시스템 개요 및 요구사항 가이드 (HTML)',
     fileName: 'ISO_45001_표준개요.html',
     fileType: 'html',
@@ -137,9 +137,9 @@ export const certificationDocuments: DownloadDocument[] = [
   },
   {
     id: 'iso-45001-risk-guide',
-    title: 'ISO 45001 위험성평가가이드',
+    title: 'ISO 45001 위험성평가 구축가이드북',
     description: '위험성평가 실무 가이드 (HTML)',
-    fileName: 'ISO_45001_위험성평가가이드.html',
+    fileName: 'ISO_45001_위험성평가_구축가이드북.html',
     fileType: 'html',
     size: '750KB',
     category: 'iso-45001',
