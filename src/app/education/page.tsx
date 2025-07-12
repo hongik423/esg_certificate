@@ -28,7 +28,8 @@ import {
   Zap,
   Settings,
   Lightbulb,
-  TrendingUp
+  TrendingUp,
+  MessageSquare
 } from 'lucide-react';
 import Link from 'next/link';
 import { COMPANY_INFO, CONSULTANT_INFO, CONTACT_INFO } from '@/lib/config/branding';
@@ -176,159 +177,58 @@ export default function EducationPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      {/* 🌟 AI-Enhanced Hero Section */}
-      <section className="relative min-h-screen overflow-hidden" style={{background: 'linear-gradient(135deg, #001c40 0%, #002552 50%, #1a304d 100%)'}}>
-        {/* AI-Powered Background Effects Layer 1 */}
-        <div className="absolute inset-0 will-change-transform">
-          {/* Animated Gradient Mesh */}
-          <div className="absolute inset-0 animate-pulse" style={{background: 'linear-gradient(135deg, rgba(247, 127, 111, 0.1) 0%, rgba(204, 167, 0, 0.1) 50%, rgba(26, 48, 77, 0.2) 100%)'}}></div>
+      {/* 🍎 Apple Store Style Hero Section */}
+      <section className="relative min-h-screen bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+        {/* Subtle Background Elements */}
+        <div className="absolute inset-0">
+          {/* Gentle gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-green-50/30 to-blue-50/20"></div>
           
-          {/* Floating Education Icons */}
+          {/* Floating geometric shapes - Apple style */}
           {isClient && (
             <div className="absolute inset-0">
-              {[GraduationCap, BookOpen, Award, Target, Briefcase].map((Icon, i) => (
-                <div
-                  key={i}
-                  className="absolute animate-float will-change-transform"
-                  style={{
-                    left: `${15 + (i * 18)}%`,
-                    top: `${25 + (i * 8)}%`,
-                    animationDelay: `${i * 0.7}s`,
-                    animationDuration: `${4.5 + i * 0.5}s`
-                  }}
-                >
-                  <Icon className="w-5 h-5 text-white/20 animate-pulse" />
-                </div>
-              ))}
+              <div className="absolute top-20 right-1/4 w-64 h-64 bg-gradient-to-br from-green-100/40 to-blue-100/40 rounded-full blur-3xl animate-pulse" style={{animationDuration: '5s'}}></div>
+              <div className="absolute bottom-32 left-1/4 w-80 h-80 bg-gradient-to-br from-blue-100/30 to-indigo-100/30 rounded-full blur-3xl animate-pulse" style={{animationDuration: '7s', animationDelay: '2s'}}></div>
             </div>
           )}
-          
-          {/* Interactive Light Trails */}
-          {isClient && (
-            <div 
-              className="absolute w-96 h-96 rounded-full blur-3xl transition-all duration-300 ease-out will-change-transform"
-              style={{
-                left: mousePosition.x - 192,
-                top: mousePosition.y - 192,
-                transform: `scale(${isHovered ? 1.5 : 1})`,
-                background: 'radial-gradient(circle, rgba(247, 127, 111, 0.2) 0%, transparent 70%)'
-              }}
-            />
-          )}
-          
-          {/* Learning Network Pattern */}
-          <div className="absolute inset-0 opacity-10 hidden md:block">
-            <svg className="w-full h-full" viewBox="0 0 1200 800">
-              <defs>
-                <pattern id="edu-grid" width="70" height="70" patternUnits="userSpaceOnUse">
-                  <circle cx="35" cy="35" r="2.5" fill="currentColor" className="text-white">
-                    <animate attributeName="opacity" values="0.3;1;0.3" dur="3.5s" repeatCount="indefinite" />
-                  </circle>
-                </pattern>
-              </defs>
-              <rect width="100%" height="100%" fill="url(#edu-grid)" />
-              
-              {/* Connecting Lines for Learning Network */}
-              {[...Array(10)].map((_, i) => (
-                <line
-                  key={i}
-                  x1={Math.random() * 1200}
-                  y1={Math.random() * 800}
-                  x2={Math.random() * 1200}
-                  y2={Math.random() * 800}
-                  stroke="currentColor"
-                  strokeWidth="0.8"
-                  className="text-white/20"
-                >
-                  <animate
-                    attributeName="opacity"
-                    values="0;0.6;0"
-                    dur={`${2.5 + Math.random() * 2}s`}
-                    repeatCount="indefinite"
-                  />
-                </line>
-              ))}
-            </svg>
-          </div>
-        </div>
-
-        {/* AI-Powered Background Effects Layer 2 */}
-        <div className="absolute inset-0 will-change-transform">
-          {/* Morphing Education Shapes */}
-          <div className="absolute top-20 left-20 w-32 h-32 md:w-52 md:h-52 rounded-full blur-2xl animate-morph" style={{background: 'linear-gradient(135deg, rgba(247, 127, 111, 0.2) 0%, rgba(204, 167, 0, 0.2) 100%)'}}></div>
-          <div className="absolute top-40 right-16 w-40 h-40 md:w-60 md:h-60 rounded-full blur-2xl animate-morph-reverse" style={{background: 'linear-gradient(135deg, rgba(204, 167, 0, 0.2) 0%, rgba(26, 48, 77, 0.2) 100%)'}}></div>
-          <div className="absolute bottom-32 left-1/3 w-36 h-36 md:w-48 md:h-48 rounded-full blur-2xl animate-morph-slow" style={{background: 'linear-gradient(135deg, rgba(26, 48, 77, 0.2) 0%, rgba(247, 127, 111, 0.2) 100%)'}}></div>
-          
-          {/* Knowledge Circuit Pattern */}
-          <div className="absolute inset-0 opacity-5 hidden lg:block">
-            <div className="absolute top-1/4 left-1/4 w-28 h-28 border border-white/30 rounded-lg animate-pulse-slow-ai">
-              <div className="absolute top-1 left-1 w-3 h-3 rounded-full animate-ping" style={{backgroundColor: '#f77f6f'}}></div>
-              <div className="absolute bottom-1 right-1 w-2 h-2 rounded-full animate-ping" style={{backgroundColor: '#cca700', animationDelay: '1s'}}></div>
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white/20 text-xs font-bold">EDU</div>
-            </div>
-            <div className="absolute top-1/3 right-1/4 w-22 h-22 border border-white/30 rounded-lg animate-pulse-slow-ai" style={{animationDelay: '2s'}}>
-              <div className="absolute top-1 right-1 w-2 h-2 rounded-full animate-ping" style={{backgroundColor: '#1a304d', animationDelay: '3s'}}></div>
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white/20 text-xs font-bold">AI</div>
-            </div>
-          </div>
         </div>
         
         {/* Main Content */}
-        <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-16 md:py-20 lg:py-24 xl:py-32 relative z-10">
-          <div className="max-w-6xl mx-auto text-center">
-            {/* AI-Enhanced Status Badge */}
-            <div 
-              className="inline-flex items-center bg-white/10 backdrop-blur-md border border-white/20 px-4 sm:px-6 py-2 sm:py-3 rounded-full mb-6 sm:mb-8 shadow-2xl hover:bg-white/20 transition-all duration-300 group cursor-pointer"
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-            >
-              <div className="relative">
-                <GraduationCap className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3" style={{color: '#f77f6f'}} />
-                <div className="absolute -top-1 -right-1 w-2 h-2 sm:w-3 sm:h-3 rounded-full animate-ping" style={{backgroundColor: '#f77f6f'}}></div>
-              </div>
-              <span className="font-semibold text-white text-xs sm:text-sm mr-2">전문 교육 기관</span>
-              <div className="flex items-center space-x-1 ml-2">
-                <Brain className="w-3 h-3 sm:w-4 sm:h-4 animate-pulse" style={{color: '#cca700'}} />
-                <Lightbulb className="w-3 h-3 sm:w-4 sm:h-4 animate-pulse" style={{color: '#1a304d', animationDelay: '0.5s'}} />
-              </div>
+        <div className="container mx-auto px-6 md:px-8 lg:px-12 py-20 md:py-32 relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            
+            {/* Apple-style Badge */}
+            <div className="inline-flex items-center bg-black/5 backdrop-blur-sm px-4 py-2 rounded-full mb-8 hover:bg-black/10 transition-all duration-300">
+              <GraduationCap className="w-4 h-4 mr-2 text-green-600" />
+              <span className="text-sm font-medium text-gray-700">전문 교육 기관</span>
             </div>
             
-            {/* AI-Enhanced Main Title */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 sm:mb-8 leading-tight hero-title">
-              <span className="block text-white mb-2 sm:mb-4 animate-fade-in-up-ai">
-                AI 기반 스마트 교육서비스
+            {/* Apple-style Main Title */}
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
+              <span className="block text-gray-900 mb-2">
+                스마트 교육서비스
               </span>
-              <span className="block bg-clip-text text-transparent animate-gradient-x animate-fade-in-up-ai" style={{backgroundImage: 'linear-gradient(90deg, #f77f6f 0%, #cca700 50%, #1a304d 100%)', animationDelay: '0.3s'}}>
+              <span className="block bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
                 전문가 양성 플랫폼
               </span>
             </h1>
             
-            {/* AI-Enhanced Subtitle */}
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed animate-fade-in-up-ai" style={{animationDelay: '0.6s'}}>
-              <strong className="text-white bg-clip-text text-transparent" style={{backgroundImage: 'linear-gradient(90deg, #f77f6f 0%, #cca700 100%)'}}>
-                {COMPANY_INFO.name}
-              </strong>의 AI 기반 교육 시스템으로<br className="hidden sm:block" />
+            {/* Apple-style Subtitle */}
+            <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
+              <strong className="font-semibold text-gray-900">{COMPANY_INFO.name}</strong>의 교육 시스템으로<br className="hidden md:block" />
               ISO 및 ESG 경영시스템 전문가로 성장하세요
             </p>
             
-            {/* AI-Enhanced Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-12 sm:mb-16 animate-fade-in-up-ai" style={{animationDelay: '0.9s'}}>
+            {/* Apple-style Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
               <Link href="/education/apply">
                 <Button 
                   size="lg"
-                  className="w-full sm:w-auto relative text-white px-8 sm:px-10 py-4 sm:py-6 text-lg sm:text-xl shadow-2xl transform hover:scale-[1.05] transition-all duration-300 group overflow-hidden border-0"
-                  style={{
-                    background: 'linear-gradient(135deg, #f77f6f 0%, #cca700 100%)',
-                    boxShadow: '0 25px 50px -12px rgba(247, 127, 111, 0.25)'
-                  }}
-                  onMouseEnter={() => setIsHovered(true)}
-                  onMouseLeave={() => setIsHovered(false)}
+                  className="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300"
                 >
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-300" style={{background: 'linear-gradient(135deg, #cca700 0%, #f77f6f 100%)'}}></div>
-                  <GraduationCap className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 relative z-10" />
-                  <span className="relative z-10">AI 교육 신청하기</span>
-                  <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 ml-2 sm:ml-3 relative z-10 group-hover:translate-x-2 transition-transform duration-300" />
-                  <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                  <GraduationCap className="w-5 h-5 mr-3" />
+                  교육 신청하기
+                  <ArrowRight className="w-5 h-5 ml-3" />
                 </Button>
               </Link>
               
@@ -336,62 +236,53 @@ export default function EducationPage() {
                 <Button 
                   variant="outline"
                   size="lg"
-                  className="w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-6 text-lg sm:text-xl border-2 text-white hover:bg-white/10 backdrop-blur-sm transition-all duration-300 group"
-                  style={{
-                    borderColor: 'rgba(247, 127, 111, 0.5)',
-                    color: '#f77f6f'
-                  }}
-                  onMouseOver={(e) => {
-                    e.currentTarget.style.borderColor = '#f77f6f';
-                    e.currentTarget.style.color = '#f77f6f';
-                  }}
+                  className="w-full sm:w-auto border-2 border-gray-300 text-gray-700 hover:border-green-600 hover:text-green-600 px-8 py-4 text-lg font-medium rounded-xl transition-all duration-300"
                 >
-                  <div className="flex items-center justify-center">
-                    <Bot className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 group-hover:animate-bounce" />
-                    <span>AI 교육 일정 보기</span>
-                  </div>
+                  <BookOpen className="w-5 h-5 mr-3" />
+                  교육 일정 보기
                 </Button>
               </Link>
             </div>
 
-            {/* AI-Enhanced Education Features Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16 animate-fade-in-up-ai" style={{animationDelay: '1.2s'}}>
+            {/* Apple-style Features Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16">
               {[
-                { icon: Target, title: '맞춤형 교육', desc: 'AI 기반 개인화 학습', color: '#f77f6f' },
-                { icon: TrendingUp, title: '실무 중심', desc: '현장 적용 가능한 교육', color: '#cca700' },
-                { icon: Award, title: '자격증 취득', desc: '공인 수료증 발급', color: '#1a304d' },
-                { icon: Users, title: '전문 강사진', desc: '현장 경험 풍부한 전문가', color: '#f77f6f' }
+                { icon: Target, title: '맞춤형 교육', desc: '개인화된 학습 경험', color: 'green' },
+                { icon: TrendingUp, title: '실무 중심', desc: '현장 적용 가능한 교육', color: 'blue' },
+                { icon: Award, title: '자격증 취득', desc: '공인 수료증 발급', color: 'indigo' },
+                { icon: Users, title: '전문 강사진', desc: '경험 풍부한 전문가', color: 'purple' }
               ].map((feature, index) => (
                 <div 
                   key={index}
-                  className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-4 sm:p-6 hover:bg-white/10 transition-all duration-300 group cursor-pointer"
-                  style={{animationDelay: `${1.2 + index * 0.15}s`}}
+                  className="group p-6 rounded-2xl bg-white/60 backdrop-blur-sm border border-gray-200/50 hover:bg-white/80 hover:border-gray-300/50 transition-all duration-300 hover:shadow-lg"
                 >
-                  <feature.icon className="w-6 h-6 sm:w-8 sm:h-8 mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300 mx-auto sm:mx-0" style={{color: feature.color}} />
-                  <h3 className="text-white font-semibold mb-2 text-sm sm:text-base">{feature.title}</h3>
-                  <p className="text-gray-300 text-xs sm:text-sm">{feature.desc}</p>
+                  <div className={`w-12 h-12 bg-${feature.color}-100 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                    <feature.icon className={`w-6 h-6 text-${feature.color}-600`} />
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{feature.title}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">{feature.desc}</p>
                 </div>
               ))}
             </div>
 
-            {/* AI-Enhanced Contact Info */}
-            <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-8 text-gray-300 text-sm sm:text-base animate-fade-in-up-ai" style={{animationDelay: '1.5s'}}>
-              <div className="flex items-center justify-center transition-colors duration-300 cursor-pointer group" style={{color: '#f77f6f'}}>
-                <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 group-hover:animate-pulse" style={{color: '#f77f6f'}} />
-                <span className="text-center">{CONSULTANT_INFO.fullTitle}: {CONTACT_INFO.mainPhone}</span>
+            {/* Apple-style Contact Info */}
+            <div className="flex flex-col sm:flex-row justify-center gap-8 text-gray-600">
+              <div className="flex items-center justify-center group">
+                <Phone className="w-5 h-5 mr-3 text-green-600 group-hover:scale-110 transition-transform duration-300" />
+                <span className="font-medium">{CONSULTANT_INFO.fullTitle}: {CONTACT_INFO.mainPhone}</span>
               </div>
-              <div className="flex items-center justify-center transition-colors duration-300 cursor-pointer group" style={{color: '#cca700'}}>
-                <Bot className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 group-hover:animate-pulse" style={{color: '#cca700'}} />
-                <span>24시간 AI 교육 상담</span>
+              <div className="flex items-center justify-center group">
+                <MessageSquare className="w-5 h-5 mr-3 text-blue-600 group-hover:scale-110 transition-transform duration-300" />
+                <span className="font-medium">24시간 교육 상담</span>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-5 h-8 sm:w-6 sm:h-10 border-2 border-white/30 rounded-full flex justify-center">
-            <div className="w-1 h-2 sm:h-3 bg-white/50 rounded-full mt-1 sm:mt-2 animate-ping"></div>
+        {/* Apple-style Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-gray-400 rounded-full mt-2 animate-pulse"></div>
           </div>
         </div>
       </section>

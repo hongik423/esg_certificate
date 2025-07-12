@@ -23,7 +23,10 @@ import {
   Cpu,
   Bot,
   Zap,
-  Settings
+  Settings,
+  CheckCircle,
+  TrendingUp,
+  MessageSquare
 } from 'lucide-react';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
@@ -160,222 +163,111 @@ export default function CertificationServicesPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      {/* 🌟 AI-Enhanced Hero Section */}
-      <section className="relative min-h-screen overflow-hidden" style={{background: 'linear-gradient(135deg, #001c40 0%, #002552 50%, #1a304d 100%)'}}>
-        {/* AI-Powered Background Effects Layer 1 */}
-        <div className="absolute inset-0 will-change-transform">
-          {/* Animated Gradient Mesh */}
-          <div className="absolute inset-0 animate-pulse" style={{background: 'linear-gradient(135deg, rgba(247, 127, 111, 0.1) 0%, rgba(204, 167, 0, 0.1) 50%, rgba(26, 48, 77, 0.2) 100%)'}}></div>
+      {/* 🍎 Apple Store Style Hero Section */}
+      <section className="relative min-h-screen bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+        {/* Subtle Background Elements */}
+        <div className="absolute inset-0">
+          {/* Gentle gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-50/30 to-indigo-50/20"></div>
           
-          {/* Floating Certification Icons */}
+          {/* Floating geometric shapes - Apple style */}
           {isClient && (
             <div className="absolute inset-0">
-              {[Award, Shield, Leaf, Globe, BadgeCheck].map((Icon, i) => (
-                <div
-                  key={i}
-                  className="absolute animate-float will-change-transform"
-                  style={{
-                    left: `${20 + (i * 15)}%`,
-                    top: `${20 + (i * 10)}%`,
-                    animationDelay: `${i * 0.8}s`,
-                    animationDuration: `${4 + i}s`
-                  }}
-                >
-                  <Icon className="w-6 h-6 text-white/20 animate-pulse" />
-                </div>
-              ))}
+              <div className="absolute top-20 left-1/4 w-64 h-64 bg-gradient-to-br from-slate-100/40 to-indigo-100/40 rounded-full blur-3xl animate-pulse" style={{animationDuration: '6s'}}></div>
+              <div className="absolute bottom-32 right-1/4 w-80 h-80 bg-gradient-to-br from-indigo-100/30 to-purple-100/30 rounded-full blur-3xl animate-pulse" style={{animationDuration: '8s', animationDelay: '3s'}}></div>
             </div>
           )}
-          
-          {/* Interactive Light Trails */}
-          {isClient && (
-            <div 
-              className="absolute w-96 h-96 rounded-full blur-3xl transition-all duration-300 ease-out will-change-transform"
-              style={{
-                left: mousePosition.x - 192,
-                top: mousePosition.y - 192,
-                transform: `scale(${isHovered ? 1.5 : 1})`,
-                background: 'radial-gradient(circle, rgba(247, 127, 111, 0.2) 0%, transparent 70%)'
-              }}
-            />
-          )}
-          
-          {/* Certification Network Pattern */}
-          <div className="absolute inset-0 opacity-10 hidden md:block">
-            <svg className="w-full h-full" viewBox="0 0 1200 800">
-              <defs>
-                <pattern id="cert-grid" width="80" height="80" patternUnits="userSpaceOnUse">
-                  <circle cx="40" cy="40" r="3" fill="currentColor" className="text-white">
-                    <animate attributeName="opacity" values="0.3;1;0.3" dur="4s" repeatCount="indefinite" />
-                  </circle>
-                </pattern>
-              </defs>
-              <rect width="100%" height="100%" fill="url(#cert-grid)" />
-              
-              {/* Connecting Lines for Certification Network */}
-              {[...Array(12)].map((_, i) => (
-                <line
-                  key={i}
-                  x1={Math.random() * 1200}
-                  y1={Math.random() * 800}
-                  x2={Math.random() * 1200}
-                  y2={Math.random() * 800}
-                  stroke="currentColor"
-                  strokeWidth="1"
-                  className="text-white/20"
-                >
-                  <animate
-                    attributeName="opacity"
-                    values="0;0.7;0"
-                    dur={`${3 + Math.random() * 2}s`}
-                    repeatCount="indefinite"
-                  />
-                </line>
-              ))}
-            </svg>
-          </div>
-        </div>
-
-        {/* AI-Powered Background Effects Layer 2 */}
-        <div className="absolute inset-0 will-change-transform">
-          {/* Morphing Certification Shapes */}
-          <div className="absolute top-20 left-20 w-32 h-32 md:w-48 md:h-48 rounded-full blur-2xl animate-morph" style={{background: 'linear-gradient(135deg, rgba(247, 127, 111, 0.2) 0%, rgba(204, 167, 0, 0.2) 100%)'}}></div>
-          <div className="absolute top-40 right-16 w-40 h-40 md:w-64 md:h-64 rounded-full blur-2xl animate-morph-reverse" style={{background: 'linear-gradient(135deg, rgba(204, 167, 0, 0.2) 0%, rgba(26, 48, 77, 0.2) 100%)'}}></div>
-          <div className="absolute bottom-32 left-1/3 w-36 h-36 md:w-56 md:h-56 rounded-full blur-2xl animate-morph-slow" style={{background: 'linear-gradient(135deg, rgba(26, 48, 77, 0.2) 0%, rgba(247, 127, 111, 0.2) 100%)'}}></div>
-          
-          {/* ISO Standards Circuit Pattern */}
-          <div className="absolute inset-0 opacity-5 hidden lg:block">
-            <div className="absolute top-1/4 left-1/4 w-24 h-24 border border-white/30 rounded-lg animate-pulse-slow-ai">
-              <div className="absolute top-1 left-1 w-3 h-3 rounded-full animate-ping" style={{backgroundColor: '#f77f6f'}}></div>
-              <div className="absolute bottom-1 right-1 w-2 h-2 rounded-full animate-ping" style={{backgroundColor: '#cca700', animationDelay: '1s'}}></div>
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white/20 text-xs font-bold">ISO</div>
-            </div>
-            <div className="absolute top-1/3 right-1/4 w-20 h-20 border border-white/30 rounded-lg animate-pulse-slow-ai" style={{animationDelay: '2s'}}>
-              <div className="absolute top-1 right-1 w-2 h-2 rounded-full animate-ping" style={{backgroundColor: '#1a304d', animationDelay: '3s'}}></div>
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white/20 text-xs font-bold">ESG</div>
-            </div>
-          </div>
         </div>
         
         {/* Main Content */}
-        <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-16 md:py-20 lg:py-24 xl:py-32 relative z-10">
-          <div className="max-w-6xl mx-auto text-center">
-            {/* AI-Enhanced Status Badge */}
-            <div 
-              className="inline-flex items-center bg-white/10 backdrop-blur-md border border-white/20 px-4 sm:px-6 py-2 sm:py-3 rounded-full mb-6 sm:mb-8 shadow-2xl hover:bg-white/20 transition-all duration-300 group cursor-pointer"
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-            >
-              <div className="relative">
-                <Award className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3" style={{color: '#f77f6f'}} />
-                <div className="absolute -top-1 -right-1 w-2 h-2 sm:w-3 sm:h-3 rounded-full animate-ping" style={{backgroundColor: '#f77f6f'}}></div>
-              </div>
-              <span className="font-semibold text-white text-xs sm:text-sm mr-2">KAB 인정 인증기관</span>
-              <div className="flex items-center space-x-1 ml-2">
-                <Brain className="w-3 h-3 sm:w-4 sm:h-4 animate-pulse" style={{color: '#cca700'}} />
-                <Settings className="w-3 h-3 sm:w-4 sm:h-4 animate-pulse" style={{color: '#1a304d', animationDelay: '0.5s'}} />
-              </div>
+        <div className="container mx-auto px-6 md:px-8 lg:px-12 py-20 md:py-32 relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            
+            {/* Apple-style Badge */}
+            <div className="inline-flex items-center bg-black/5 backdrop-blur-sm px-4 py-2 rounded-full mb-8 hover:bg-black/10 transition-all duration-300">
+              <Award className="w-4 h-4 mr-2 text-slate-600" />
+              <span className="text-sm font-medium text-gray-700">국제 표준 인증 기관</span>
             </div>
             
-            {/* AI-Enhanced Main Title */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 sm:mb-8 leading-tight hero-title">
-              <span className="block text-white mb-2 sm:mb-4 animate-fade-in-up-ai">
-                AI 기반 스마트 인증서비스
+            {/* Apple-style Main Title */}
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
+              <span className="block text-gray-900 mb-2">
+                ESG 경영시스템
               </span>
-              <span className="block bg-clip-text text-transparent animate-gradient-x animate-fade-in-up-ai" style={{backgroundImage: 'linear-gradient(90deg, #f77f6f 0%, #cca700 50%, #1a304d 100%)', animationDelay: '0.3s'}}>
-                ISO & ESG 통합 솔루션
+              <span className="block bg-gradient-to-r from-slate-600 to-indigo-600 bg-clip-text text-transparent">
+                인증서비스
               </span>
             </h1>
             
-            {/* AI-Enhanced Subtitle */}
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed animate-fade-in-up-ai" style={{animationDelay: '0.6s'}}>
-              <strong className="text-white bg-clip-text text-transparent" style={{backgroundImage: 'linear-gradient(90deg, #f77f6f 0%, #cca700 100%)'}}>
-                {COMPANY_INFO.name}
-              </strong>의 AI 기반 인증 플랫폼으로<br className="hidden sm:block" />
-              ISO 9001, ISO 14001, ISO 45001, ESG 경영시스템을 한 번에 관리하세요
+            {/* Apple-style Subtitle */}
+            <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
+              <strong className="font-semibold text-gray-900">{COMPANY_INFO.name}</strong>의 전문 인증서비스로<br className="hidden md:block" />
+              국제 표준에 부합하는 ESG 경영시스템을 구축하세요
             </p>
             
-            {/* AI-Enhanced Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-12 sm:mb-16 animate-fade-in-up-ai" style={{animationDelay: '0.9s'}}>
+            {/* Apple-style Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
               <Link href="/esg-certification/consultation">
                 <Button 
                   size="lg"
-                  className="w-full sm:w-auto relative text-white px-8 sm:px-10 py-4 sm:py-6 text-lg sm:text-xl shadow-2xl transform hover:scale-[1.05] transition-all duration-300 group overflow-hidden border-0"
-                  style={{
-                    background: 'linear-gradient(135deg, #f77f6f 0%, #cca700 100%)',
-                    boxShadow: '0 25px 50px -12px rgba(247, 127, 111, 0.25)'
-                  }}
-                  onMouseEnter={() => setIsHovered(true)}
-                  onMouseLeave={() => setIsHovered(false)}
+                  className="w-full sm:w-auto bg-slate-600 hover:bg-slate-700 text-white px-8 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300"
                 >
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-300" style={{background: 'linear-gradient(135deg, #cca700 0%, #f77f6f 100%)'}}></div>
-                  <Award className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 relative z-10" />
-                  <span className="relative z-10">AI 인증 신청하기</span>
-                  <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 ml-2 sm:ml-3 relative z-10 group-hover:translate-x-2 transition-transform duration-300" />
-                  <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                  <Award className="w-5 h-5 mr-3" />
+                  인증 신청하기
+                  <ArrowRight className="w-5 h-5 ml-3" />
                 </Button>
               </Link>
               
-              <Link href="/esg-certification/services/cost">
+              <Link href="/esg-certification/services/process">
                 <Button 
                   variant="outline"
                   size="lg"
-                  className="w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-6 text-lg sm:text-xl border-2 text-white hover:bg-white/10 backdrop-blur-sm transition-all duration-300 group"
-                  style={{
-                    borderColor: 'rgba(247, 127, 111, 0.5)',
-                    color: '#f77f6f'
-                  }}
-                  onMouseOver={(e) => {
-                    e.currentTarget.style.borderColor = '#f77f6f';
-                    e.currentTarget.style.color = '#f77f6f';
-                  }}
+                  className="w-full sm:w-auto border-2 border-gray-300 text-gray-700 hover:border-slate-600 hover:text-slate-600 px-8 py-4 text-lg font-medium rounded-xl transition-all duration-300"
                 >
-                  <div className="flex items-center justify-center">
-                    <Bot className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 group-hover:animate-bounce" />
-                    <span>AI 심사비용 계산</span>
-                  </div>
+                  <FileText className="w-5 h-5 mr-3" />
+                  인증 절차 보기
                 </Button>
               </Link>
             </div>
 
-            {/* AI-Enhanced Certification Features Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16 animate-fade-in-up-ai" style={{animationDelay: '1.2s'}}>
+            {/* Apple-style Features Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
               {[
-                { icon: BadgeCheck, title: 'ISO 9001', desc: 'AI 기반 품질관리', color: '#f77f6f' },
-                { icon: Leaf, title: 'ISO 14001', desc: '스마트 환경관리', color: '#cca700' },
-                { icon: Shield, title: 'ISO 45001', desc: '지능형 안전관리', color: '#1a304d' },
-                { icon: Globe, title: 'ESG 시스템', desc: '통합 지속가능경영', color: '#f77f6f' }
-              ].map((cert, index) => (
+                { icon: CheckCircle, title: '국제 표준', desc: 'ISO 14001, 45001 기반', color: 'slate' },
+                { icon: TrendingUp, title: '경영 개선', desc: '체계적 경영시스템 구축', color: 'indigo' },
+                { icon: Shield, title: '신뢰성 확보', desc: '제3자 독립 인증', color: 'purple' }
+              ].map((feature, index) => (
                 <div 
                   key={index}
-                  className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-4 sm:p-6 hover:bg-white/10 transition-all duration-300 group cursor-pointer"
-                  style={{animationDelay: `${1.2 + index * 0.15}s`}}
+                  className="group p-6 rounded-2xl bg-white/60 backdrop-blur-sm border border-gray-200/50 hover:bg-white/80 hover:border-gray-300/50 transition-all duration-300 hover:shadow-lg"
                 >
-                  <cert.icon className="w-6 h-6 sm:w-8 sm:h-8 mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300 mx-auto sm:mx-0" style={{color: cert.color}} />
-                  <h3 className="text-white font-semibold mb-2 text-sm sm:text-base">{cert.title}</h3>
-                  <p className="text-gray-300 text-xs sm:text-sm">{cert.desc}</p>
+                  <div className={`w-12 h-12 bg-${feature.color}-100 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                    <feature.icon className={`w-6 h-6 text-${feature.color}-600`} />
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{feature.title}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">{feature.desc}</p>
                 </div>
               ))}
             </div>
 
-            {/* AI-Enhanced Contact Info */}
-            <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-8 text-gray-300 text-sm sm:text-base animate-fade-in-up-ai" style={{animationDelay: '1.5s'}}>
-              <div className="flex items-center justify-center transition-colors duration-300 cursor-pointer group" style={{color: '#f77f6f'}}>
-                <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 group-hover:animate-pulse" style={{color: '#f77f6f'}} />
-                <span className="text-center">{CONSULTANT_INFO.fullTitle}: {CONTACT_INFO.mainPhone}</span>
+            {/* Apple-style Contact Info */}
+            <div className="flex flex-col sm:flex-row justify-center gap-8 text-gray-600">
+              <div className="flex items-center justify-center group">
+                <Phone className="w-5 h-5 mr-3 text-slate-600 group-hover:scale-110 transition-transform duration-300" />
+                <span className="font-medium">{CONSULTANT_INFO.fullTitle}: {CONTACT_INFO.mainPhone}</span>
               </div>
-              <div className="flex items-center justify-center transition-colors duration-300 cursor-pointer group" style={{color: '#cca700'}}>
-                <Bot className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 group-hover:animate-pulse" style={{color: '#cca700'}} />
-                <span>24시간 AI 상담 가능</span>
+              <div className="flex items-center justify-center group">
+                <MessageSquare className="w-5 h-5 mr-3 text-indigo-600 group-hover:scale-110 transition-transform duration-300" />
+                <span className="font-medium">인증 전문 상담</span>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-5 h-8 sm:w-6 sm:h-10 border-2 border-white/30 rounded-full flex justify-center">
-            <div className="w-1 h-2 sm:h-3 bg-white/50 rounded-full mt-1 sm:mt-2 animate-ping"></div>
+        {/* Apple-style Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-gray-400 rounded-full mt-2 animate-pulse"></div>
           </div>
         </div>
       </section>
