@@ -209,11 +209,11 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       {/* 🌟 AI-Enhanced Hero Section with Dual Effects */}
-      <section className="relative min-h-screen bg-gradient-to-br from-slate-900 via-green-900 to-slate-900 overflow-hidden">
+      <section className="relative min-h-screen overflow-hidden" style={{background: 'linear-gradient(135deg, #001c40 0%, #002552 50%, #1a304d 100%)'}}>
         {/* AI-Powered Background Effects Layer 1 */}
         <div className="absolute inset-0 will-change-transform">
           {/* Animated Gradient Mesh */}
-          <div className="absolute inset-0 bg-gradient-to-br from-green-600/20 via-emerald-600/20 to-teal-600/20 animate-pulse"></div>
+          <div className="absolute inset-0 animate-pulse" style={{background: 'linear-gradient(135deg, rgba(247, 127, 111, 0.1) 0%, rgba(204, 167, 0, 0.1) 50%, rgba(26, 48, 77, 0.2) 100%)'}}></div>
           
           {/* Floating Particles - Only render on client */}
           {isClient && (
@@ -236,11 +236,12 @@ export default function Home() {
           {/* Interactive Light Trails - Only render on client */}
           {isClient && (
             <div 
-              className="absolute w-96 h-96 bg-gradient-radial from-green-400/20 to-transparent rounded-full blur-3xl transition-all duration-300 ease-out will-change-transform"
+              className="absolute w-96 h-96 rounded-full blur-3xl transition-all duration-300 ease-out will-change-transform"
               style={{
                 left: mousePosition.x - 192,
                 top: mousePosition.y - 192,
-                transform: `scale(${isHovered ? 1.5 : 1})`
+                transform: `scale(${isHovered ? 1.5 : 1})`,
+                background: 'radial-gradient(circle, rgba(247, 127, 111, 0.2) 0%, transparent 70%)'
               }}
             />
           )}
@@ -284,18 +285,18 @@ export default function Home() {
         {/* AI-Powered Background Effects Layer 2 */}
         <div className="absolute inset-0 will-change-transform">
           {/* Morphing Shapes */}
-          <div className="absolute top-20 left-20 w-32 h-32 md:w-64 md:h-64 bg-gradient-to-br from-green-400/20 to-emerald-400/20 rounded-full blur-2xl animate-morph"></div>
-          <div className="absolute top-40 right-16 w-40 h-40 md:w-80 md:h-80 bg-gradient-to-br from-emerald-400/20 to-teal-400/20 rounded-full blur-2xl animate-morph-reverse"></div>
-          <div className="absolute bottom-32 left-1/3 w-36 h-36 md:w-72 md:h-72 bg-gradient-to-br from-teal-400/20 to-green-400/20 rounded-full blur-2xl animate-morph-slow"></div>
+          <div className="absolute top-20 left-20 w-32 h-32 md:w-64 md:h-64 rounded-full blur-2xl animate-morph" style={{background: 'linear-gradient(135deg, rgba(247, 127, 111, 0.2) 0%, rgba(204, 167, 0, 0.2) 100%)'}}></div>
+          <div className="absolute top-40 right-16 w-40 h-40 md:w-80 md:h-80 rounded-full blur-2xl animate-morph-reverse" style={{background: 'linear-gradient(135deg, rgba(204, 167, 0, 0.2) 0%, rgba(26, 48, 77, 0.2) 100%)'}}></div>
+          <div className="absolute bottom-32 left-1/3 w-36 h-36 md:w-72 md:h-72 rounded-full blur-2xl animate-morph-slow" style={{background: 'linear-gradient(135deg, rgba(26, 48, 77, 0.2) 0%, rgba(247, 127, 111, 0.2) 100%)'}}></div>
           
           {/* AI Circuit Board Pattern */}
           <div className="absolute inset-0 opacity-5 hidden lg:block">
             <div className="absolute top-1/4 left-1/4 w-32 h-32 border border-white/30 rounded-lg animate-pulse-slow-ai">
-              <div className="absolute top-2 left-2 w-4 h-4 bg-green-400 rounded-full animate-ping"></div>
-              <div className="absolute bottom-2 right-2 w-3 h-3 bg-emerald-400 rounded-full animate-ping" style={{animationDelay: '1s'}}></div>
+              <div className="absolute top-2 left-2 w-4 h-4 rounded-full animate-ping" style={{backgroundColor: '#f77f6f'}}></div>
+              <div className="absolute bottom-2 right-2 w-3 h-3 rounded-full animate-ping" style={{backgroundColor: '#cca700', animationDelay: '1s'}}></div>
             </div>
             <div className="absolute top-1/3 right-1/4 w-24 h-24 border border-white/30 rounded-lg animate-pulse-slow-ai" style={{animationDelay: '2s'}}>
-              <div className="absolute top-1 right-1 w-3 h-3 bg-teal-400 rounded-full animate-ping" style={{animationDelay: '3s'}}></div>
+              <div className="absolute top-1 right-1 w-3 h-3 rounded-full animate-ping" style={{backgroundColor: '#1a304d', animationDelay: '3s'}}></div>
             </div>
           </div>
         </div>
@@ -310,13 +311,13 @@ export default function Home() {
               onMouseLeave={() => setIsHovered(false)}
             >
               <div className="relative">
-                <BadgeCheck className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 text-green-400" />
-                <div className="absolute -top-1 -right-1 w-2 h-2 sm:w-3 sm:h-3 bg-green-400 rounded-full animate-ping"></div>
+                <BadgeCheck className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3" style={{color: '#f77f6f'}} />
+                <div className="absolute -top-1 -right-1 w-2 h-2 sm:w-3 sm:h-3 rounded-full animate-ping" style={{backgroundColor: '#f77f6f'}}></div>
               </div>
               <span className="font-semibold text-white text-xs sm:text-sm mr-2">KAB 인정 ESG 경영시스템 시범 인증기관</span>
               <div className="flex items-center space-x-1 ml-2">
-                <Brain className="w-3 h-3 sm:w-4 sm:h-4 text-emerald-400 animate-pulse" />
-                <Cpu className="w-3 h-3 sm:w-4 sm:h-4 text-teal-400 animate-pulse" style={{animationDelay: '0.5s'}} />
+                <Brain className="w-3 h-3 sm:w-4 sm:h-4 animate-pulse" style={{color: '#cca700'}} />
+                <Cpu className="w-3 h-3 sm:w-4 sm:h-4 animate-pulse" style={{color: '#1a304d', animationDelay: '0.5s'}} />
               </div>
             </div>
             
@@ -325,14 +326,14 @@ export default function Home() {
               <span className="block text-white mb-2 sm:mb-4 animate-fade-in-up-ai">
                 공평성을 최고의 가치로
               </span>
-              <span className="block bg-gradient-to-r from-green-400 via-emerald-400 to-teal-400 bg-clip-text text-transparent animate-gradient-x animate-fade-in-up-ai" style={{animationDelay: '0.3s'}}>
+              <span className="block bg-clip-text text-transparent animate-gradient-x animate-fade-in-up-ai" style={{backgroundImage: 'linear-gradient(90deg, #f77f6f 0%, #cca700 50%, #1a304d 100%)', animationDelay: '0.3s'}}>
                 AI 기반 신뢰 인증서비스
               </span>
             </h1>
             
             {/* AI-Enhanced Subtitle */}
             <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed animate-fade-in-up-ai" style={{animationDelay: '0.6s'}}>
-              <strong className="text-white bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
+              <strong className="text-white bg-clip-text text-transparent" style={{backgroundImage: 'linear-gradient(90deg, #f77f6f 0%, #cca700 100%)'}}>
                 {COMPANY_INFO.name}
               </strong>은 AI 기술과 전문성을 결합하여<br className="hidden sm:block" />
               차세대 적합성 평가 서비스를 제공합니다
@@ -343,11 +344,15 @@ export default function Home() {
               <Link href="/esg-certification/consultation">
                 <Button 
                   size="lg"
-                  className="w-full sm:w-auto relative bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white px-8 sm:px-10 py-4 sm:py-6 text-lg sm:text-xl shadow-2xl hover:shadow-green-500/25 transform hover:scale-[1.05] transition-all duration-300 group overflow-hidden"
+                  className="w-full sm:w-auto relative text-white px-8 sm:px-10 py-4 sm:py-6 text-lg sm:text-xl shadow-2xl transform hover:scale-[1.05] transition-all duration-300 group overflow-hidden border-0"
+                  style={{
+                    background: 'linear-gradient(135deg, #f77f6f 0%, #cca700 100%)',
+                    boxShadow: '0 25px 50px -12px rgba(247, 127, 111, 0.25)'
+                  }}
                   onMouseEnter={() => setIsHovered(true)}
                   onMouseLeave={() => setIsHovered(false)}
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-green-400 to-emerald-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-300" style={{background: 'linear-gradient(135deg, #cca700 0%, #f77f6f 100%)'}}></div>
                   <Award className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 relative z-10" />
                   <span className="relative z-10">AI 인증 신청하기</span>
                   <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 ml-2 sm:ml-3 relative z-10 group-hover:translate-x-2 transition-transform duration-300" />
@@ -359,7 +364,15 @@ export default function Home() {
                 <Button 
                   variant="outline"
                   size="lg"
-                  className="w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-6 text-lg sm:text-xl border-2 border-white/30 text-white hover:border-green-400 hover:text-green-400 hover:bg-white/10 backdrop-blur-sm transition-all duration-300 group"
+                  className="w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-6 text-lg sm:text-xl border-2 text-white hover:bg-white/10 backdrop-blur-sm transition-all duration-300 group"
+                  style={{
+                    borderColor: 'rgba(247, 127, 111, 0.5)',
+                    color: '#f77f6f'
+                  }}
+                  onMouseOver={(e) => {
+                    e.currentTarget.style.borderColor = '#f77f6f';
+                    e.currentTarget.style.color = '#f77f6f';
+                  }}
                 >
                   <div className="flex items-center justify-center">
                     <Bot className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 group-hover:animate-bounce" />
@@ -372,16 +385,16 @@ export default function Home() {
             {/* AI-Enhanced Features Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-12 sm:mb-16 animate-fade-in-up-ai" style={{animationDelay: '1.2s'}}>
               {[
-                { icon: Brain, title: 'AI 기반 분석', desc: '인공지능을 활용한 정밀 진단' },
-                { icon: Zap, title: '실시간 처리', desc: '빠르고 정확한 인증 프로세스' },
-                { icon: Shield, title: '보안 강화', desc: '최고 수준의 데이터 보안' }
+                { icon: Brain, title: 'AI 기반 분석', desc: '인공지능을 활용한 정밀 진단', color: '#f77f6f' },
+                { icon: Zap, title: '실시간 처리', desc: '빠르고 정확한 인증 프로세스', color: '#cca700' },
+                { icon: Shield, title: '보안 강화', desc: '최고 수준의 데이터 보안', color: '#1a304d' }
               ].map((feature, index) => (
                 <div 
                   key={index}
                   className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-4 sm:p-6 hover:bg-white/10 transition-all duration-300 group cursor-pointer"
                   style={{animationDelay: `${1.2 + index * 0.2}s`}}
                 >
-                  <feature.icon className="w-6 h-6 sm:w-8 sm:h-8 text-green-400 mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300 mx-auto sm:mx-0" />
+                  <feature.icon className="w-6 h-6 sm:w-8 sm:h-8 mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300 mx-auto sm:mx-0" style={{color: feature.color}} />
                   <h3 className="text-white font-semibold mb-2 text-sm sm:text-base">{feature.title}</h3>
                   <p className="text-gray-300 text-xs sm:text-sm">{feature.desc}</p>
                 </div>
@@ -390,12 +403,12 @@ export default function Home() {
 
             {/* AI-Enhanced Contact Info */}
             <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-8 text-gray-300 text-sm sm:text-base animate-fade-in-up-ai" style={{animationDelay: '1.5s'}}>
-              <div className="flex items-center justify-center hover:text-green-400 transition-colors duration-300 cursor-pointer group">
-                <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 text-green-400 group-hover:animate-pulse" />
+              <div className="flex items-center justify-center transition-colors duration-300 cursor-pointer group" style={{color: '#f77f6f'}}>
+                <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 group-hover:animate-pulse" style={{color: '#f77f6f'}} />
                 <span className="text-center">{CONSULTANT_INFO.fullTitle}: {CONTACT_INFO.mainPhone}</span>
               </div>
-              <div className="flex items-center justify-center hover:text-emerald-400 transition-colors duration-300 cursor-pointer group">
-                <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 text-emerald-400 group-hover:animate-pulse" />
+              <div className="flex items-center justify-center transition-colors duration-300 cursor-pointer group" style={{color: '#cca700'}}>
+                <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 group-hover:animate-pulse" style={{color: '#cca700'}} />
                 <span>{CONTACT_INFO.mainEmail}</span>
               </div>
             </div>
