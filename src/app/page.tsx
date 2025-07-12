@@ -209,11 +209,11 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       {/* 🌟 AI-Enhanced Hero Section with Dual Effects */}
-      <section className="relative min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 overflow-hidden">
+      <section className="relative min-h-screen bg-gradient-to-br from-slate-900 via-green-900 to-slate-900 overflow-hidden">
         {/* AI-Powered Background Effects Layer 1 */}
         <div className="absolute inset-0 will-change-transform">
           {/* Animated Gradient Mesh */}
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-green-600/20 animate-pulse"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-green-600/20 via-emerald-600/20 to-teal-600/20 animate-pulse"></div>
           
           {/* Floating Particles - Only render on client */}
           {isClient && (
@@ -236,7 +236,7 @@ export default function Home() {
           {/* Interactive Light Trails - Only render on client */}
           {isClient && (
             <div 
-              className="absolute w-96 h-96 bg-gradient-radial from-blue-400/20 to-transparent rounded-full blur-3xl transition-all duration-300 ease-out will-change-transform"
+              className="absolute w-96 h-96 bg-gradient-radial from-green-400/20 to-transparent rounded-full blur-3xl transition-all duration-300 ease-out will-change-transform"
               style={{
                 left: mousePosition.x - 192,
                 top: mousePosition.y - 192,
@@ -284,18 +284,18 @@ export default function Home() {
         {/* AI-Powered Background Effects Layer 2 */}
         <div className="absolute inset-0 will-change-transform">
           {/* Morphing Shapes */}
-          <div className="absolute top-20 left-20 w-32 h-32 md:w-64 md:h-64 bg-gradient-to-br from-green-400/20 to-blue-400/20 rounded-full blur-2xl animate-morph"></div>
-          <div className="absolute top-40 right-16 w-40 h-40 md:w-80 md:h-80 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-2xl animate-morph-reverse"></div>
-          <div className="absolute bottom-32 left-1/3 w-36 h-36 md:w-72 md:h-72 bg-gradient-to-br from-cyan-400/20 to-indigo-400/20 rounded-full blur-2xl animate-morph-slow"></div>
+          <div className="absolute top-20 left-20 w-32 h-32 md:w-64 md:h-64 bg-gradient-to-br from-green-400/20 to-emerald-400/20 rounded-full blur-2xl animate-morph"></div>
+          <div className="absolute top-40 right-16 w-40 h-40 md:w-80 md:h-80 bg-gradient-to-br from-emerald-400/20 to-teal-400/20 rounded-full blur-2xl animate-morph-reverse"></div>
+          <div className="absolute bottom-32 left-1/3 w-36 h-36 md:w-72 md:h-72 bg-gradient-to-br from-teal-400/20 to-green-400/20 rounded-full blur-2xl animate-morph-slow"></div>
           
           {/* AI Circuit Board Pattern */}
           <div className="absolute inset-0 opacity-5 hidden lg:block">
             <div className="absolute top-1/4 left-1/4 w-32 h-32 border border-white/30 rounded-lg animate-pulse-slow-ai">
               <div className="absolute top-2 left-2 w-4 h-4 bg-green-400 rounded-full animate-ping"></div>
-              <div className="absolute bottom-2 right-2 w-3 h-3 bg-blue-400 rounded-full animate-ping" style={{animationDelay: '1s'}}></div>
+              <div className="absolute bottom-2 right-2 w-3 h-3 bg-emerald-400 rounded-full animate-ping" style={{animationDelay: '1s'}}></div>
             </div>
             <div className="absolute top-1/3 right-1/4 w-24 h-24 border border-white/30 rounded-lg animate-pulse-slow-ai" style={{animationDelay: '2s'}}>
-              <div className="absolute top-1 right-1 w-3 h-3 bg-purple-400 rounded-full animate-ping" style={{animationDelay: '3s'}}></div>
+              <div className="absolute top-1 right-1 w-3 h-3 bg-teal-400 rounded-full animate-ping" style={{animationDelay: '3s'}}></div>
             </div>
           </div>
         </div>
@@ -315,8 +315,8 @@ export default function Home() {
               </div>
               <span className="font-semibold text-white text-xs sm:text-sm mr-2">KAB 인정 ESG 경영시스템 시범 인증기관</span>
               <div className="flex items-center space-x-1 ml-2">
-                <Brain className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400 animate-pulse" />
-                <Cpu className="w-3 h-3 sm:w-4 sm:h-4 text-purple-400 animate-pulse" style={{animationDelay: '0.5s'}} />
+                <Brain className="w-3 h-3 sm:w-4 sm:h-4 text-emerald-400 animate-pulse" />
+                <Cpu className="w-3 h-3 sm:w-4 sm:h-4 text-teal-400 animate-pulse" style={{animationDelay: '0.5s'}} />
               </div>
             </div>
             
@@ -325,14 +325,14 @@ export default function Home() {
               <span className="block text-white mb-2 sm:mb-4 animate-fade-in-up-ai">
                 공평성을 최고의 가치로
               </span>
-              <span className="block bg-gradient-to-r from-green-400 via-blue-400 to-purple-400 bg-clip-text text-transparent animate-gradient-x animate-fade-in-up-ai" style={{animationDelay: '0.3s'}}>
+              <span className="block bg-gradient-to-r from-green-400 via-emerald-400 to-teal-400 bg-clip-text text-transparent animate-gradient-x animate-fade-in-up-ai" style={{animationDelay: '0.3s'}}>
                 AI 기반 신뢰 인증서비스
               </span>
             </h1>
             
             {/* AI-Enhanced Subtitle */}
             <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed animate-fade-in-up-ai" style={{animationDelay: '0.6s'}}>
-              <strong className="text-white bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
+              <strong className="text-white bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
                 {COMPANY_INFO.name}
               </strong>은 AI 기술과 전문성을 결합하여<br className="hidden sm:block" />
               차세대 적합성 평가 서비스를 제공합니다
@@ -343,11 +343,11 @@ export default function Home() {
               <Link href="/esg-certification/consultation">
                 <Button 
                   size="lg"
-                  className="w-full sm:w-auto relative bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 text-white px-8 sm:px-10 py-4 sm:py-6 text-lg sm:text-xl shadow-2xl hover:shadow-green-500/25 transform hover:scale-[1.05] transition-all duration-300 group overflow-hidden"
+                  className="w-full sm:w-auto relative bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white px-8 sm:px-10 py-4 sm:py-6 text-lg sm:text-xl shadow-2xl hover:shadow-green-500/25 transform hover:scale-[1.05] transition-all duration-300 group overflow-hidden"
                   onMouseEnter={() => setIsHovered(true)}
                   onMouseLeave={() => setIsHovered(false)}
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-green-400 to-blue-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-green-400 to-emerald-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
                   <Award className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 relative z-10" />
                   <span className="relative z-10">AI 인증 신청하기</span>
                   <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 ml-2 sm:ml-3 relative z-10 group-hover:translate-x-2 transition-transform duration-300" />
@@ -394,8 +394,8 @@ export default function Home() {
                 <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 text-green-400 group-hover:animate-pulse" />
                 <span className="text-center">{CONSULTANT_INFO.fullTitle}: {CONTACT_INFO.mainPhone}</span>
               </div>
-              <div className="flex items-center justify-center hover:text-blue-400 transition-colors duration-300 cursor-pointer group">
-                <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 text-blue-400 group-hover:animate-pulse" />
+              <div className="flex items-center justify-center hover:text-emerald-400 transition-colors duration-300 cursor-pointer group">
+                <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 text-emerald-400 group-hover:animate-pulse" />
                 <span>{CONTACT_INFO.mainEmail}</span>
               </div>
             </div>
